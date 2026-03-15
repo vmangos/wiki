@@ -1,0 +1,77 @@
+site_name: VMaNGOS Wiki
+site_url: https://vmangos.github.io/wiki/
+repo_url: https://github.com/vmangos/core
+edit_uri: https://github.com/vmangos/wiki/edit/master/docs/
+theme:
+  name: material
+  language: en
+  font:
+    text: Cinzel
+    code: Fira Code
+  palette:
+    scheme: slate
+    primary: black
+    accent: amber
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - toc.integrate
+    - content.code.copy
+    - content.action.edit
+    - search.suggest
+    - search.highlight
+extra_css:
+  - stylesheets/extra.css
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - tables
+  - footnotes
+  - def_list
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.keys
+  - pymdownx.tabbed:
+      alternate_style: true
+nav:
+  - Home: README.md
+  - Getting Started:
+      - About the Project: About-the-project.md
+      - Getting it Working: Getting-it-working.md
+      - Frequently Asked Questions: Frequently-Asked-Questions.md
+      - Contribution Guide: Contribution-guide.md
+  - Compiling:
+      - Compiling on Windows: Compiling-on-Windows.md
+      - Compiling on Linux: Compiling-on-Linux.md
+      - Devuan Install Guide: Devuan-install-guide.md
+  - Database:
+      - World Database: World-Database.md
+      - DB Script Tables: DB-Script-Tables.md
+      - Conditions: conditions.md
+      - Creature: creature.md
+      - Creature Addon: creature_addon.md
+      - Creature AI Events: creature_ai_events.md
+      - Creature AI Scripts: creature_ai_scripts.md
+      - Area Template: area_template.md
+      - Areatrigger BG Entrance: areatrigger_bg_entrance.md
+      - Areatrigger Involved Relation: areatrigger_involvedrelation.md
+      - Areatrigger Tavern: areatrigger_tavern.md
+      - Areatrigger Teleport: areatrigger_teleport.md
+      - Areatrigger Template: areatrigger_template.md
+      - Auction House Bot: auctionhousebot.md
+      - Autobroadcast: autobroadcast.md
+      - Battleground Events: battleground_events.md
+      - Battleground Template: battleground_template.md
+      - Battlemaster Entry: battlemaster_entry.md
+      - Broadcast Text: broadcast_text.md
+      - Cinematic Waypoints: cinematic_waypoints.md
+      - Command: command.md
