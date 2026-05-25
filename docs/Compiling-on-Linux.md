@@ -25,7 +25,7 @@ sudo pacman -S base-devel
 sudo dnf install make gcc g++
 ```
 
-## 4. Installing Git
+## 2. Installing Git
 
 To download the source code for VMaNGOS, you should install Git. This can be avoided if you choose to manually download the zip archive from the website, but it's better to use Git, as it makes pulling updates from the main repository much easier.
 ### Debian, Ubuntu
@@ -41,7 +41,7 @@ sudo pacman -S git
 sudo dnf install git
 ```
 
-## 5. Installing CMake
+## 3. Installing CMake
 
 Since this is a cross-platform project, we use CMake to generate the appropriate solution files for every environment.
 ### Debian, Ubuntu
@@ -57,7 +57,7 @@ sudo pacman -S cmake
 sudo dnf install cmake
 ```
 
-## 6 Installing MariaDB or MySQL
+## 4. Installing MariaDB or MySQL
 
 Account, character, and game data is stored inside the database, so we need MariaDB to read and write data to it.
 
@@ -81,7 +81,7 @@ sudo dnf install mariadb-server mariadb-devel
 systemctl enable --now mariadb.service
 ```
 
-## 7. Installing OpenSSL
+## 5. Installing OpenSSL
 
 Communication between the game client and server needs to be encrypted, which requires a cryptography library.
 ### Debian, Ubuntu
@@ -97,12 +97,12 @@ sudo dnf install openssl
 sudo dnf install openssl-devel
 ```
 
-## 8. Installing Zlib
+## 6. Installing Zlib
 
 In order to reduce network traffic, a number of packets sent from the server are compressed, so we need a library for that too.
 ### Debian, Ubuntu
 ```
-sudo apt install build-essential zlib1g-dev -y
+sudo apt install zlib1g-dev -y
 ```
 ### Arch
 On arch we can use zlib-ng-compat, which is faster.
@@ -115,7 +115,7 @@ On Fedora we have to use zlib-ng-compat as zlib package has been deleted in Fedo
 sudo dnf install zlib-ng-compat zlib-ng-compat-devel
 ```
 
-## 9. Downloading the source code
+## 7. Downloading the source code
 
 Clone the latest core revision into a vmangos directory inside your home folder using Git:
 ```
@@ -124,7 +124,7 @@ cd ~/vmangos
 git clone -b development https://github.com/vmangos/core
 ```
 
-## 10. Configuring with CMake
+## 8. Configuring with CMake
 
 Now let's configure our project. Make another directory called `build` next to the newly created `core` folder, and call CMake from there to generate the Makefiles.
 ```
@@ -151,11 +151,11 @@ The server needs the map terrain data in order to know where anything is located
 
 This setting lets you choose where to copy the binaries after compilation finishes.
 
-## 11. Compiling the core
+## 9. Compiling the core
 
 Now that we have all the dependencies, and the project files have been properly configured, we can go ahead and compile the core. This can take quite a while, depending on the computer you are using.
 ```
-make -j(nproc)
+make -j$(nproc)
 make install
 ```
 
