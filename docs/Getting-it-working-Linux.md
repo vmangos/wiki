@@ -76,7 +76,7 @@ The server requires a large amount of data from the client in order to operate. 
 
 ## 2. Setting up the database
 
-The server requires a MySQL (or MariaDB) database to store all account, character, and world data.
+The server requires a MariaDB (or MySQL) database to store all account, character, and world data.
 
 ### Set username and password for DB (to reuse in following steps)
 
