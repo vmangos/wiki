@@ -244,7 +244,7 @@ This creates an account with username `admin` and password `admin`, and grants i
 
 ## 7. Connecting with the client
 
-1. In your World of Warcraft 1.12.1 folder (on Windows), open `realmlist.wtf` with a text editor.
+1. In your World of Warcraft 1.12.1 folder, open `realmlist.wtf` with a text editor.
 2. Replace its content with:
    ```
    set realmlist 127.0.0.1
