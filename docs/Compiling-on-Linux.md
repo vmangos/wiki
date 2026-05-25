@@ -6,7 +6,7 @@ This page will guide you through all the required steps to compile the server co
 - Git
 
 ### Required dependencies:
-- MariaDB
+- MariaDB or MySQL 5.5 (officially supported by VMaNGOS, though EOL). MySQL 8.0 is not supported.
 - OpenSSL (if not on Arch)
 - Zlib
 
@@ -57,9 +57,14 @@ sudo pacman -S cmake
 sudo dnf install cmake
 ```
 
-## 6 Installing MariaDB
+## 6 Installing MariaDB or MySQL
 
-Account, character and game data is stored inside the database, so we need MariaDB to read and write data to it.
+Account, character, and game data is stored inside the database, so we need MariaDB to read and write data to it.
+
+> **MySQL 5.5** is officially supported by VMaNGOS but is end-of-life and unavailable in modern distribution repositories. If you choose MySQL 5.5, refer to your distribution's documentation or community guides for manual installation steps. **MySQL 8.0 is not supported.**
+
+Below is how to install **MariaDB** on common distributions:
+
 ### Debian, Ubuntu
 ```
 sudo apt-get install mariadb-server libmariadb-dev
