@@ -76,7 +76,7 @@ The server requires a large amount of data from the client in order to operate. 
 
 ## 2. Setting up the database
 
-The server requires a MariaDB (or MySQL) database to store all account, character, and world data.
+The server requires a MySQL (or MariaDB) database to store all account, character, and world data.
 
 ### Set username and password for DB (to reuse in following steps)
 
@@ -90,9 +90,9 @@ read -sp "Database password [mangos]: " DB_PASS; echo; DB_PASS=${DB_PASS:-mangos
 ### Create databases and user
 
 ```bash
-mariadb -u root -p -e "CREATE DATABASE IF NOT EXISTS realmd DEFAULT CHARSET utf8 COLLATE utf8_general_ci; CREATE DATABASE IF NOT EXISTS mangos DEFAULT CHARSET utf8 COLLATE utf8_general_ci; CREATE DATABASE IF NOT EXISTS characters DEFAULT CHARSET utf8 COLLATE utf8_general_ci; CREATE DATABASE IF NOT EXISTS logs DEFAULT CHARSET utf8 COLLATE utf8_general_ci; CREATE USER IF NOT EXISTS '${DB_USER}'@'localhost' IDENTIFIED BY '${DB_PASS}'; GRANT ALL PRIVILEGES ON realmd.* TO '${DB_USER}'@'localhost'; GRANT ALL PRIVILEGES ON mangos.* TO '${DB_USER}'@'localhost'; GRANT ALL PRIVILEGES ON characters.* TO '${DB_USER}'@'localhost'; GRANT ALL PRIVILEGES ON logs.* TO '${DB_USER}'@'localhost'; FLUSH PRIVILEGES;"
+mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS realmd DEFAULT CHARSET utf8 COLLATE utf8_general_ci; CREATE DATABASE IF NOT EXISTS mangos DEFAULT CHARSET utf8 COLLATE utf8_general_ci; CREATE DATABASE IF NOT EXISTS characters DEFAULT CHARSET utf8 COLLATE utf8_general_ci; CREATE DATABASE IF NOT EXISTS logs DEFAULT CHARSET utf8 COLLATE utf8_general_ci; CREATE USER IF NOT EXISTS '${DB_USER}'@'localhost' IDENTIFIED BY '${DB_PASS}'; GRANT ALL PRIVILEGES ON realmd.* TO '${DB_USER}'@'localhost'; GRANT ALL PRIVILEGES ON mangos.* TO '${DB_USER}'@'localhost'; GRANT ALL PRIVILEGES ON characters.* TO '${DB_USER}'@'localhost'; GRANT ALL PRIVILEGES ON logs.* TO '${DB_USER}'@'localhost'; FLUSH PRIVILEGES;"
 ```
-*You will be prompted for the MariaDB root password.*
+*You will be prompted for the MySQL root password.*
 
 ### Importing the database
 
@@ -101,7 +101,7 @@ You have two options: import a fully updated database (recommended) or import th
 #### Option A: Import the latest database with migrations pre‑applied (fast)
 
 ```bash
-ZIP_URL=$(curl -s https://api.github.com/repos/vmangos/core/releases/tags/db_latest | grep -o '"name": "db-[0-9a-f]*\.zip"' | sed 's/"name": "\([^"]*\)"/\1/' | head -n1 | sed 's|^|https://github.com/vmangos/core/releases/download/db_latest/|') && wget -qO /tmp/db-latest.zip "$ZIP_URL" && 7z x /tmp/db-latest.zip -o/tmp/ -y && mariadb -u"${DB_USER}" -p"${DB_PASS}" --max-allowed-packet=256M realmd < /tmp/mysql-dump/logon.sql && mariadb -u"${DB_USER}" -p"${DB_PASS}" --max-allowed-packet=256M characters < /tmp/mysql-dump/characters.sql && mariadb -u"${DB_USER}" -p"${DB_PASS}" --max-allowed-packet=256M mangos < /tmp/mysql-dump/mangos.sql && mariadb -u"${DB_USER}" -p"${DB_PASS}" --max-allowed-packet=256M logs < /tmp/mysql-dump/logs.sql
+ZIP_URL=$(curl -s https://api.github.com/repos/vmangos/core/releases/tags/db_latest | grep -o '"name": "db-[0-9a-f]*\.zip"' | sed 's/"name": "\([^"]*\)"/\1/' | head -n1 | sed 's|^|https://github.com/vmangos/core/releases/download/db_latest/|') && wget -qO /tmp/db-latest.zip "$ZIP_URL" && 7z x /tmp/db-latest.zip -o/tmp/ -y && mysql -u"${DB_USER}" -p"${DB_PASS}" --max-allowed-packet=256M realmd < /tmp/mysql-dump/logon.sql && mysql -u"${DB_USER}" -p"${DB_PASS}" --max-allowed-packet=256M characters < /tmp/mysql-dump/characters.sql && mysql -u"${DB_USER}" -p"${DB_PASS}" --max-allowed-packet=256M mangos < /tmp/mysql-dump/mangos.sql && mysql -u"${DB_USER}" -p"${DB_PASS}" --max-allowed-packet=256M logs < /tmp/mysql-dump/logs.sql
 ```
 
 After this, you can skip to **Step 3**.
@@ -123,7 +123,7 @@ After this, you can skip to **Step 3**.
 3. **Import the base world database**
 
    ```bash
-   mariadb -u"${DB_USER}" -p"${DB_PASS}" mangos < "/tmp/$(basename "$LATEST_DB" .7z).sql"
+   mysql -u"${DB_USER}" -p"${DB_PASS}" mangos < "/tmp/$(basename "$LATEST_DB" .7z).sql"
    ```
 
 4. **Run the VMaNGOS migration merge script**
@@ -136,18 +136,18 @@ After this, you can skip to **Step 3**.
 5. **Import the core SQL files (logs, logon, characters)**
 
    ```bash
-   mariadb -u"${DB_USER}" -p"${DB_PASS}" logs < ~/vmangos/core/sql/logs.sql
-   mariadb -u"${DB_USER}" -p"${DB_PASS}" realmd < ~/vmangos/core/sql/logon.sql
-   mariadb -u"${DB_USER}" -p"${DB_PASS}" characters < ~/vmangos/core/sql/characters.sql
+   mysql -u"${DB_USER}" -p"${DB_PASS}" logs < ~/vmangos/core/sql/logs.sql
+   mysql -u"${DB_USER}" -p"${DB_PASS}" realmd < ~/vmangos/core/sql/logon.sql
+   mysql -u"${DB_USER}" -p"${DB_PASS}" characters < ~/vmangos/core/sql/characters.sql
    ```
 
 6. **Import the merged migration files**
 
    ```bash
-   mariadb -u"${DB_USER}" -p"${DB_PASS}" mangos < ~/vmangos/core/sql/migrations/world_db_updates.sql
-   mariadb -u"${DB_USER}" -p"${DB_PASS}" logs < ~/vmangos/core/sql/migrations/logs_db_updates.sql
-   mariadb -u"${DB_USER}" -p"${DB_PASS}" realmd < ~/vmangos/core/sql/migrations/logon_db_updates.sql
-   mariadb -u"${DB_USER}" -p"${DB_PASS}" characters < ~/vmangos/core/sql/migrations/characters_db_updates.sql
+   mysql -u"${DB_USER}" -p"${DB_PASS}" mangos < ~/vmangos/core/sql/migrations/world_db_updates.sql
+   mysql -u"${DB_USER}" -p"${DB_PASS}" logs < ~/vmangos/core/sql/migrations/logs_db_updates.sql
+   mysql -u"${DB_USER}" -p"${DB_PASS}" realmd < ~/vmangos/core/sql/migrations/logon_db_updates.sql
+   mysql -u"${DB_USER}" -p"${DB_PASS}" characters < ~/vmangos/core/sql/migrations/characters_db_updates.sql
    ```
 
 ---
@@ -188,7 +188,7 @@ If you used a different MySQL username or password during database setup, replac
 Insert a record for your realm into the `realmlist` table of the `realmd` database:
 
 ```bash
-mariadb -u"${DB_USER}" -p"${DB_PASS}" -e "USE realmd; INSERT INTO realmlist (id, name, address, port, icon, realmflags, timezone, allowedSecurityLevel, population, gamebuild_min, gamebuild_max, flag) VALUES (1, 'VMaNGOS', '127.0.0.1', 8085, 1, 0, 1, 0, 0, 5875, 5875, 0);"
+mysql -u"${DB_USER}" -p"${DB_PASS}" -e "USE realmd; INSERT INTO realmlist (id, name, address, port, icon, realmflags, timezone, allowedSecurityLevel, population, gamebuild_min, gamebuild_max, flag) VALUES (1, 'VMaNGOS', '127.0.0.1', 8085, 1, 0, 1, 0, 0, 5875, 5875, 0);"
 ```
 
 Change `'VMaNGOS'` and `'127.0.0.1'` to your desired realm name and public IP if needed.
@@ -197,7 +197,7 @@ Change `'VMaNGOS'` and `'127.0.0.1'` to your desired realm name and public IP if
 
 ## 5. Starting your server
 
-Make sure your MariaDB server is running.
+Make sure your MySQL server is running.
 
 ### Start manually in two terminals
 
