@@ -10,7 +10,8 @@ These pages are aimed at helping contributors with setting up the server environ
 ### First steps:
 * [Compiling on Windows](Compiling-on-Windows.md)
 * [Compiling on Linux](Compiling-on-Linux.md)
-* [Getting it working](Getting-it-working.md)
+* [Getting it Working Windows](Getting-it-working-Windows.md)
+* [Getting it Working Linux](Getting-it-working-Linux.md)
 * [Contribution guide](Contribution-guide.md)
 
 

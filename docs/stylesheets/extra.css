@@ -28,13 +28,45 @@
     --md-code-fg-color:           #d4b896;
 }
 
+[data-md-color-scheme="default"] {
+    --clr-bg:           #f5f0e8;
+    --clr-surface:      #ede4d0;
+    --clr-panel:        #e0d4b8;
+    --clr-border:       #b89a60;
+    --clr-gold:         #7a5c1e;
+    --clr-gold-bright:  #5a3e0e;
+    --clr-gold-dim:     #a07840;
+    --clr-amber:        #8b4a00;
+    --clr-text:         #2a1f0e;
+    --clr-text-muted:   #6b5530;
+    --clr-code-bg:      #ede4d0;
+    --clr-shadow:       0 4px 24px rgba(0,0,0,0.12);
+    --clr-glow:         0 0 6px rgba(120,90,30,0.15);
+    --md-default-bg-color:        var(--clr-bg);
+    --md-default-fg-color:        var(--clr-text);
+    --md-default-fg-color--light: var(--clr-text-muted);
+    --md-primary-fg-color:        var(--clr-bg);
+    --md-primary-bg-color:        var(--clr-gold);
+    --md-accent-fg-color:         var(--clr-gold-bright);
+    --md-typeset-a-color:         var(--clr-gold);
+    --md-code-bg-color:           var(--clr-code-bg);
+    --md-code-fg-color:           #5a3e0e;
+}
+
 body {
     background-color: var(--clr-bg);
     background-image:
-    radial-gradient(ellipse at 20% 0%, rgba(80,50,10,0.15) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 100%, rgba(60,30,5,0.12) 0%, transparent 60%),
-    url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+        radial-gradient(ellipse at 20% 0%, rgba(80,50,10,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 100%, rgba(60,30,5,0.12) 0%, transparent 60%),
+        url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
     font-family: 'EB Garamond', Georgia, serif;
+}
+
+[data-md-color-scheme="default"] body {
+    background-image:
+        radial-gradient(ellipse at 20% 0%, rgba(180,140,60,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 100%, rgba(160,120,40,0.06) 0%, transparent 60%),
+        url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
 }
 
 .md-typeset {
@@ -50,6 +82,10 @@ body {
     box-shadow: 0 1px 8px rgba(0,0,0,0.6);
 }
 
+[data-md-color-scheme="default"] .md-header {
+    background: linear-gradient(180deg, #e8dcc4 0%, #ddd0b0 100%);
+}
+
 .md-header__title {
     font-family: 'Cinzel Decorative', 'Cinzel', serif;
     font-weight: 700;
@@ -57,6 +93,10 @@ body {
     letter-spacing: 0.08em;
     color: var(--clr-gold) !important;
     text-shadow: 0 0 10px rgba(200,168,75,0.2), 0 2px 4px rgba(0,0,0,0.8);
+}
+
+[data-md-color-scheme="default"] .md-header__title {
+    text-shadow: 0 1px 2px rgba(255,255,255,0.5);
 }
 
 .md-header__button.md-logo img,
@@ -177,6 +217,10 @@ body {
     margin-bottom: 1.5rem;
 }
 
+[data-md-color-scheme="default"] .md-typeset h1 {
+    text-shadow: 0 1px 3px rgba(255,255,255,0.6);
+}
+
 .md-typeset h2 {
     font-family: 'Cinzel', serif;
     font-weight: 600;
@@ -260,6 +304,10 @@ body {
     padding: 0.05em 0.35em;
 }
 
+[data-md-color-scheme="default"] .md-typeset code {
+    color: var(--clr-amber);
+}
+
 .md-typeset pre > code {
     background: var(--clr-code-bg);
     border: 1px solid var(--clr-border);
@@ -300,6 +348,11 @@ body {
 
 .md-footer-meta {
     background: var(--clr-bg);
+}
+
+[data-md-color-scheme="default"] .md-footer,
+[data-md-color-scheme="default"] .md-footer-meta {
+    background: #ddd0b0;
 }
 
 .md-footer__title {
@@ -366,6 +419,10 @@ body {
 ::selection {
     background: rgba(200,168,75,0.25);
     color: var(--clr-gold-bright);
+}
+
+[data-md-color-scheme="default"] ::selection {
+    background: rgba(120,90,30,0.2);
 }
 
 .md-typeset hr {

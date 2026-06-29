@@ -9,9 +9,18 @@ theme:
     text: Cinzel
     code: Fira Code
   palette:
-    scheme: slate
-    primary: black
-    accent: amber
+    - scheme: slate
+      primary: black
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+    - scheme: default
+      primary: brown
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
   features:
     - navigation.instant
     - navigation.sections
@@ -46,13 +55,14 @@ nav:
   - Home: README.md
   - Getting Started:
       - About the Project: About-the-project.md
-      - Getting it Working: Getting-it-working.md
       - Frequently Asked Questions: Frequently-Asked-Questions.md
       - Contribution Guide: Contribution-guide.md
-  - Compiling:
+  - Setup Guides:
       - Compiling on Windows: Compiling-on-Windows.md
       - Compiling on Linux: Compiling-on-Linux.md
       - Devuan Install Guide: Devuan-install-guide.md
+      - Getting it Working Windows: Getting-it-working-Windows.md
+      - Getting it Working Linux: Getting-it-working-Linux.md
   - Database:
       - World Database: World-Database.md
       - DB Script Tables: DB-Script-Tables.md
