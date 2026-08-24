@@ -9,7 +9,7 @@ Scripts executed when a game object is activated. Uses the [generic script syste
 | `id` | int(10) unsigned |  | NO | 0 |  |
 | `delay` | int(10) unsigned |  | NO | 0 |  |
 | `priority` | tinyint(3) unsigned |  | NO | 0 |  |
-| [`command`](../DB-Script-Tables.md) | tinyint(3) unsigned |  | NO | 0 |  |
+| `command` | tinyint(3) unsigned |  | NO | 0 |  |
 | `datalong` | int(10) unsigned |  | NO | 0 |  |
 | `datalong2` | int(10) unsigned |  | NO | 0 |  |
 | `datalong3` | int(10) unsigned |  | NO | 0 |  |
