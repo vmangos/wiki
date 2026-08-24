@@ -4,7 +4,7 @@ The world database is mostly static and contains definitions for all game conten
 
 ## Tables
 
-- [`DB-Script-Tables`](DB-Script-Tables.md) - The generic script command set shared by [`event_scripts`](world/event_scripts.md), [`gossip_scripts`](world/gossip_scripts.md), `quest_start/end_scripts`, [`spell_scripts`](world/spell_scripts.md) and the other script tables.
+- [`DB-Script-Tables`](DB-Script-Tables.md) - The generic script command set shared by `event_scripts`, `gossip_scripts``quest_start/end_scripts`, `spell_scripts` and the other script tables.
 - [`area_template`](world/area_template.md) - Contains information about all areas and zones of the world, including flags, recommended level, faction ownership, and liquid type.
 - [`areatrigger_bg_entrance`](world/areatrigger_bg_entrance.md) - Defines battleground entrance portals that players can use to join the queue.
 - [`areatrigger_involvedrelation`](world/areatrigger_involvedrelation.md) - Associates area triggers with quest completion.
@@ -32,7 +32,7 @@ The world database is mostly static and contains definitions for all game conten
 - [`creature_equip_template`](world/creature_equip_template.md) - Defines equipment sets for creatures - up to three items (main hand, off hand, ranged).
 - [`creature_groups`](world/creature_groups.md) - Groups creatures into formations, with a leader and relative positions.
 - [`creature_groups_entry_limit`](world/creature_groups_entry_limit.md) - Restricts the number of creatures of a specific template ID that can be part of a group.
-- [`creature_involvedrelation`](world/creature_involvedrelation.md) - Maps creatures (NPCs) to quests that they **end**, the turn-in side of the relation pair (offer side: [`creature_questrelation`](world/creature_questrelation.md)).
+- [`creature_involvedrelation`](world/creature_involvedrelation.md) - Maps creatures (NPCs) to quests that they **end**, the turn-in side of the relation pair (offer side: `creature_questrelation`.
 - [`creature_linking`](world/creature_linking.md) - Links a creature to a master creature.
 - [`creature_linking_template`](world/creature_linking_template.md) - Template-level creature linking - all spawns of a given entry link to a master entry on a specific map.
 - [`creature_loot_template`](world/creature_loot_template.md) - Loot tables for creatures - defines items, drop chances, groups, and patch ranges.
@@ -106,7 +106,7 @@ The world database is mostly static and contains definitions for all game conten
 - [`npc_trainer_greeting`](world/npc_trainer_greeting.md) - Defines custom greeting texts for specific trainer NPCs.
 - [`npc_trainer_template`](world/npc_trainer_template.md) - Defines spells taught by trainer templates (reusable across multiple NPCs via [`creature_template`](world/creature_template.md).trainer_id).
 - [`npc_vendor`](world/npc_vendor.md) - Defines items sold by specific NPC vendors (per-spawn or per-entry).
-- [`npc_vendor_template`](world/npc_vendor_template.md) - Reusable vendor templates - assign to NPCs via [`creature_template`](world/creature_template.md).vendor_id.
+- [`npc_vendor_template`](world/npc_vendor_template.md) - Reusable vendor templates
 - [`page_text`](world/page_text.md) - Defines book/page text content with links to next pages.
 - [`pet_levelstats`](world/pet_levelstats.md) - Base stats for pets by creature entry and level.
 - [`pet_name_generation`](world/pet_name_generation.md) - Generates random names for hunter pets.
@@ -147,7 +147,7 @@ The world database is mostly static and contains definitions for all game conten
 - [`reputation_spillover_template`](world/reputation_spillover_template.md) - Defines spillover reputation - gaining reputation with one faction also grants partial reputation to others.
 - [`reserved_name`](world/reserved_name.md) - List of reserved character names that cannot be used.
 - [`script_escort_data`](world/script_escort_data.md) - Defines escort quest data - creature, quest, and faction override.
-- [`script_texts`](world/script_texts.md) - Generic script texts - similar to [`custom_texts`](world/custom_texts.md) but used by core scripts.
+- [`script_texts`](world/script_texts.md) - Generic script texts - similar to `custom_texts` but used by core scripts.
 - [`script_waypoint`](world/script_waypoint.md) - Defines waypoint paths for scripted creatures (escorts, etc.).
 - [`scripted_event_id`](world/scripted_event_id.md) - Maps scripted event IDs to script names.
 - [`skill_fishing_base_level`](world/skill_fishing_base_level.md) - Defines base fishing skill required per zone/area.

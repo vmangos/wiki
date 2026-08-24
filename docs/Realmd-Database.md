@@ -2,8 +2,6 @@
 
 The **realmd** (login/auth) database stores accounts, bans, GM access levels and the realm list. The `realmd` process authenticates clients here before handing them to a world server.
 
-Created from [`sql/logon.sql`](https://github.com/vmangos/core/blob/development/sql/logon.sql); configured via `LoginDatabase.Info` in `mangosd.conf` and by `realmd.conf`.
-
 ## Tables
 
 - [`account`](realmd/account.md) - Account credentials and per-account settings (username, password hash/verifier, expansion, locale).
@@ -12,7 +10,7 @@ Created from [`sql/logon.sql`](https://github.com/vmangos/core/blob/development/
 - [`allowed_clients`](realmd/allowed_clients.md) - Whitelist of exact client builds/platforms permitted to log on through realmd.
 - [`geoip`](realmd/geoip.md) - IP range to country mapping cache used by the login server.
 - [`ip2nation`](realmd/ip2nation.md) - Mapping of IP ranges to country codes for GeoIP lookups.
-- [`ip2nationcountries`](realmd/ip2nationcountries.md) - Country metadata for [`ip2nation`](realmd/ip2nation.md).
+- [`ip2nationcountries`](realmd/ip2nationcountries.md) - Country metadata for `ip2nation`.
 - [`ip_banned`](realmd/ip_banned.md) - Banned IP addresses/networks.
 - [`migrations`](realmd/migrations.md) - Applied migration IDs for the realmd database.
 - [`rbac_account_permissions`](realmd/rbac_account_permissions.md) - Grants or revokes RBAC permissions per account.

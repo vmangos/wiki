@@ -30,12 +30,12 @@ Both read their database credentials from their config files - see the
 
 ## Databases
 
-| Database | Loaded from | Contents |
-| :--- | :--- | :--- |
-| **realmd** | `sql/logon.sql` | Accounts, bans, GM access, realms ([tables](Realmd-Database.md)) |
-| **mangos** (world) | full dump + `sql/migrations` | All static game content ([tables](World-Database.md)) |
-| **characters** | `sql/characters.sql` | Player state ([tables](Characters-Database.md)) |
-| **logs** | `sql/logs.sql` | Audit/statistics sinks ([tables](Logs-Database.md)) |
+| Database | Contents |
+| :--- | :--- |
+| **realmd** | Accounts, bans, GM access, realms |
+| **mangos** (world) | All static game content |
+| **characters** | Player state |
+| **logs** | Audit/statistics sinks |
 
 The world database **is** shipped as one complete dump; after importing it you either apply the
 migration files from `sql/migrations` on top, or download a full database release with all

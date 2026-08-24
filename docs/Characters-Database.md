@@ -2,8 +2,6 @@
 
 The **character** database stores all player-owned state: characters themselves, inventories, guilds, groups, mail, auctions, tickets, pets, corpses and respawn data.
 
-It is created from the core's [`sql/characters.sql`](https://github.com/vmangos/core/blob/development/sql/characters.sql) dump and updated by `sql/migrations`. Connection settings live under `CharacterDatabase.Info` in `mangosd.conf`.
-
 ## Tables
 
 - [`account_data`](characters/account_data.md) - Stores account-wide client UI data blobs, kept separately from per-character settings.
@@ -19,7 +17,7 @@ It is created from the core's [`sql/characters.sql`](https://github.com/vmangos/
 - [`character_homebind`](characters/character_homebind.md) - Home bind position (hearthstone destination) per character.
 - [`character_honor_cp`](characters/character_honor_cp.md) - Honour contribution points accumulated during the current honour day (used by the weekly honour calculation).
 - [`character_instance`](characters/character_instance.md) - Instance binds of a character (which dungeon/raid saves they belong to).
-- [`character_inventory`](characters/character_inventory.md) - Every item a character carries: bag/slot mapping from [`item_instance`](characters/item_instance.md).
+- [`character_inventory`](characters/character_inventory.md) - Every item a character carries: bag/slot mapping from `item_instance`.
 - [`character_pet`](characters/character_pet.md) - Persistent pet data (hunter pets): stats, spells, loyalty, name and stable slot.
 - [`character_queststatus`](characters/character_queststatus.md) - Quest progress: accepted quests, kill/credit counters, rewarded status and timers.
 - [`character_reputation`](characters/character_reputation.md) - Standing per faction for every character.
@@ -31,7 +29,7 @@ It is created from the core's [`sql/characters.sql`](https://github.com/vmangos/
 - [`character_tutorial`](characters/character_tutorial.md) - Tutorial flags shown to newly created accounts/characters.
 - [`characters`](characters/characters.md) - The central table: one row per player character with race/class/level, position, money and appearance.
 - [`characters_guid_delete`](characters/characters_guid_delete.md) - Queue of character GUIDs scheduled for deletion by the cleanup system.
-- [`characters_item_delete`](characters/characters_item_delete.md) - Purge list used by the item reference cleanup ([`item_instance`](characters/item_instance.md) deletion queue).
+- [`characters_item_delete`](characters/characters_item_delete.md) - Purge list used by the item reference cleanup `item_instance` deletion queue.
 - [`corpse`](characters/corpse.md) - Corpses left in the world after deaths (position, bones/state).
 - [`creature_respawn`](characters/creature_respawn.md) - Persisted respawn times of creatures so respawn state survives server restarts.
 - [`game_event_status`](characters/game_event_status.md) - Manual override of game event state set by admins (start/stop events independent of their schedule).
@@ -52,7 +50,7 @@ It is created from the core's [`sql/characters.sql`](https://github.com/vmangos/
 - [`item_loot`](characters/item_loot.md) - Loot rolled inside an openable item, persisted until looted.
 - [`item_text`](characters/item_text.md) - Text written on letter-stationery items (old book items) - deprecated content.
 - [`mail`](characters/mail.md) - Mailbox messages: sender, receiver, subject, body, attachments state, expiry.
-- [`mail_items`](characters/mail_items.md) - Items attached to mails (moved out of [`mail`](characters/mail.md) for performance).
+- [`mail_items`](characters/mail_items.md) - Items attached to mails (moved out of `mail`for performance.
 - [`migrations`](characters/migrations.md) - Applied migration IDs for the characters database.
 - [`pet_aura`](characters/pet_aura.md) - Auras persisting on pets across logout.
 - [`pet_spell`](characters/pet_spell.md) - Spells known by persistent pets.
