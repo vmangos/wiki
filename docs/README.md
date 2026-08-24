@@ -15,6 +15,13 @@ These pages are aimed at helping contributors with setting up the server environ
 * [Getting it Working Windows](Getting-it-working-Windows.md)
 * [Getting it Working Linux](Getting-it-working-Linux.md)
 
+### Databases:
+
+* [Realmd (Logon) Database](Realmd-Database.md)
+* [Character Database](Characters-Database.md)
+* [World Database](World-Database.md)
+* [Logs Database](Logs-Database.md)
+
 ### Core systems:
 
 * [Creature AI System](AI-System.md)
@@ -67,13 +74,6 @@ These pages are aimed at helping contributors with setting up the server environ
 
 * [GM Commands reference](GM-Commands.md)
 * [DB Script Tables](DB-Script-Tables.md)
-
-### Databases:
-
-* [Realmd (Logon) Database](Realmd-Database.md)
-* [Character Database](Characters-Database.md)
-* [World Database](World-Database.md)
-* [Logs Database](Logs-Database.md)
 
 ### Tools:
 
