@@ -20,8 +20,8 @@ Recent guild events (member join/leave, leadership changes) shown in-game.
 
 ## Field Breakdown
 
-- <a id="f-guild_id"></a>**`guild_id`** - Part of the primary key. Guild the event belongs to.
-- <a id="f-log_guid"></a>**`log_guid`** - Part of the primary key. Log entry counter.
+- <a id="f-guild_id"></a>**`guild_id`** - Primary Key. Guild the event belongs to.
+- <a id="f-log_guid"></a>**`log_guid`** - Primary Key. Log entry counter.
 - <a id="f-event_type"></a>**`event_type`** - Join/leave/promotion/demotion event code.
 - <a id="f-player_guid1"></a>**`player_guid1`** - Actors involved (e.g. leaver + issuer).
 - <a id="f-player_guid2"></a>**`player_guid2`** - Actors involved (e.g. leaver + issuer).

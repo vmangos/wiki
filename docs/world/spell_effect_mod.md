@@ -35,7 +35,7 @@ Overrides spell effect parameters (e.g., damage, radius, target) for custom tuni
 ## Field Breakdown
 
 - <a id="f-Id"></a>**`Id`** - Primary Key. Spell ID. (see [`spell_template`](spell_template.md).entry)
-- <a id="f-EffectIndex"></a>**`EffectIndex`** - Part of the primary key. Which effect slot (0-2) the row modifies.
+- <a id="f-EffectIndex"></a>**`EffectIndex`** - Primary Key. Which effect slot (0-2) the row modifies.
 - <a id="f-Effect"></a>**`Effect`** - Replacement effect type.
 - <a id="f-EffectDieSides"></a>**`EffectDieSides`** - Override for the same-named `effect` template field; only provided values replace client data.
 - <a id="f-EffectBaseDice"></a>**`EffectBaseDice`** - Override for the same-named `effect` template field; only provided values replace client data.

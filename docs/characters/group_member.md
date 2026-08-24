@@ -17,7 +17,7 @@ Members of each party/raid group.
 
 ## Field Breakdown
 
-- <a id="f-group_id"></a>**`group_id`** - Part of the primary key. Group header row.
-- <a id="f-member_guid"></a>**`member_guid`** - Part of the primary key. Member character guid ([`characters`](characters.md).guid).
+- <a id="f-group_id"></a>**`group_id`** - Primary Key. Group header row.
+- <a id="f-member_guid"></a>**`member_guid`** - Primary Key. Member character guid ([`characters`](characters.md).guid).
 - <a id="f-assistant"></a>**`assistant`** - Raid assistant flag (can mark/invite).
 - <a id="f-subgroup"></a>**`subgroup`** - Raid subgroup index 0-7 (displayed as subgroup 1-8 in the client).

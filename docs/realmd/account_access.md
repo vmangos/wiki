@@ -16,6 +16,6 @@ GM level and realm assignment per account (console/GM permissions).
 
 ## Field Breakdown
 
-- <a id="f-id"></a>**`id`** - Part of the primary key. Account id.
+- <a id="f-id"></a>**`id`** - Primary Key. Account id.
 - <a id="f-gmlevel"></a>**`gmlevel`** - Security level 0-7 applied on this realm (see Security & RBAC page).
-- <a id="f-RealmID"></a>**`RealmID`** - Part of the primary key. Realm the level applies to; `-1` = all realms.
+- <a id="f-RealmID"></a>**`RealmID`** - Primary Key. Realm the level applies to; `-1` = all realms.

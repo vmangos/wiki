@@ -28,8 +28,8 @@ Defines faction reactions - which factions are friendly, hostile, or enemy.
 
 ## Field Breakdown
 
-- <a id="f-id"></a>**`id`** - Part of the primary key. Faction template id used by creatures/GOs ([`creature_template`](creature_template.md).faction).
-- <a id="f-build"></a>**`build`** - Part of the primary key. Client build targeting.
+- <a id="f-id"></a>**`id`** - Primary Key. Faction template id used by creatures/GOs ([`creature_template`](creature_template.md).faction).
+- <a id="f-build"></a>**`build`** - Primary Key. Client build targeting.
 - <a id="f-faction_id"></a>**`faction_id`** - Link to [`faction`](faction.md) reputation group (if any).
 - <a id="f-faction_flags"></a>**`faction_flags`** - Behaviour flags (`FACTION_TEMPLATE_*`): call-for-help response/flee, enemy and friend search/broadcast priorities, assist players, attack PvP-active players.
 - <a id="f-our_mask"></a>**`our_mask`** - Faction team mask this template belongs to (see `FactionMasks`).

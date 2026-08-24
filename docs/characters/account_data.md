@@ -17,8 +17,8 @@ Stores account-wide client UI data (per type/keybind blobs), kept separately fro
 
 ## Field Breakdown
 
-- <a id="f-account"></a>**`account`** - Part of the primary key. Account id ([`account`](../realmd/account.md).id) the data belongs to.
-- <a id="f-type"></a>**`type`** - Part of the primary key. Data slot 0-7 (per-type client config blob: key bindings, camera settings, layout…).
+- <a id="f-account"></a>**`account`** - Primary Key. Account id ([`account`](../realmd/account.md).id) the data belongs to.
+- <a id="f-type"></a>**`type`** - Primary Key. Data slot 0-7 (per-type client config blob: key bindings, camera settings, layout…).
 - <a id="f-time"></a>**`time`** - Unix timestamp of last modification.
 - <a id="f-data"></a>**`data`** - Compressed/encoded client UI blob for this type.
 

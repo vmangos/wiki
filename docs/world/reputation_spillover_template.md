@@ -26,7 +26,7 @@ Defines spillover reputation - gaining reputation with one faction also grants p
 
 ## Field Breakdown
 
-- <a id="f-faction"></a>**`faction`** - Part of the primary key. Child faction whose gains spill over ([`faction`](faction.md).id).
+- <a id="f-faction"></a>**`faction`** - Primary Key. Child faction whose gains spill over ([`faction`](faction.md).id).
 - <a id="f-faction1"></a>**`faction1`** - Up to four parent factions receiving spillover ([`faction`](faction.md).id).
 - <a id="f-rate_1"></a>**`rate_1`** - Multiplier applied to rep gained with `faction` and passed on to parent N (e.g. `0.25` = 25%).
 - <a id="f-rank_1"></a>**`rank_1`** - Spillover applies only while player's standing toward parent N is at or below this rank.

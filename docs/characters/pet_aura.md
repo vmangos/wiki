@@ -28,10 +28,10 @@ Auras persisting on pets across logout.
 
 ## Field Breakdown
 
-- <a id="f-guid"></a>**`guid`** - Part of the primary key. Global Unique Identifier
-- <a id="f-caster_guid"></a>**`caster_guid`** - Part of the primary key. Unit guid of the aura caster (0 = self/environment).
-- <a id="f-item_guid"></a>**`item_guid`** - Part of the primary key. Item that granted the aura (proc/enchant), else 0.
-- <a id="f-spell"></a>**`spell`** - Part of the primary key. Spell id producing this aura.
+- <a id="f-guid"></a>**`guid`** - Primary Key. Global Unique Identifier
+- <a id="f-caster_guid"></a>**`caster_guid`** - Primary Key. Unit guid of the aura caster (0 = self/environment).
+- <a id="f-item_guid"></a>**`item_guid`** - Primary Key. Item that granted the aura (proc/enchant), else 0.
+- <a id="f-spell"></a>**`spell`** - Primary Key. Spell id producing this aura.
 - <a id="f-stacks"></a>**`stacks`** - Current stack count (refreshable auras).
 - <a id="f-charges"></a>**`charges`** - Remaining proc/consumable charges.
 - <a id="f-base_points0"></a>**`base_points0`** - Rolled base points (damage/heal magnitude) per effect, overriding DBC dice.

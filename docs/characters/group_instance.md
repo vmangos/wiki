@@ -16,6 +16,6 @@ Which instances a group is bound to.
 
 ## Field Breakdown
 
-- <a id="f-leader_guid"></a>**`leader_guid`** - Part of the primary key. Group leader owning the bind.
-- <a id="f-instance"></a>**`instance`** - Part of the primary key. Save id ([`instance`](instance.md).id).
+- <a id="f-leader_guid"></a>**`leader_guid`** - Primary Key. Group leader owning the bind.
+- <a id="f-instance"></a>**`instance`** - Primary Key. Save id ([`instance`](instance.md).id).
 - <a id="f-permanent"></a>**`permanent`** - 1 = persistent dungeon/raid bind.

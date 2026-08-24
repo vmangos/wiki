@@ -19,8 +19,8 @@ Defines transitions between taxi paths - connects paths and nodes.
 
 ## Field Breakdown
 
-- <a id="f-in_path"></a>**`in_path`** - Part of the primary key. Incoming taxi path id (from `TaxiPath.dbc`).
-- <a id="f-out_path"></a>**`out_path`** - Part of the primary key. Outgoing taxi path id (from `TaxiPath.dbc`).
+- <a id="f-in_path"></a>**`in_path`** - Primary Key. Incoming taxi path id (from `TaxiPath.dbc`).
+- <a id="f-out_path"></a>**`out_path`** - Primary Key. Outgoing taxi path id (from `TaxiPath.dbc`).
 - <a id="f-in_node"></a>**`in_node`** - Node id in the incoming path where the transition occurs.
 - <a id="f-out_node"></a>**`out_node`** - Destination node ([`taxi_nodes`](taxi_nodes.md)).
 - <a id="f-comment"></a>**`comment`** - Description.

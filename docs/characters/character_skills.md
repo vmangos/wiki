@@ -17,7 +17,7 @@ Learned skills and their current/max values (professions, weapon skills).
 
 ## Field Breakdown
 
-- <a id="f-guid"></a>**`guid`** - Part of the primary key. Character guid (from [`characters`](characters.md).guid).
-- <a id="f-skill"></a>**`skill`** - Part of the primary key. Skill line id (weapon skills, professions, secondary skills).
+- <a id="f-guid"></a>**`guid`** - Primary Key. Character guid (from [`characters`](characters.md).guid).
+- <a id="f-skill"></a>**`skill`** - Primary Key. Skill line id (weapon skills, professions, secondary skills).
 - <a id="f-value"></a>**`value`** - Current skill value.
 - <a id="f-max"></a>**`max`** - Current cap (grows with level/profession tier).

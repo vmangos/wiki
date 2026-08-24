@@ -26,8 +26,8 @@ Defines greeting text and emotes for quest givers (creatures or game objects).
 
 ## Field Breakdown
 
-- <a id="f-entry"></a>**`entry`** - Part of the primary key. Creature or gameobject entry this greeting belongs to. (see [`creature_template`](creature_template.md).entry or [`gameobject_template`](gameobject_template.md).entry)
-- <a id="f-type"></a>**`type`** - Part of the primary key. Owner type: 0 creature, 1 gameobject.
+- <a id="f-entry"></a>**`entry`** - Primary Key. Creature or gameobject entry this greeting belongs to. (see [`creature_template`](creature_template.md).entry or [`gameobject_template`](gameobject_template.md).entry)
+- <a id="f-type"></a>**`type`** - Primary Key. Owner type: 0 creature, 1 gameobject.
 - <a id="f-content_default"></a>**`content_default`** - Greeting text shown when opening the quest giver window.
 - <a id="f-content_loc1"></a>**`content_loc1`** - Localized greeting variants.
 - <a id="f-content_loc2"></a>**`content_loc2`** - Localized greeting variants.

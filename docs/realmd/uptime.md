@@ -20,8 +20,8 @@ Uptime history of the realm(s): start time, player peak, revision.
 
 ## Field Breakdown
 
-- <a id="f-realmid"></a>**`realmid`** - Part of the primary key. Realm reporting uptime.
-- <a id="f-starttime"></a>**`starttime`** - Part of the primary key. Process start time (numeric + text form).
+- <a id="f-realmid"></a>**`realmid`** - Primary Key. Realm reporting uptime.
+- <a id="f-starttime"></a>**`starttime`** - Primary Key. Process start time (numeric + text form).
 - <a id="f-startstring"></a>**`startstring`** - Process start time (numeric + text form).
 - <a id="f-uptime"></a>**`uptime`** - Seconds running at last update.
 - <a id="f-onlineplayers"></a>**`onlineplayers`** - Players online at the last periodic update.

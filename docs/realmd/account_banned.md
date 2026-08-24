@@ -23,8 +23,8 @@ Account ban records with reason and expiration.
 ## Field Breakdown
 
 - <a id="f-banid"></a>**`banid`** - Unique. Ban record id.
-- <a id="f-id"></a>**`id`** - Part of the primary key. Account id from [`account`](account.md).id.
-- <a id="f-bandate"></a>**`bandate`** - Part of the primary key. Start unix timestamp of the ban.
+- <a id="f-id"></a>**`id`** - Primary Key. Account id from [`account`](account.md).id.
+- <a id="f-bandate"></a>**`bandate`** - Primary Key. Start unix timestamp of the ban.
 - <a id="f-unbandate"></a>**`unbandate`** - End unix timestamp of the ban (equal to `bandate` for permanent bans).
 - <a id="f-bannedby"></a>**`bannedby`** - Name of the staff member or console that issued the ban.
 - <a id="f-banreason"></a>**`banreason`** - Reason text shown to staff.

@@ -15,7 +15,7 @@ Binds chat/console commands to the RBAC permission required to execute them.
 
 ## Field Breakdown
 
-- <a id="f-command"></a>**`command`** - Part of the primary key. Chat/console command the binding applies to.
-- <a id="f-permission_id"></a>**`permission_id`** - Part of the primary key. Permission required to execute this command.
+- <a id="f-command"></a>**`command`** - Primary Key. Chat/console command the binding applies to.
+- <a id="f-permission_id"></a>**`permission_id`** - Primary Key. Permission required to execute this command.
 
 *References [`rbac_permissions`](rbac_permissions.md); see [GM Commands](../GM-Commands.md).*

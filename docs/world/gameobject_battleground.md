@@ -17,5 +17,5 @@ Links game objects to battleground events (e.g., flag spawns, towers).
 ## Field Breakdown
 
 - <a id="f-guid"></a>**`guid`** - Primary Key. Game object spawn GUID ([`gameobject`](gameobject.md).guid).
-- <a id="f-event1"></a>**`event1`** - Part of the primary key. First event index (joins [`battleground_events`](battleground_events.md).event1 together with the object's map).
-- <a id="f-event2"></a>**`event2`** - Part of the primary key. Second event index (joins [`battleground_events`](battleground_events.md).event2).
+- <a id="f-event1"></a>**`event1`** - Primary Key. First event index (joins [`battleground_events`](battleground_events.md).event1 together with the object's map).
+- <a id="f-event2"></a>**`event2`** - Primary Key. Second event index (joins [`battleground_events`](battleground_events.md).event2).

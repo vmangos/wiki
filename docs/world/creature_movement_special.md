@@ -24,7 +24,7 @@ Special movement paths (e.g., scripted escort or event paths) defined by creatur
 ## Field Breakdown
 
 - <a id="f-id"></a>**`id`** - Creature entry ([`creature_template`](creature_template.md).entry) or arbitrary path ID assigned from scripts/hardcoded events.
-- <a id="f-point"></a>**`point`** - Part of the primary key. Sequence index within the special movement path.
+- <a id="f-point"></a>**`point`** - Primary Key. Sequence index within the special movement path.
 - <a id="f-position_x"></a>**`position_x`** - Special waypoint X coordinate.
 - <a id="f-position_y"></a>**`position_y`** - Special waypoint Y coordinate.
 - <a id="f-position_z"></a>**`position_z`** - Special waypoint Z coordinate.

@@ -16,6 +16,6 @@ Spells known by persistent pets.
 
 ## Field Breakdown
 
-- <a id="f-guid"></a>**`guid`** - Part of the primary key. Global Unique Identifier
-- <a id="f-spell"></a>**`spell`** - Part of the primary key. Spell Identifier
+- <a id="f-guid"></a>**`guid`** - Primary Key. Global Unique Identifier
+- <a id="f-spell"></a>**`spell`** - Primary Key. Spell Identifier
 - <a id="f-active"></a>**`active`** - `ActiveStates` toggle (`UnitDefines.h`): `0x01` passive, `0x81` disabled/castable (off), `0xC1` auto-cast + castable.

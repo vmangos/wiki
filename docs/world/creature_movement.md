@@ -24,7 +24,7 @@ Defines waypoint movement paths for specific creature spawns (GUID-based).
 ## Field Breakdown
 
 - <a id="f-id"></a>**`id`** - Primary Key. Creature GUID (from [`creature`](creature.md).guid).
-- <a id="f-point"></a>**`point`** - Part of the primary key. Sequence number of the waypoint for this spawn guid.
+- <a id="f-point"></a>**`point`** - Primary Key. Sequence number of the waypoint for this spawn guid.
 - <a id="f-position_x"></a>**`position_x`** - Waypoint X coordinate.
 - <a id="f-position_y"></a>**`position_y`** - Waypoint Y coordinate.
 - <a id="f-position_z"></a>**`position_z`** - Waypoint Z coordinate.

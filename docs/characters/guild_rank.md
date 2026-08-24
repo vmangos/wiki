@@ -17,7 +17,7 @@ Rank definitions per guild (rights and money withdraw limits).
 
 ## Field Breakdown
 
-- <a id="f-guild_id"></a>**`guild_id`** - Part of the primary key. Guild reference.
-- <a id="f-id"></a>**`id`** - Part of the primary key. Rank number (0 = guild master).
+- <a id="f-guild_id"></a>**`guild_id`** - Primary Key. Guild reference.
+- <a id="f-id"></a>**`id`** - Primary Key. Rank number (0 = guild master).
 - <a id="f-name"></a>**`name`** - Rank title.
 - <a id="f-rights"></a>**`rights`** - Permission bitmask (`GuildRankRights` / `GR_RIGHT_*`): guild/officer chat listen & speak, promote/demote, invite/remove, set MOTD, edit/view public and officer notes, modify guild info.

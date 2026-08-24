@@ -23,8 +23,8 @@ Template-level waypoint paths that can be reused by any creature spawn (by entry
 
 ## Field Breakdown
 
-- <a id="f-entry"></a>**`entry`** - Part of the primary key. Creature entry sharing this waypoint path. (see [`creature_template`](creature_template.md).entry)
-- <a id="f-point"></a>**`point`** - Part of the primary key. Waypoint sequence number along the path.
+- <a id="f-entry"></a>**`entry`** - Primary Key. Creature entry sharing this waypoint path. (see [`creature_template`](creature_template.md).entry)
+- <a id="f-point"></a>**`point`** - Primary Key. Waypoint sequence number along the path.
 - <a id="f-position_x"></a>**`position_x`** - Waypoint coordinates.
 - <a id="f-position_y"></a>**`position_y`** - Waypoint Y coordinate.
 - <a id="f-position_z"></a>**`position_z`** - Waypoint Z coordinate.

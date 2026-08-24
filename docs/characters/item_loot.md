@@ -18,8 +18,8 @@ Loot rolled inside an openable item, persisted until looted.
 
 ## Field Breakdown
 
-- <a id="f-guid"></a>**`guid`** - Part of the primary key. [`item_instance`](item_instance.md).guid owning this rolled loot.
+- <a id="f-guid"></a>**`guid`** - Primary Key. [`item_instance`](item_instance.md).guid owning this rolled loot.
 - <a id="f-owner_guid"></a>**`owner_guid`** - Player allowed to loot it.
-- <a id="f-item_id"></a>**`item_id`** - Part of the primary key. Contained item entry.
+- <a id="f-item_id"></a>**`item_id`** - Primary Key. Contained item entry.
 - <a id="f-amount"></a>**`amount`** - Stack count of the contained item.
 - <a id="f-property"></a>**`property`** - Random property id of the contained item.

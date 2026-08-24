@@ -17,7 +17,7 @@ Optional follow-up survey answers attached to GM tickets.
 
 ## Field Breakdown
 
-- <a id="f-survey_id"></a>**`survey_id`** - Part of the primary key. Parent survey.
-- <a id="f-subsurvey_id"></a>**`subsurvey_id`** - Part of the primary key. Individual question index.
+- <a id="f-survey_id"></a>**`survey_id`** - Primary Key. Parent survey.
+- <a id="f-subsurvey_id"></a>**`subsurvey_id`** - Primary Key. Individual question index.
 - <a id="f-rank"></a>**`rank`** - Answer rating.
 - <a id="f-comment"></a>**`comment`** - Per-question comment.

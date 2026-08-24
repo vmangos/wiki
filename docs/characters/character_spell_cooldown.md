@@ -19,8 +19,8 @@ Spell cooldowns persisting across logout.
 
 ## Field Breakdown
 
-- <a id="f-guid"></a>**`guid`** - Part of the primary key. Character guid (from [`characters`](characters.md).guid).
-- <a id="f-spell"></a>**`spell`** - Part of the primary key. Spell on cooldown.
+- <a id="f-guid"></a>**`guid`** - Primary Key. Character guid (from [`characters`](characters.md).guid).
+- <a id="f-spell"></a>**`spell`** - Primary Key. Spell on cooldown.
 - <a id="f-spell_expire_time"></a>**`spell_expire_time`** - Unix timestamp when the spell cooldown ends.
 - <a id="f-category"></a>**`category`** - Cooldown category id (shared-category cooldowns).
 - <a id="f-category_expire_time"></a>**`category_expire_time`** - Category cooldown expiry timestamp.

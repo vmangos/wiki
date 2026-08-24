@@ -35,8 +35,8 @@ Defines reputation factions, their base standings per race/class, and other prop
 
 ## Field Breakdown
 
-- <a id="f-id"></a>**`id`** - Part of the primary key. Faction (reputation group) id.
-- <a id="f-build"></a>**`build`** - Part of the primary key. Client build this row targets.
+- <a id="f-id"></a>**`id`** - Primary Key. Faction (reputation group) id.
+- <a id="f-build"></a>**`build`** - Primary Key. Client build this row targets.
 - <a id="f-reputation_list_id"></a>**`reputation_list_id`** - Index players see in the rep pane (-1 not listed).
 - <a id="f-base_rep_race_mask1"></a>**`base_rep_race_mask1`** - Race mask that receives the paired base_rep_value at creation.
 - <a id="f-base_rep_race_mask2"></a>**`base_rep_race_mask2`** - Race mask that receives the paired base_rep_value at creation.

@@ -17,7 +17,7 @@ Persisted respawn times of creatures so respawn state survives server restarts.
 
 ## Field Breakdown
 
-- <a id="f-guid"></a>**`guid`** - Part of the primary key. Creature spawn guid (from [`creature`](../world/creature.md).guid).
+- <a id="f-guid"></a>**`guid`** - Primary Key. Creature spawn guid (from [`creature`](../world/creature.md).guid).
 - <a id="f-respawn_time"></a>**`respawn_time`** - Unix time when it becomes alive again.
-- <a id="f-instance"></a>**`instance`** - Part of the primary key. Instance-bound respawn or 0 for world spawns ([`instance`](instance.md).id).
+- <a id="f-instance"></a>**`instance`** - Primary Key. Instance-bound respawn or 0 for world spawns ([`instance`](instance.md).id).
 - <a id="f-map"></a>**`map`** - Map id.

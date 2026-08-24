@@ -16,6 +16,6 @@ How many characters each account has per realm (enforces character-per-realm lim
 
 ## Field Breakdown
 
-- <a id="f-realmid"></a>**`realmid`** - Part of the primary key. Realm id.
-- <a id="f-acctid"></a>**`acctid`** - Part of the primary key. Account id ([`account`](account.md).id).
+- <a id="f-realmid"></a>**`realmid`** - Primary Key. Realm id.
+- <a id="f-acctid"></a>**`acctid`** - Primary Key. Account id ([`account`](account.md).id).
 - <a id="f-numchars"></a>**`numchars`** - Characters this account owns on that realm (enforces per-realm limit).

@@ -22,12 +22,12 @@ Defines spells that apply auras when entering a specific area, based on quests, 
 
 ## Field Breakdown
 
-- <a id="f-spell"></a>**`spell`** - Part of the primary key. Spell that applies the aura (→ [`spell_template`](spell_template.md).entry).
+- <a id="f-spell"></a>**`spell`** - Primary Key. Spell that applies the aura (→ [`spell_template`](spell_template.md).entry).
 - <a id="f-area"></a>**`area`** - Primary Key. Zone/area ID. (see `AreaTable.dbc`)
-- <a id="f-quest_start"></a>**`quest_start`** - Part of the primary key. Quest that must be active (from [`quest_template`](quest_template.md).entry).
+- <a id="f-quest_start"></a>**`quest_start`** - Primary Key. Quest that must be active (from [`quest_template`](quest_template.md).entry).
 - <a id="f-quest_start_active"></a>**`quest_start_active`** - Primary Key. If `1`, quest must be active; if `0`, quest must be complete.
 - <a id="f-quest_end"></a>**`quest_end`** - Quest that ends the aura (from [`quest_template`](quest_template.md).entry).
-- <a id="f-aura_spell"></a>**`aura_spell`** - Part of the primary key. Aura requirement: positive = aura must be present, negative = aura must be absent.
+- <a id="f-aura_spell"></a>**`aura_spell`** - Primary Key. Aura requirement: positive = aura must be present, negative = aura must be absent.
 - <a id="f-racemask"></a>**`racemask`** - Primary Key. Race mask.
 - <a id="f-gender"></a>**`gender`** - Primary Key. `0` male, `1` female, `2` both.
 - <a id="f-autocast"></a>**`autocast`** - If `1`, spell is auto-applied on entering the area; if `0`, it is only allowed to be cast there.

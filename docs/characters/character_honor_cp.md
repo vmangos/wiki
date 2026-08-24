@@ -19,7 +19,7 @@ Honour contribution points accumulated during the current honour day (used by th
 
 ## Field Breakdown
 
-- <a id="f-guid"></a>**`guid`** - Part of the primary key. Character earning the honour ([`characters`](characters.md).guid).
+- <a id="f-guid"></a>**`guid`** - Primary Key. Character earning the honour ([`characters`](characters.md).guid).
 - <a id="f-victim_type"></a>**`victim_type`** - Object type id of the honour source unit (0 when the source is the character itself).
 - <a id="f-victim_id"></a>**`victim_id`** - Victim identifier (guid low or creature entry).
 - <a id="f-cp"></a>**`cp`** - Contribution points awarded for this entry.

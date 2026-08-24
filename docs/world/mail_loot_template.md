@@ -22,8 +22,8 @@ Loot tables for mail items - determines what players receive in mail.
 
 ## Field Breakdown
 
-- <a id="f-entry"></a>**`entry`** - Part of the primary key. Loot list id referenced by the owner system (see Loot System page).
-- <a id="f-item"></a>**`item`** - Part of the primary key. [`item_template`](item_template.md).entry granted when this loot line rolls.
+- <a id="f-entry"></a>**`entry`** - Primary Key. Loot list id referenced by the owner system (see Loot System page).
+- <a id="f-item"></a>**`item`** - Primary Key. [`item_template`](item_template.md).entry granted when this loot line rolls.
 - <a id="f-ChanceOrQuestChance"></a>**`ChanceOrQuestChance`** - Positive = plain % chance · negative = quest drop (% magnitude) · 100 always.
 - <a id="f-groupid"></a>**`groupid`** - Equal-chance group id; rows sharing a group share the drop budget. 0 = independent roll.
 - <a id="f-mincountOrRef"></a>**`mincountOrRef`** - Minimum stack size; a negative value `-n` pulls from [`reference_loot_template`](reference_loot_template.md).entry n.

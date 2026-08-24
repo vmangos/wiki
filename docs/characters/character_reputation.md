@@ -17,8 +17,8 @@ Reputation standing per faction for every character.
 
 ## Field Breakdown
 
-- <a id="f-guid"></a>**`guid`** - Part of the primary key. Character guid (from [`characters`](characters.md).guid).
-- <a id="f-faction"></a>**`faction`** - Part of the primary key. Reputation group id ([`faction`](../world/faction.md).id).
+- <a id="f-guid"></a>**`guid`** - Primary Key. Character guid (from [`characters`](characters.md).guid).
+- <a id="f-faction"></a>**`faction`** - Primary Key. Reputation group id ([`faction`](../world/faction.md).id).
 - <a id="f-standing"></a>**`standing`** - Numeric reputation points (-42000…42999).
 - <a id="f-flags"></a>**`flags`** - State bits (`FactionFlag`): 1 = visible, 2 = *At War*, 4 = hidden from the client reputation pane.
 

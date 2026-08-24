@@ -17,7 +17,7 @@ Statistics log of creature kills inside instanced encounters.
 
 ## Field Breakdown
 
-- <a id="f-mapId"></a>**`mapId`** - Part of the primary key. Map where the kill happened.
-- <a id="f-creatureEntry"></a>**`creatureEntry`** - Part of the primary key. Creature killed.
-- <a id="f-spellEntry"></a>**`spellEntry`** - Part of the primary key. Finishing spell (0 = melee/direct).
+- <a id="f-mapId"></a>**`mapId`** - Primary Key. Map where the kill happened.
+- <a id="f-creatureEntry"></a>**`creatureEntry`** - Primary Key. Creature killed.
+- <a id="f-spellEntry"></a>**`spellEntry`** - Primary Key. Finishing spell (0 = melee/direct).
 - <a id="f-count"></a>**`count`** - Aggregated kill count.

@@ -16,6 +16,6 @@ Logged wipes on boss encounters (duration, attempts).
 
 ## Field Breakdown
 
-- <a id="f-mapId"></a>**`mapId`** - Part of the primary key. Instance map.
-- <a id="f-creatureEntry"></a>**`creatureEntry`** - Part of the primary key. Boss/encounter creature entry (from [`creature_template`](../world/creature_template.md).entry).
+- <a id="f-mapId"></a>**`mapId`** - Primary Key. Instance map.
+- <a id="f-creatureEntry"></a>**`creatureEntry`** - Primary Key. Boss/encounter creature entry (from [`creature_template`](../world/creature_template.md).entry).
 - <a id="f-count"></a>**`count`** - Wipe count against this encounter.

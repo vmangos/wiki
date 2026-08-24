@@ -20,7 +20,7 @@ Defines waypoint paths for scripted creatures (escorts, etc.).
 
 ## Field Breakdown
 
-- <a id="f-entry"></a>**`entry`** - Part of the primary key. Creature entry being escorted/pathed. (see [`creature_template`](creature_template.md).entry)
+- <a id="f-entry"></a>**`entry`** - Primary Key. Creature entry being escorted/pathed. (see [`creature_template`](creature_template.md).entry)
 - <a id="f-pointid"></a>**`pointid`** - Primary Key. Waypoint order.
 - <a id="f-location_x"></a>**`location_x`** - World coordinates of the waypoint.
 - <a id="f-location_y"></a>**`location_y`** - Waypoint Y coordinate.

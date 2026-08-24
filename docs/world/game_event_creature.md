@@ -16,5 +16,5 @@ an existing spawn (from [`creature`](creature.md)) to an event entry.
 
 ## Field Breakdown
 
-- <a id="f-guid"></a>**`guid`** - Part of the primary key. Creature spawn GUID (from [`creature`](creature.md).guid).
-- <a id="f-event"></a>**`event`** - Part of the primary key. [`game_event`](game_event.md).entry this spawn belongs to.
+- <a id="f-guid"></a>**`guid`** - Primary Key. Creature spawn GUID (from [`creature`](creature.md).guid).
+- <a id="f-event"></a>**`event`** - Primary Key. [`game_event`](game_event.md).entry this spawn belongs to.

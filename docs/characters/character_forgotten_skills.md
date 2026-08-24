@@ -16,6 +16,6 @@ Skills explicitly unlearned from a character (weapon skill resets); remembered s
 
 ## Field Breakdown
 
-- <a id="f-guid"></a>**`guid`** - Part of the primary key. Character guid (from [`characters`](characters.md).guid).
-- <a id="f-skill"></a>**`skill`** - Part of the primary key. Skill line id that was unlearned (e.g. via GM reset).
+- <a id="f-guid"></a>**`guid`** - Primary Key. Character guid (from [`characters`](characters.md).guid).
+- <a id="f-skill"></a>**`skill`** - Primary Key. Skill line id that was unlearned (e.g. via GM reset).
 - <a id="f-value"></a>**`value`** - Former skill value, kept so it can be restored.

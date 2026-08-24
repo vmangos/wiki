@@ -16,6 +16,6 @@ Pet spell cooldowns persisting across logout.
 
 ## Field Breakdown
 
-- <a id="f-guid"></a>**`guid`** - Part of the primary key. Global Unique Identifier, Low part
-- <a id="f-spell"></a>**`spell`** - Part of the primary key. Spell Identifier
+- <a id="f-guid"></a>**`guid`** - Primary Key. Global Unique Identifier, Low part
+- <a id="f-spell"></a>**`spell`** - Primary Key. Spell Identifier
 - <a id="f-time"></a>**`time`** - Cooldown expiry timestamp (unix time).

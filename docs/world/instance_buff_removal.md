@@ -18,8 +18,8 @@ Defines spells (buffs) that are removed when entering specific instances.
 
 ## Field Breakdown
 
-- <a id="f-map_id"></a>**`map_id`** - Part of the primary key. Map being entered (`Map.dbc` id).
-- <a id="f-spell_id"></a>**`spell_id`** - Part of the primary key. Spell removed on entry (see [`spell_template`](spell_template.md).entry)*.
+- <a id="f-map_id"></a>**`map_id`** - Primary Key. Map being entered (`Map.dbc` id).
+- <a id="f-spell_id"></a>**`spell_id`** - Primary Key. Spell removed on entry (see [`spell_template`](spell_template.md).entry)*.
 - <a id="f-enabled"></a>**`enabled`** - `1` if this removal rule is active.
 - <a id="f-flags"></a>**`flags`** - Behaviour flags (`AuraRemovalFlags`, `AuraRemovalMgr.h`):
   - `1` - EXCLUDE_HORDE (keep the buff on Horde players)

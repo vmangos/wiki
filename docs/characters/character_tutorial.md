@@ -22,7 +22,7 @@ Tutorial flags shown to newly created accounts/characters.
 
 ## Field Breakdown
 
-- <a id="f-account"></a>**`account`** - Part of the primary key. Account id from [`account`](../realmd/account.md).id; tutorial state is tracked per account.
+- <a id="f-account"></a>**`account`** - Primary Key. Account id from [`account`](../realmd/account.md).id; tutorial state is tracked per account.
 - <a id="f-tut0"></a>**`tut0`** - Bitmask marking which tutorial windows were already shown.
 - <a id="f-tut1"></a>**`tut1`** - Bitmask marking which tutorial windows were already shown.
 - <a id="f-tut2"></a>**`tut2`** - Bitmask marking which tutorial windows were already shown.

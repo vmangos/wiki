@@ -16,6 +16,6 @@ Friends and ignores of each character.
 
 ## Field Breakdown
 
-- <a id="f-guid"></a>**`guid`** - Part of the primary key. Character owning the social entry ([`characters`](characters.md).guid).
-- <a id="f-friend"></a>**`friend`** - Part of the primary key. The other character's guid ([`characters`](characters.md).guid).
-- <a id="f-flags"></a>**`flags`** - Part of the primary key. Relationship type: 1 = friend, 2 = ignored. One row per relationship type between two characters.
+- <a id="f-guid"></a>**`guid`** - Primary Key. Character owning the social entry ([`characters`](characters.md).guid).
+- <a id="f-friend"></a>**`friend`** - Primary Key. The other character's guid ([`characters`](characters.md).guid).
+- <a id="f-flags"></a>**`flags`** - Primary Key. Relationship type: 1 = friend, 2 = ignored. One row per relationship type between two characters.

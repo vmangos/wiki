@@ -17,7 +17,7 @@ Spells learned by the character.
 
 ## Field Breakdown
 
-- <a id="f-guid"></a>**`guid`** - Part of the primary key. Character guid (from [`characters`](characters.md).guid).
-- <a id="f-spell"></a>**`spell`** - Part of the primary key. Learned spell id.
+- <a id="f-guid"></a>**`guid`** - Primary Key. Character guid (from [`characters`](characters.md).guid).
+- <a id="f-spell"></a>**`spell`** - Primary Key. Learned spell id.
 - <a id="f-active"></a>**`active`** - 1 if spell is in an action-bar usable state (toggled spells like auras).
 - <a id="f-disabled"></a>**`disabled`** - 1 = temporarily disabled by core (cannot be cast).

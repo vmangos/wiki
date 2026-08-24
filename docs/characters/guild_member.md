@@ -19,7 +19,7 @@ Guild roster with rank and public/officer notes.
 ## Field Breakdown
 
 - <a id="f-guild_id"></a>**`guild_id`** - Guild reference.
-- <a id="f-guid"></a>**`guid`** - Part of the primary key. Member character ([`characters`](characters.md).guid).
+- <a id="f-guid"></a>**`guid`** - Primary Key. Member character ([`characters`](characters.md).guid).
 - <a id="f-rank"></a>**`rank`** - Rank id within the guild ([`guild_rank`](guild_rank.md).id).
 - <a id="f-player_note"></a>**`player_note`** - Public note visible to all members.
 - <a id="f-officer_note"></a>**`officer_note`** - Officer-only note.

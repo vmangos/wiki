@@ -28,8 +28,8 @@ Quest progress: accepted quests, kill/credit counters, rewarded status and timer
 
 ## Field Breakdown
 
-- <a id="f-guid"></a>**`guid`** - Part of the primary key. Character guid (from [`characters`](characters.md).guid).
-- <a id="f-quest"></a>**`quest`** - Part of the primary key. [`quest_template`](../world/quest_template.md).entry.
+- <a id="f-guid"></a>**`guid`** - Primary Key. Character guid (from [`characters`](characters.md).guid).
+- <a id="f-quest"></a>**`quest`** - Primary Key. [`quest_template`](../world/quest_template.md).entry.
 - <a id="f-status"></a>**`status`** - Quest state - see the [Status Values table](#status-values) below.
 - <a id="f-rewarded"></a>**`rewarded`** - 1 once turned in (drives repeatable re-offers).
 - <a id="f-explored"></a>**`explored`** - Exploration bitmask for quest areas (explore objectives).

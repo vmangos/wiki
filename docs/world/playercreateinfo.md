@@ -21,8 +21,8 @@ Defines starting location for each race/class combination.
 
 ## Field Breakdown
 
-- <a id="f-race"></a>**`race`** - Part of the primary key. Race-class pair this starting definition belongs to.
-- <a id="f-class"></a>**`class`** - Part of the primary key. Race-class pair this starting definition belongs to.
+- <a id="f-race"></a>**`race`** - Primary Key. Race-class pair this starting definition belongs to.
+- <a id="f-class"></a>**`class`** - Primary Key. Race-class pair this starting definition belongs to.
 - <a id="f-map"></a>**`map`** - Starting map and zone ids.
 - <a id="f-zone"></a>**`zone`** - Starting map and zone ids. (see `AreaTable.dbc`)
 - <a id="f-position_x"></a>**`position_x`** - Starting position X coordinate.

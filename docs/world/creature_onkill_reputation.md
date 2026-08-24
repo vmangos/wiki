@@ -24,7 +24,7 @@ Reputation rewards granted when a player kills a creature of a specific entry.
 
 ## Field Breakdown
 
-- <a id="f-creature_id"></a>**`creature_id`** - Part of the primary key. Creature entry the reward applies to. (see [`creature_template`](creature_template.md).entry)
+- <a id="f-creature_id"></a>**`creature_id`** - Primary Key. Creature entry the reward applies to. (see [`creature_template`](creature_template.md).entry)
 - <a id="f-patch"></a>**`patch`** - Primary Key. Client patch version.
 - <a id="f-RewOnKillRepFaction1"></a>**`RewOnKillRepFaction1`** - Faction(s) receiving reputation on kill (two independent rows worth of settings).
 - <a id="f-RewOnKillRepFaction2"></a>**`RewOnKillRepFaction2`** - Faction gaining reputation (second row).

@@ -31,8 +31,8 @@ Localized gossip menu option texts.
 
 ## Field Breakdown
 
-- <a id="f-menu_id"></a>**`menu_id`** - Part of the primary key. Gossip menu id.; references [`gossip_menu_option`](gossip_menu_option.md).menu_id / [`gossip_menu_option`](gossip_menu_option.md).id
-- <a id="f-id"></a>**`id`** - Part of the primary key. Option index within the menu.; references [`gossip_menu_option`](gossip_menu_option.md).menu_id / [`gossip_menu_option`](gossip_menu_option.md).id
+- <a id="f-menu_id"></a>**`menu_id`** - Primary Key. Gossip menu id.; references [`gossip_menu_option`](gossip_menu_option.md).menu_id / [`gossip_menu_option`](gossip_menu_option.md).id
+- <a id="f-id"></a>**`id`** - Primary Key. Option index within the menu.; references [`gossip_menu_option`](gossip_menu_option.md).menu_id / [`gossip_menu_option`](gossip_menu_option.md).id
 - <a id="f-option_text_loc1"></a>**`option_text_loc1`** - Localized option label.
 - <a id="f-option_text_loc2"></a>**`option_text_loc2`** - Localized option label.
 - <a id="f-option_text_loc3"></a>**`option_text_loc3`** - Localized option label.
