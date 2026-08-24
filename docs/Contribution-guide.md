@@ -1,13 +1,16 @@
-There are two kinds of changes that can be made - core changes and database changes. A core change is a modification to any of the source code included in the repository, that basically means changes to any of the "_.cpp_" and "_.h_" files. In order to edit the core's source code you'll need to be fluent in the [C++](https://en.wikipedia.org/wiki/C%2B%2B) programming language. 
+# Contribution Guide
+
+There are two kinds of changes that can be made - core changes and database changes. A core change is a modification to any of the source code included in the repository, that basically means changes to any of the "_.cpp_" and "_.h_" files. In order to edit the core's source code you'll need to be fluent in the [C++](https://en.wikipedia.org/wiki/C%2B%2B) programming language.
 
 Database changes are done by creating new "_.sql_" files called migrations which contain SQL statements that alter the data or structure of database tables. In order to make changes to the database you need to be familiar with the [SQL](https://en.wikipedia.org/wiki/SQL) database management language.
 
 ## Making database changes.
+
 To create a migration, navigate to the "_sql_" directory and use the batch script there. The newly created migration can be found in "_sql/migrations_". The name of the migration consists of the date and time when it was created and the database to which it should be applied. By default any migrations created with the batch script are for the world database, but you can change that by just renaming the migrations. Here are a few examples.
 
 - `20171101091800_world.sql`
 
-This is a migration for the world database, you can tell by it's name that it was created on the 1st of November 2017 at 9:18:00.
+This is a migration for the world database, you can tell by its name that it was created on the 1st of November 2017 at 9:18:00.
 
 - `20171030141951_logon.sql`
 
@@ -22,6 +25,7 @@ An empty migration looks like this:
 That code is generated automatically by the batch script used to create new migration files. It's a procedure that checks if the migration has already been applied to the world database, and if it has not it executes the SQL queries contained within it. You are meant to paste your SQL queries in the middle of it, as implied by the comments.
 
 ## Making core changes.
+
 If you are going to be making core changes, then you are already at least somewhat experienced in programming and won't need to have your hand held all the way through, but there are some rules specific to this project that you need to remember.
 
 - Code must be C++14 compliant, no C++17 yet.
@@ -44,9 +48,10 @@ When you need to use IDs of spells, creatures, texts or something else in your c
 
 - No hardcoded texts.
 
-Do not define string literals for commands or scripts, instead either find the text in the `broadcast_text` table if it is a blizzlike text, or add it to `mangos_string` in the case of system texts. All in-game texts need localization, and there is no way to do that outside of the database.
+Do not define string literals for commands or scripts, instead either find the text in the [`broadcast_text`](world/broadcast_text.md) table if it is a blizzlike text, or add it to [`mangos_string`](world/mangos_string.md) in the case of system texts. All in-game texts need localization, and there is no way to do that outside of the database.
 
 ## Creating a branch and making pull requests.
+
 _This section is intended for people who have not used git before, you may skip it otherwise._
 
 In order to contribute your changes back to the public repository you will need to make a pull request, and to do that you need to make a separate branch on your own fork. Open up a command prompt and navigate to the directory where you'd like to clone the repository, then type the following sequence of commands to create a new branch based on the latest development revision:

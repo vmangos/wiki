@@ -1,0 +1,65 @@
+# Character Database
+
+The **character** database stores all player-owned state: characters themselves, inventories, guilds, groups, mail, auctions, tickets, pets, corpses and respawn data.
+
+It is created from the core's [`sql/characters.sql`](https://github.com/vmangos/core/blob/development/sql/characters.sql) dump and updated by `sql/migrations`. Connection settings live under `CharacterDatabase.Info` in `mangosd.conf`.
+
+## Tables
+
+- [`account_data`](characters/account_data.md) - Stores account-wide client UI data blobs, kept separately from per-character settings.
+- [`auction`](characters/auction.md) - Active auctions on the world auction houses.
+- [`character_account_data`](characters/character_account_data.md) - Per-character client UI data blobs stored by data type.
+- [`character_action`](characters/character_action.md) - Player action bar button assignments (spells/items placed on slots).
+- [`character_aura`](characters/character_aura.md) - Auras persisting on a character across logout (passives, shapeshifts, DoTs with long duration).
+- [`character_battleground_data`](characters/character_battleground_data.md) - Per-character battleground state that must survive a restart (marked for BG, random BG info).
+- [`character_deleted_items`](characters/character_deleted_items.md) - Items deleted from a character, kept for restoration purposes.
+- [`character_duplicate_account`](characters/character_duplicate_account.md) - Detection data for characters suspected of being duplicated between accounts.
+- [`character_forgotten_skills`](characters/character_forgotten_skills.md) - Skills explicitly unlearned from a character (weapon skill resets); remembered so they are not re-granted automatically.
+- [`character_gifts`](characters/character_gifts.md) - Items wrapped as gifts waiting to be opened (gift target stored until unwrapped).
+- [`character_homebind`](characters/character_homebind.md) - Home bind position (hearthstone destination) per character.
+- [`character_honor_cp`](characters/character_honor_cp.md) - Honour contribution points accumulated during the current honour day (used by the weekly honour calculation).
+- [`character_instance`](characters/character_instance.md) - Instance binds of a character (which dungeon/raid saves they belong to).
+- [`character_inventory`](characters/character_inventory.md) - Every item a character carries: bag/slot mapping from [`item_instance`](characters/item_instance.md).
+- [`character_pet`](characters/character_pet.md) - Persistent pet data (hunter pets): stats, spells, loyalty, name and stable slot.
+- [`character_queststatus`](characters/character_queststatus.md) - Quest progress: accepted quests, kill/credit counters, rewarded status and timers.
+- [`character_reputation`](characters/character_reputation.md) - Standing per faction for every character.
+- [`character_skills`](characters/character_skills.md) - Learned skills and their current/max values (professions, weapon skills).
+- [`character_social`](characters/character_social.md) - Friends and ignores of each character.
+- [`character_spell`](characters/character_spell.md) - Spells learned by the character.
+- [`character_spell_cooldown`](characters/character_spell_cooldown.md) - Spell cooldowns persisting across logout.
+- [`character_stats`](characters/character_stats.md) - Cached lifetime statistics for the character sheet: kills, honour, quest counts and combat stats.
+- [`character_tutorial`](characters/character_tutorial.md) - Tutorial flags shown to newly created accounts/characters.
+- [`characters`](characters/characters.md) - The central table: one row per player character with race/class/level, position, money and appearance.
+- [`characters_guid_delete`](characters/characters_guid_delete.md) - Queue of character GUIDs scheduled for deletion by the cleanup system.
+- [`characters_item_delete`](characters/characters_item_delete.md) - Purge list used by the item reference cleanup ([`item_instance`](characters/item_instance.md) deletion queue).
+- [`corpse`](characters/corpse.md) - Corpses left in the world after deaths (position, bones/state).
+- [`creature_respawn`](characters/creature_respawn.md) - Persisted respawn times of creatures so respawn state survives server restarts.
+- [`game_event_status`](characters/game_event_status.md) - Manual override of game event state set by admins (start/stop events independent of their schedule).
+- [`gameobject_respawn`](characters/gameobject_respawn.md) - Persisted respawn times of game objects.
+- [`gm_subsurveys`](characters/gm_subsurveys.md) - Optional follow-up survey answers attached to GM tickets.
+- [`gm_surveys`](characters/gm_surveys.md) - Player satisfaction surveys submitted after a GM ticket was resolved.
+- [`gm_tickets`](characters/gm_tickets.md) - Open and archived GM tickets written by players.
+- [`group_instance`](characters/group_instance.md) - Which instances a group is bound to.
+- [`group_member`](characters/group_member.md) - Members of each party/raid group.
+- [`groups`](characters/groups.md) - Party and raid group headers (leader, loot rules, difficulty).
+- [`guild`](characters/guild.md) - Guild header row: name, leader, emblem/tabard colours, public info, MOTD and creation date.
+- [`guild_eventlog`](characters/guild_eventlog.md) - Recent guild events (member join/leave, leadership changes) shown in-game.
+- [`guild_member`](characters/guild_member.md) - Guild roster with rank and public/officer notes.
+- [`guild_rank`](characters/guild_rank.md) - Rank definitions per guild (name and permission rights).
+- [`instance`](characters/instance.md) - Dungeon/raid save instances with reset times.
+- [`instance_reset`](characters/instance_reset.md) - Global reset schedule per map/difficulty.
+- [`item_instance`](characters/item_instance.md) - One row per physical item in the world: owner, enchantments, durability, flags.
+- [`item_loot`](characters/item_loot.md) - Loot rolled inside an openable item, persisted until looted.
+- [`item_text`](characters/item_text.md) - Text written on letter-stationery items (old book items) - deprecated content.
+- [`mail`](characters/mail.md) - Mailbox messages: sender, receiver, subject, body, attachments state, expiry.
+- [`mail_items`](characters/mail_items.md) - Items attached to mails (moved out of [`mail`](characters/mail.md) for performance).
+- [`migrations`](characters/migrations.md) - Applied migration IDs for the characters database.
+- [`pet_aura`](characters/pet_aura.md) - Auras persisting on pets across logout.
+- [`pet_spell`](characters/pet_spell.md) - Spells known by persistent pets.
+- [`pet_spell_cooldown`](characters/pet_spell_cooldown.md) - Pet spell cooldowns persisting across logout.
+- [`petition`](characters/petition.md) - Charter petitions for founding guilds, including the requested guild name and charter item.
+- [`petition_sign`](characters/petition_sign.md) - Signatures collected on a petition.
+- [`playerbot`](characters/playerbot.md) - State storage for player bots managed by the built-in bot system.
+- [`saved_variables`](characters/saved_variables.md) - Miscellaneous global flags saved between restarts, such as the next honour-day maintenance date.
+- [`world`](characters/world.md) - World-wide persistent variables, such as per-map weather timers.
+- [`worldstates`](characters/worldstates.md) - World state variables broadcast to clients (BG scores, AQ war effort state…).

@@ -1,11 +1,15 @@
+# Compiling on Linux
+
 This page will guide you through all the required steps to compile the server core on Linux.
 
 ### Required software:
+
 - g++ Compiler
 - CMake
 - Git
 
 ### Required dependencies:
+
 - MariaDB or MySQL 5.5 (officially supported by VMaNGOS, though EOL). MySQL 8.0 is not supported.
 - OpenSSL (if not on Arch)
 - Zlib
@@ -13,14 +17,19 @@ This page will guide you through all the required steps to compile the server co
 ## 1. Installing essential compiler packages
 
 ### Debian, Ubuntu
+
 ```
 sudo apt install build-essential
 ```
+
 ### Arch
+
 ```
 sudo pacman -S base-devel
 ```
+
 ### Fedora
+
 ```
 sudo dnf install make gcc g++
 ```
@@ -28,15 +37,21 @@ sudo dnf install make gcc g++
 ## 2. Installing Git
 
 To download the source code for VMaNGOS, you should install Git. This can be avoided if you choose to manually download the zip archive from the website, but it's better to use Git, as it makes pulling updates from the main repository much easier.
+
 ### Debian, Ubuntu
+
 ```
 sudo apt install git
 ```
+
 ### Arch
+
 ```
 sudo pacman -S git
 ```
+
 ### Fedora
+
 ```
 sudo dnf install git
 ```
@@ -44,15 +59,21 @@ sudo dnf install git
 ## 3. Installing CMake
 
 Since this is a cross-platform project, we use CMake to generate the appropriate solution files for every environment.
+
 ### Debian, Ubuntu
+
 ```
 sudo apt install cmake
 ```
+
 ### Arch
+
 ```
 sudo pacman -S cmake
 ```
+
 ### Fedora
+
 ```
 sudo dnf install cmake
 ```
@@ -66,16 +87,21 @@ Account, character, and game data is stored inside the database, so we need Mari
 Below is how to install **MariaDB** on common distributions:
 
 ### Debian, Ubuntu
+
 ```
 sudo apt-get install mariadb-server libmariadb-dev
 systemctl enable --now mariadb.service
 ```
+
 ### Arch
+
 ```
 sudo pacman -S mariadb mariadb-libs
 systemctl enable --now mariadb.service
 ```
+
 ### Fedora
+
 ```
 sudo dnf install mariadb-server mariadb-devel
 systemctl enable --now mariadb.service
@@ -84,14 +110,20 @@ systemctl enable --now mariadb.service
 ## 5. Installing OpenSSL
 
 Communication between the game client and server needs to be encrypted, which requires a cryptography library.
+
 ### Debian, Ubuntu
+
 ```
 sudo apt-get install openssl
 sudo apt-get install libssl-dev
 ```
+
 ### Arch
-OpenSSL is provided as part of coreutils and there is no need to install it.
+
+OpenSSL is preinstalled on Arch and provided by the `openssl` package; no extra steps are needed.
+
 ### Fedora
+
 ```
 sudo dnf install openssl
 sudo dnf install openssl-devel
@@ -100,16 +132,22 @@ sudo dnf install openssl-devel
 ## 6. Installing Zlib
 
 In order to reduce network traffic, a number of packets sent from the server are compressed, so we need a library for that too.
+
 ### Debian, Ubuntu
+
 ```
 sudo apt install zlib1g-dev -y
 ```
+
 ### Arch
+
 On arch we can use zlib-ng-compat, which is faster.
 ```
 sudo pacman -S zlib-ng-compat
 ```
+
 ### Fedora
+
 On Fedora we have to use zlib-ng-compat as zlib package has been deleted in Fedora 40+.
 ```
 sudo dnf install zlib-ng-compat zlib-ng-compat-devel

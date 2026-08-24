@@ -1,6 +1,8 @@
+# Getting it Working (Linux)
+
 Once you've compiled the server core, there are still a number of steps you must go through before being able to start your server.
 
-**Important:** Before running any of the commands below, it is recommended to start a **bash session** to ensure compatibility.  
+**Important:** Before running any of the commands below, it is recommended to start a **bash session** to ensure compatibility.
 Enter bash by typing:
 ```bash
 bash
@@ -13,9 +15,9 @@ The server requires a large amount of data from the client in order to operate. 
 
 ### Extracting data from client on Linux
 
-1. **Locate your WoW 1.12.1 client folder**  
-   Verify it's build **5875** (bottom‑left corner of the login screen).  
-   Assume your client is installed at `/home/yourname/games/World of Warcraft` – adjust the path accordingly.
+1. **Locate your WoW 1.12.1 client folder**
+   Verify it's build **5875** (bottom-left corner of the login screen).
+   Assume your client is installed at `/home/yourname/games/World of Warcraft` - adjust the path accordingly.
 
 2. **Set your WoW path** (edit once)
 
@@ -24,7 +26,7 @@ The server requires a large amount of data from the client in order to operate. 
    ```
    Change it to your actual path.
 
-3. **Run extraction (separate commands – run in order)**
+3. **Run extraction (separate commands - run in order)**
 
    Create the target data directory:
    ```bash
@@ -37,7 +39,7 @@ The server requires a large amount of data from the client in order to operate. 
    ~/vmangos/bin/Extractors/MapExtractor -i "$WOW_PATH" -o ~/vmangos/data -e 7
    ```
 
-   Move the DBC folder into the version‑specific subdirectory:
+   Move the DBC folder into the version-specific subdirectory:
    ```bash
    mv ~/vmangos/data/dbc ~/vmangos/data/5875/dbc
    ```
@@ -98,7 +100,7 @@ mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS realmd DEFAULT CHARSET utf8 C
 
 You have two options: import a fully updated database (recommended) or import the latest release and then apply migrations separately.
 
-#### Option A: Import the latest database with migrations pre‑applied (fast)
+#### Option A: Import the latest database with migrations pre-applied (fast)
 
 ```bash
 ZIP_URL=$(curl -s https://api.github.com/repos/vmangos/core/releases/tags/db_latest | grep -o '"name": "db-[0-9a-f]*\.zip"' | sed 's/"name": "\([^"]*\)"/\1/' | head -n1 | sed 's|^|https://github.com/vmangos/core/releases/download/db_latest/|') && wget -qO /tmp/db-latest.zip "$ZIP_URL" && 7z x /tmp/db-latest.zip -o/tmp/ -y && mysql -u"${DB_USER}" -p"${DB_PASS}" --max-allowed-packet=256M realmd < /tmp/mysql-dump/logon.sql && mysql -u"${DB_USER}" -p"${DB_PASS}" --max-allowed-packet=256M characters < /tmp/mysql-dump/characters.sql && mysql -u"${DB_USER}" -p"${DB_PASS}" --max-allowed-packet=256M mangos < /tmp/mysql-dump/mangos.sql && mysql -u"${DB_USER}" -p"${DB_PASS}" --max-allowed-packet=256M logs < /tmp/mysql-dump/logs.sql
@@ -170,7 +172,7 @@ sed -i "s|^LogsDir.*|LogsDir = \"../logs\"|" ~/vmangos/etc/mangosd.conf
 sed -i "s|^LogsDir.*|LogsDir = \"../logs\"|" ~/vmangos/etc/realmd.conf
 ```
 
-**Important:** Now open `~/vmangos/etc/mangosd.conf` and `~/vmangos/etc/realmd.conf` in a text editor (e.g., `nano`, `vim`) and verify the database connection strings. The default entries typically look like:
+**Important:** Now open `~/vmangos/etc/mangosd.conf` and `~/vmangos/etc/realmd.conf` in a text editor (e.g., `nano`, `vim`) and verify the database connection strings. The default entries look like:
 
 ```
 LoginDatabase.Info    = "127.0.0.1;3306;mangos;mangos;realmd"
@@ -185,7 +187,7 @@ If you used a different MySQL username or password during database setup, replac
 
 ## 4. Add your realm to the database
 
-Insert a record for your realm into the `realmlist` table of the `realmd` database:
+Insert a record for your realm into the [`realmlist`](realmd/realmlist.md) table of the `realmd` database:
 
 ```bash
 mysql -u"${DB_USER}" -p"${DB_PASS}" -e "USE realmd; INSERT INTO realmlist (id, name, address, port, icon, realmflags, timezone, allowedSecurityLevel, population, gamebuild_min, gamebuild_max, flag) VALUES (1, 'VMaNGOS', '127.0.0.1', 8085, 1, 0, 1, 0, 0, 5875, 5875, 0);"
@@ -201,12 +203,12 @@ Make sure your MySQL server is running.
 
 ### Start manually in two terminals
 
-**Terminal 1 – Realm server**
+**Terminal 1 - Realm server**
 ```bash
 cd ~/vmangos/bin && ./realmd
 ```
 
-**Terminal 2 – World server**
+**Terminal 2 - World server**
 ```bash
 cd ~/vmangos/bin && ./mangosd
 ```
@@ -244,7 +246,7 @@ This creates an account with username `admin` and password `admin`, and grants i
 
 ## 7. Connecting with the client
 
-1. In your World of Warcraft 1.12.1 folder, open `realmlist.wtf` with a text editor.
+1. In your World of Warcraft 1.12.1 folder, open the `realmlist.wtf` file with a text editor.
 2. Replace its content with:
    ```
    set realmlist 127.0.0.1

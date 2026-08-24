@@ -52,36 +52,350 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
 nav:
-  - Home: README.md
-  - Getting Started:
-      - About the Project: About-the-project.md
-      - Frequently Asked Questions: Frequently-Asked-Questions.md
-      - Contribution Guide: Contribution-guide.md
-  - Setup Guides:
-      - Compiling on Windows: Compiling-on-Windows.md
-      - Compiling on Linux: Compiling-on-Linux.md
-      - Devuan Install Guide: Devuan-install-guide.md
-      - Getting it Working Windows: Getting-it-working-Windows.md
-      - Getting it Working Linux: Getting-it-working-Linux.md
-  - Database:
-      - World Database: World-Database.md
-      - DB Script Tables: DB-Script-Tables.md
-      - Conditions: conditions.md
-      - Creature: creature.md
-      - Creature Addon: creature_addon.md
-      - Creature AI Events: creature_ai_events.md
-      - Creature AI Scripts: creature_ai_scripts.md
-      - Area Template: area_template.md
-      - Areatrigger BG Entrance: areatrigger_bg_entrance.md
-      - Areatrigger Involved Relation: areatrigger_involvedrelation.md
-      - Areatrigger Tavern: areatrigger_tavern.md
-      - Areatrigger Teleport: areatrigger_teleport.md
-      - Areatrigger Template: areatrigger_template.md
-      - Auction House Bot: auctionhousebot.md
-      - Autobroadcast: autobroadcast.md
-      - Battleground Events: battleground_events.md
-      - Battleground Template: battleground_template.md
-      - Battlemaster Entry: battlemaster_entry.md
-      - Broadcast Text: broadcast_text.md
-      - Cinematic Waypoints: cinematic_waypoints.md
-      - Command: command.md
+- Home: README.md
+- Getting Started:
+  - About the Project: About-the-project.md
+  - Frequently Asked Questions: Frequently-Asked-Questions.md
+  - Contribution Guide: Contribution-guide.md
+- Setup Guides:
+  - Compiling on Windows: Compiling-on-Windows.md
+  - Compiling on Linux: Compiling-on-Linux.md
+  - Devuan Install Guide: Devuan-install-guide.md
+  - Getting it Working (Windows): Getting-it-working-Windows.md
+  - Getting it Working (Linux): Getting-it-working-Linux.md
+- Core Systems:
+  - Creature AI System: AI-System.md
+  - Movement System: Movement-System.md
+  - Progression System: Progression-System.md
+  - XP & Leveling: XP-and-Leveling.md
+  - Professions & Tradeskills: Professions-Tradeskills.md
+  - Loot System: Loot-System.md
+  - Gossip System: Gossip-System.md
+  - Spell System: Spell-System.md
+  - Game Events: Game-Events.md
+  - Battlegrounds: Battlegrounds.md
+  - Instances & Resets: Instances.md
+  - Honor & PvP: Honor-PvP.md
+  - Quest System: Quest-System.md
+  - Localization: Localization.md
+  - Pets: Pets.md
+  - Guilds: Guilds.md
+  - Mail System: Mail-System.md
+  - Groups & Parties: Groups.md
+  - Zone Mechanics: Zone-Mechanics.md
+  - Chat & Channels: Chat-and-Channels.md
+  - Transports: Transports.md
+  - Scripts Library: Scripts-Library.md
+  - Outdoor PvP: Outdoor-PvP.md
+  - LFG & Meeting Stones: LFG-Meeting-Stones.md
+  - Data Lifecycle & Cleanup: Data-Lifecycle.md
+  - EventAI Examples: EventAI-Examples.md
+  - DB Scripts Examples: DB-Scripts-Examples.md
+  - Conditions Examples: Conditions-Examples.md
+  - Reputation System: Reputation-System.md
+  - Trainer & Vendor Guide: Trainer-Vendor-Guide.md
+  - Auction House: Auction-House.md
+  - Item System: Item-System.md
+  - Areatriggers: Areatriggers.md
+  - Maps & Pathfinding: Maps-and-Pathfinding.md
+  - Character Login Pipeline: Character-Login-Pipeline.md
+- Character Database:
+  - account_data: characters/account_data.md
+  - auction: characters/auction.md
+  - character_account_data: characters/character_account_data.md
+  - character_action: characters/character_action.md
+  - character_aura: characters/character_aura.md
+  - character_battleground_data: characters/character_battleground_data.md
+  - character_deleted_items: characters/character_deleted_items.md
+  - character_duplicate_account: characters/character_duplicate_account.md
+  - character_forgotten_skills: characters/character_forgotten_skills.md
+  - character_gifts: characters/character_gifts.md
+  - character_homebind: characters/character_homebind.md
+  - character_honor_cp: characters/character_honor_cp.md
+  - character_instance: characters/character_instance.md
+  - character_inventory: characters/character_inventory.md
+  - character_pet: characters/character_pet.md
+  - character_queststatus: characters/character_queststatus.md
+  - character_reputation: characters/character_reputation.md
+  - character_skills: characters/character_skills.md
+  - character_social: characters/character_social.md
+  - character_spell: characters/character_spell.md
+  - character_spell_cooldown: characters/character_spell_cooldown.md
+  - character_stats: characters/character_stats.md
+  - character_tutorial: characters/character_tutorial.md
+  - characters: characters/characters.md
+  - characters_guid_delete: characters/characters_guid_delete.md
+  - characters_item_delete: characters/characters_item_delete.md
+  - corpse: characters/corpse.md
+  - creature_respawn: characters/creature_respawn.md
+  - game_event_status: characters/game_event_status.md
+  - gameobject_respawn: characters/gameobject_respawn.md
+  - gm_subsurveys: characters/gm_subsurveys.md
+  - gm_surveys: characters/gm_surveys.md
+  - gm_tickets: characters/gm_tickets.md
+  - group_instance: characters/group_instance.md
+  - group_member: characters/group_member.md
+  - groups: characters/groups.md
+  - guild: characters/guild.md
+  - guild_eventlog: characters/guild_eventlog.md
+  - guild_member: characters/guild_member.md
+  - guild_rank: characters/guild_rank.md
+  - instance: characters/instance.md
+  - instance_reset: characters/instance_reset.md
+  - item_instance: characters/item_instance.md
+  - item_loot: characters/item_loot.md
+  - item_text: characters/item_text.md
+  - mail: characters/mail.md
+  - mail_items: characters/mail_items.md
+  - migrations: characters/migrations.md
+  - Overview: Characters-Database.md
+  - pet_aura: characters/pet_aura.md
+  - pet_spell: characters/pet_spell.md
+  - pet_spell_cooldown: characters/pet_spell_cooldown.md
+  - petition: characters/petition.md
+  - petition_sign: characters/petition_sign.md
+  - playerbot: characters/playerbot.md
+  - saved_variables: characters/saved_variables.md
+  - world: characters/world.md
+  - worldstates: characters/worldstates.md
+- Realmd Database:
+  - account: realmd/account.md
+  - account_access: realmd/account_access.md
+  - account_banned: realmd/account_banned.md
+  - allowed_clients: realmd/allowed_clients.md
+  - geoip: realmd/geoip.md
+  - ip2nation: realmd/ip2nation.md
+  - ip2nationcountries: realmd/ip2nationcountries.md
+  - ip_banned: realmd/ip_banned.md
+  - migrations: realmd/migrations.md
+  - Overview: Realmd-Database.md
+  - rbac_account_permissions: realmd/rbac_account_permissions.md
+  - rbac_command_permissions: realmd/rbac_command_permissions.md
+  - rbac_permissions: realmd/rbac_permissions.md
+  - realmcharacters: realmd/realmcharacters.md
+  - realmlist: realmd/realmlist.md
+  - uptime: realmd/uptime.md
+- Logs Database:
+  - instance_creature_kills: logs/instance_creature_kills.md
+  - instance_custom_counters: logs/instance_custom_counters.md
+  - instance_wipes: logs/instance_wipes.md
+  - logs_battleground: logs/logs_battleground.md
+  - logs_player: logs/logs_player.md
+  - logs_trade: logs/logs_trade.md
+  - logs_transactions: logs/logs_transactions.md
+  - logs_trashcharacters: logs/logs_trashcharacters.md
+  - migrations: logs/migrations.md
+  - Overview: Logs-Database.md
+  - smartlog_creature: logs/smartlog_creature.md
+  - system_fingerprint_usage: logs/system_fingerprint_usage.md
+- Server Configuration:
+  - Security & RBAC: Security-RBAC.md
+  - Tickets & Player Support: Tickets.md
+  - GM Commands Reference: GM-Commands.md
+  - Anticheat: Anticheat.md
+  - Player Bots: Player-Bots.md
+  - Auction House Bot: Auction-House-Bot.md
+  - Server Architecture: Server-Architecture.md
+  - Tools & Deployment: Tools-and-Deployment.md
+  - Database Setup & Migrations: Database-Setup.md
+  - Troubleshooting DB Errors: Troubleshooting-DB-Errors.md
+  - GM Workflows: GM-Workflows.md
+- Tutorials:
+  - Adding a Custom NPC: Tutorial-Custom-NPC.md
+  - Adding a Custom Quest: Tutorial-Custom-Quest.md
+- Database:
+  - Overview:
+    - World Database: World-Database.md
+    - migrations: world/migrations.md
+    - DB Script Tables: DB-Script-Tables.md
+    - conditions: world/conditions.md
+  - Server Administration:
+    - auctionhousebot: world/auctionhousebot.md
+    - autobroadcast: world/autobroadcast.md
+    - command: world/command.md
+    - variables: world/variables.md
+    - reserved_name: world/reserved_name.md
+    - warden_scans: world/warden_scans.md
+    - game_tele: world/game_tele.md
+    - game_weather: world/game_weather.md
+  - Areas & Maps:
+    - area_template: world/area_template.md
+    - map_template: world/map_template.md
+    - map_loot_disabled: world/map_loot_disabled.md
+    - areatrigger_bg_entrance: world/areatrigger_bg_entrance.md
+    - areatrigger_involvedrelation: world/areatrigger_involvedrelation.md
+    - areatrigger_tavern: world/areatrigger_tavern.md
+    - areatrigger_teleport: world/areatrigger_teleport.md
+    - areatrigger_template: world/areatrigger_template.md
+    - cinematic_waypoints: world/cinematic_waypoints.md
+    - game_graveyard_zone: world/game_graveyard_zone.md
+    - taxi_nodes: world/taxi_nodes.md
+    - taxi_path_transitions: world/taxi_path_transitions.md
+    - transports: world/transports.md
+    - world_safe_locs_facing: world/world_safe_locs_facing.md
+  - Creatures & NPCs:
+    - creature: world/creature.md
+    - creature_template: world/creature_template.md
+    - creature_addon: world/creature_addon.md
+    - creature_ai_events: world/creature_ai_events.md
+    - creature_ai_scripts: world/creature_ai_scripts.md
+    - creature_classlevelstats: world/creature_classlevelstats.md
+    - creature_display_info_addon: world/creature_display_info_addon.md
+    - creature_equip_template: world/creature_equip_template.md
+    - creature_groups: world/creature_groups.md
+    - creature_groups_entry_limit: world/creature_groups_entry_limit.md
+    - creature_involvedrelation: world/creature_involvedrelation.md
+    - creature_linking: world/creature_linking.md
+    - creature_linking_template: world/creature_linking_template.md
+    - creature_movement: world/creature_movement.md
+    - creature_movement_template: world/creature_movement_template.md
+    - creature_movement_special: world/creature_movement_special.md
+    - creature_onkill_reputation: world/creature_onkill_reputation.md
+    - creature_questrelation: world/creature_questrelation.md
+    - creature_spells: world/creature_spells.md
+    - creature_charm_spells: world/creature_charm_spells.md
+    - npc_trainer: world/npc_trainer.md
+    - npc_trainer_greeting: world/npc_trainer_greeting.md
+    - npc_trainer_template: world/npc_trainer_template.md
+    - npc_vendor: world/npc_vendor.md
+    - npc_vendor_template: world/npc_vendor_template.md
+  - Game Objects:
+    - gameobject: world/gameobject.md
+    - gameobject_template: world/gameobject_template.md
+    - gameobject_display_info_addon: world/gameobject_display_info_addon.md
+    - gameobject_involvedrelation: world/gameobject_involvedrelation.md
+    - gameobject_questrelation: world/gameobject_questrelation.md
+    - gameobject_requirement: world/gameobject_requirement.md
+  - Items:
+    - item_template: world/item_template.md
+    - item_display_info: world/item_display_info.md
+    - item_enchantment_template: world/item_enchantment_template.md
+    - item_required_target: world/item_required_target.md
+    - forbidden_items: world/forbidden_items.md
+    - mail_text_template: world/mail_text_template.md
+  - Loot Templates:
+    - creature_loot_template: world/creature_loot_template.md
+    - disenchant_loot_template: world/disenchant_loot_template.md
+    - fishing_loot_template: world/fishing_loot_template.md
+    - gameobject_loot_template: world/gameobject_loot_template.md
+    - item_loot_template: world/item_loot_template.md
+    - mail_loot_template: world/mail_loot_template.md
+    - pickpocketing_loot_template: world/pickpocketing_loot_template.md
+    - reference_loot_template: world/reference_loot_template.md
+    - skinning_loot_template: world/skinning_loot_template.md
+  - Quests:
+    - quest_template: world/quest_template.md
+    - quest_greeting: world/quest_greeting.md
+    - points_of_interest: world/points_of_interest.md
+  - Gossip & Texts:
+    - gossip_menu: world/gossip_menu.md
+    - gossip_menu_option: world/gossip_menu_option.md
+    - broadcast_text: world/broadcast_text.md
+    - mangos_string: world/mangos_string.md
+    - npc_gossip: world/npc_gossip.md
+    - npc_text: world/npc_text.md
+    - page_text: world/page_text.md
+    - script_texts: world/script_texts.md
+    - custom_texts: world/custom_texts.md
+    - sound_entries: world/sound_entries.md
+  - Spells:
+    - spell_template: world/spell_template.md
+    - spell_area: world/spell_area.md
+    - spell_chain: world/spell_chain.md
+    - spell_check: world/spell_check.md
+    - spell_cone: world/spell_cone.md
+    - spell_disabled: world/spell_disabled.md
+    - spell_effect_mod: world/spell_effect_mod.md
+    - spell_elixir: world/spell_elixir.md
+    - spell_enchant_charges: world/spell_enchant_charges.md
+    - spell_group: world/spell_group.md
+    - spell_group_stack_rules: world/spell_group_stack_rules.md
+    - spell_learn_spell: world/spell_learn_spell.md
+    - spell_mod: world/spell_mod.md
+    - spell_pet_auras: world/spell_pet_auras.md
+    - spell_proc_event: world/spell_proc_event.md
+    - spell_proc_item_enchant: world/spell_proc_item_enchant.md
+    - spell_script_target: world/spell_script_target.md
+    - spell_target_position: world/spell_target_position.md
+    - spell_threat: world/spell_threat.md
+  - Skills & Progression:
+    - exploration_basexp: world/exploration_basexp.md
+    - skill_line_ability: world/skill_line_ability.md
+    - skill_fishing_base_level: world/skill_fishing_base_level.md
+  - Pools:
+    - pool_template: world/pool_template.md
+    - pool_pool: world/pool_pool.md
+    - pool_creature: world/pool_creature.md
+    - pool_creature_template: world/pool_creature_template.md
+    - pool_gameobject: world/pool_gameobject.md
+    - pool_gameobject_template: world/pool_gameobject_template.md
+  - Game Events:
+    - game_event: world/game_event.md
+    - game_event_creature: world/game_event_creature.md
+    - game_event_creature_data: world/game_event_creature_data.md
+    - game_event_gameobject: world/game_event_gameobject.md
+    - game_event_mail: world/game_event_mail.md
+    - game_event_quest: world/game_event_quest.md
+  - Battlegrounds & Instances:
+    - battleground_template: world/battleground_template.md
+    - battleground_events: world/battleground_events.md
+    - battlemaster_entry: world/battlemaster_entry.md
+    - creature_battleground: world/creature_battleground.md
+    - gameobject_battleground: world/gameobject_battleground.md
+    - instance_buff_removal: world/instance_buff_removal.md
+  - Players & Pets:
+    - playercreateinfo: world/playercreateinfo.md
+    - playercreateinfo_action: world/playercreateinfo_action.md
+    - playercreateinfo_item: world/playercreateinfo_item.md
+    - playercreateinfo_spell: world/playercreateinfo_spell.md
+    - player_levelstats: world/player_levelstats.md
+    - player_classlevelstats: world/player_classlevelstats.md
+    - player_xp_for_level: world/player_xp_for_level.md
+    - player_crit_per_agility: world/player_crit_per_agility.md
+    - player_dodge_per_agility: world/player_dodge_per_agility.md
+    - pet_levelstats: world/pet_levelstats.md
+    - petcreateinfo_spell: world/petcreateinfo_spell.md
+    - pet_name_generation: world/pet_name_generation.md
+    - pet_spell_data: world/pet_spell_data.md
+    - player_premade_item: world/player_premade_item.md
+    - player_premade_item_template: world/player_premade_item_template.md
+    - player_premade_spell: world/player_premade_spell.md
+    - player_premade_spell_template: world/player_premade_spell_template.md
+    - player_factionchange_items: world/player_factionchange_items.md
+    - player_factionchange_mounts: world/player_factionchange_mounts.md
+    - player_factionchange_quests: world/player_factionchange_quests.md
+    - player_factionchange_reputations: world/player_factionchange_reputations.md
+    - player_factionchange_spells: world/player_factionchange_spells.md
+  - Factions & Reputation:
+    - faction: world/faction.md
+    - faction_template: world/faction_template.md
+    - reputation_reward_rate: world/reputation_reward_rate.md
+    - reputation_spillover_template: world/reputation_spillover_template.md
+  - Script System:
+    - event_scripts: world/event_scripts.md
+    - generic_scripts: world/generic_scripts.md
+    - gossip_scripts: world/gossip_scripts.md
+    - gameobject_scripts: world/gameobject_scripts.md
+    - areatrigger_scripts: world/areatrigger_scripts.md
+    - quest_start_scripts: world/quest_start_scripts.md
+    - quest_end_scripts: world/quest_end_scripts.md
+    - spell_scripts: world/spell_scripts.md
+    - creature_movement_scripts: world/creature_movement_scripts.md
+    - creature_spells_scripts: world/creature_spells_scripts.md
+    - scripted_event_id: world/scripted_event_id.md
+    - script_escort_data: world/script_escort_data.md
+    - script_waypoint: world/script_waypoint.md
+  - Localization:
+    - locales_area: world/locales_area.md
+    - locales_areatrigger: world/locales_areatrigger.md
+    - locales_broadcast_text: world/locales_broadcast_text.md
+    - locales_creature: world/locales_creature.md
+    - locales_faction: world/locales_faction.md
+    - locales_gameobject: world/locales_gameobject.md
+    - locales_gossip_menu_option: world/locales_gossip_menu_option.md
+    - locales_item: world/locales_item.md
+    - locales_page_text: world/locales_page_text.md
+    - locales_points_of_interest: world/locales_points_of_interest.md
+    - locales_quest: world/locales_quest.md
+    - locales_spell: world/locales_spell.md
+    - locales_taxi_node: world/locales_taxi_node.md
