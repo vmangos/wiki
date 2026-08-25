@@ -46,13 +46,13 @@ Cached lifetime statistics shown in the character sheet (kills, honor, quest cou
 
 - <a id="f-guid"></a>**`guid`** - Primary Key. Character guid (from [`characters`](characters.md).guid).
 - <a id="f-max_health"></a>**`max_health`** - Cached maximum health.
-- <a id="f-max_power1"></a>**`max_power1`** - Max power per type (mana/rage/focus/energy/happiness/runes/runic).
-- <a id="f-max_power2"></a>**`max_power2`** - Max power per type (mana/rage/focus/energy/happiness/runes/runic).
-- <a id="f-max_power3"></a>**`max_power3`** - Max power per type (mana/rage/focus/energy/happiness/runes/runic).
-- <a id="f-max_power4"></a>**`max_power4`** - Max power per type (mana/rage/focus/energy/happiness/runes/runic).
-- <a id="f-max_power5"></a>**`max_power5`** - Max power per type (mana/rage/focus/energy/happiness/runes/runic).
-- <a id="f-max_power6"></a>**`max_power6`** - Max power per type (mana/rage/focus/energy/happiness/runes/runic).
-- <a id="f-max_power7"></a>**`max_power7`** - Max power per type (mana/rage/focus/energy/happiness/runes/runic).
+- <a id="f-max_power1"></a>**`max_power1`** - Max power for power type `N` (1=mana, 2=rage, 3=focus, 4=energy, 5=happiness; power types 6 and 7 are unused in the 1.12 client).
+- <a id="f-max_power2"></a>**`max_power2`** - Max power for power type `N` (1=mana, 2=rage, 3=focus, 4=energy, 5=happiness; power types 6 and 7 are unused in the 1.12 client).
+- <a id="f-max_power3"></a>**`max_power3`** - Max power for power type `N` (1=mana, 2=rage, 3=focus, 4=energy, 5=happiness; power types 6 and 7 are unused in the 1.12 client).
+- <a id="f-max_power4"></a>**`max_power4`** - Max power for power type `N` (1=mana, 2=rage, 3=focus, 4=energy, 5=happiness; power types 6 and 7 are unused in the 1.12 client).
+- <a id="f-max_power5"></a>**`max_power5`** - Max power for power type `N` (1=mana, 2=rage, 3=focus, 4=energy, 5=happiness; power types 6 and 7 are unused in the 1.12 client).
+- <a id="f-max_power6"></a>**`max_power6`** - Max power for power type `N` (1=mana, 2=rage, 3=focus, 4=energy, 5=happiness; power types 6 and 7 are unused in the 1.12 client).
+- <a id="f-max_power7"></a>**`max_power7`** - Max power for power type `N` (1=mana, 2=rage, 3=focus, 4=energy, 5=happiness; power types 6 and 7 are unused in the 1.12 client).
 - <a id="f-strength"></a>**`strength`** - Cached base attributes.
 - <a id="f-agility"></a>**`agility`** - Cached base attributes.
 - <a id="f-stamina"></a>**`stamina`** - Cached base attributes.

@@ -1,6 +1,6 @@
 # logs_player Table
 
-Per-player audit log of notable account/character events written by the core when player logging is enabled.
+Per-player audit log of notable account/character events, written by the core when the corresponding `LogDB.*` player-logging categories are enabled in `mangosd.conf`.
 
 ---
 
@@ -28,7 +28,7 @@ Per-player audit log of notable account/character events written by the core whe
 
 - <a id="f-id"></a>**`id`** - Primary Key. Log row id.
 - <a id="f-time"></a>**`time`** - Event timestamp.
-- <a id="f-type"></a>**`type`** - Event category string. The column is declared as an `enum` (Basic, WorldPacket, Chat, BG, Character, Honor, RA, DBError, DBErrorFix, ClientIds, Loot, LevelUp, Performance, MoneyTrade, GM, GMCritical, ChatSpam, Anticheat); the core's `type_strings` additionally emit Scripts, Movement and Network, which fall outside the enum.
+- <a id="f-type"></a>**`type`** - Event category, one of the `enum` values listed under [type Values](#type-values). Only a subset of these values is actually persisted; see that section.
 - <a id="f-subtype"></a>**`subtype`** - Optional sub-category string for the event type.
 - <a id="f-account"></a>**`account`** - Account involved ([`account`](../realmd/account.md).id).
 - <a id="f-ip"></a>**`ip`** - Source IP at event time.
@@ -44,23 +44,37 @@ Per-player audit log of notable account/character events written by the core whe
 
 ### type Values
 
-| Value | Logged content |
+All rows are valid members of the column `enum`. The core only persists a subset to this table, selected by the `LogDB.*` config settings in `mangosd.conf`:
+
+| `LogDB.*` setting | Recorded `type` value(s) |
 | :--- | :--- |
-| Basic | generic player events |
-| WorldPacket | notable packet-level events |
-| Chat | chat-related events |
-| BG | battleground events |
-| Character | login/logout/create/delete/rename events |
-| Honor | honour calculation events |
-| RA | remote-access console actions |
-| DBError | database error context |
-| DBErrorFix | automated DB error repairs |
-| ClientIds | client identification data |
-| Loot | loot events |
-| LevelUp | level-ups |
-| Performance | performance samples |
-| MoneyTrade | money flow between players |
-| GM | GM actions on players |
-| GMCritical | critical GM actions |
-| ChatSpam | spam detections/mutes |
-| Anticheat | movement-anticheat and Warden detections |
+| `LogDB.Chat` | Chat |
+| `LogDB.Battlegrounds` | BG |
+| `LogDB.Characters` | Character |
+| `LogDB.Loot` | Loot |
+| `LogDB.LevelUp` | LevelUp |
+| `LogDB.Trades` | MoneyTrade |
+| `LogDB.GM` | GM, GMCritical |
+
+The values actually written are therefore: **Chat, BG, Character, Loot, LevelUp, MoneyTrade, GM, GMCritical**. The remaining `enum` members (Basic, WorldPacket, Honor, RA, DBError, DBErrorFix, ClientIds, Performance, ChatSpam, Anticheat) are defined in the `enum` but are not currently recorded by the core.
+
+| Value | Logged content | Persisted to DB? |
+| :--- | :--- | :--- |
+| Basic | generic player events | No |
+| WorldPacket | notable packet-level events | No |
+| Chat | chat-related events | Yes |
+| BG | battleground events | Yes |
+| Character | login/logout/create/delete/rename events | Yes |
+| Honor | honour calculation events | No |
+| RA | remote-access console actions | No |
+| DBError | database error context | No |
+| DBErrorFix | automated DB error repairs | No |
+| ClientIds | client identification data | No |
+| Loot | loot events | Yes |
+| LevelUp | level-ups | Yes |
+| Performance | performance samples | No |
+| MoneyTrade | money flow between players | Yes |
+| GM | GM actions on players | Yes |
+| GMCritical | critical GM actions | Yes |
+| ChatSpam | spam detections/mutes | No |
+| Anticheat | movement-anticheat and Warden detections | No |

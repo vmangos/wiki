@@ -28,10 +28,10 @@ Contains information about all areas and zones of the world, including flags, re
 - <a id="f-explore_flag"></a>**`explore_flag`** - Exploration-related flags (internal).
 - <a id="f-flags"></a>**`flags`** - Bitmask of area properties:
   - `0x01` - Snow (Dun Morogh, Naxxramas, etc.)
-  - `0x02` - Unknown
+  - `0x02` - Override parent breath particles
   - `0x04` - Development map only
   - `0x08` - Slave capital
-  - `0x10` - Unknown
+  - `0x10` - Enemies PvP flagged
   - `0x20` - Slave capital (2)
   - `0x40` - Duel allowed
   - `0x80` - Arena

@@ -47,7 +47,7 @@ Account credentials and per-account settings (username, password hash/verifier, 
 - <a id="f-email"></a>**`email`** - Account e-mail (password recovery / identification).
 - <a id="f-joindate"></a>**`joindate`** - Registration date.
 - <a id="f-last_ip"></a>**`last_ip`** - IP of the most recent login.
-- <a id="f-locked"></a>**`locked`** - Lock/authenticator bitmask (`LockFlag`): 1 = IP lock to `last_ip`, 2 = fixed PIN required, 4 = TOTP authenticator, 8 = always enforce authenticator.
+- <a id="f-locked"></a>**`locked`** - Lock/authenticator bitmask (`LockFlag`): 1 = IP lock to `last_ip`, 2 = fixed PIN required, 4 = TOTP authenticator, 8 = always enforce authenticator, 16 = GeoIP country lock, 32 = GeoIP city lock.
 - <a id="f-lock_country"></a>**`lock_country`** - Country code of the client's last-login IP (populated by external tooling); never written or read by this core.
 - <a id="f-last_login"></a>**`last_login`** - Timestamp of previous successful login.
 - <a id="f-online"></a>**`online`** - 1 while logged into any realm served by this auth server.

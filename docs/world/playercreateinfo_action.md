@@ -22,4 +22,4 @@ Defines starting action bar layout for each race/class combination.
 - <a id="f-class"></a>**`class`** - Primary Key. Class ID.; references Player race/class combination.
 - <a id="f-button"></a>**`button`** - Primary Key. Action bar button index.
 - <a id="f-action"></a>**`action`** - Spell ID or action ID. (see [`spell_template`](spell_template.md).entry (if spell).)
-- <a id="f-type"></a>**`type`** - Action type (e.g., `0` spell, `1` macro, etc.).
+- <a id="f-type"></a>**`type`** - Action type: `0` spell, `1` C (click), `64` macro, `128` item.

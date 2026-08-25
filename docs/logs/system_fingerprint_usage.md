@@ -25,7 +25,7 @@ Records system fingerprint usage during logon - part of anti-cheat/multi-boxing 
 ## Field Breakdown
 
 - <a id="f-id"></a>**`id`** - Primary Key. Row id.
-- <a id="f-fingerprint"></a>**`fingerprint`** - Hardware/system fingerprint hash observed.
+- <a id="f-fingerprint"></a>**`fingerprint`** - System fingerprint hash; the core does not currently implement fingerprinting and always stores `0`.
 - <a id="f-account"></a>**`account`** - Account using the fingerprint ([`account`](../realmd/account.md).id).
 - <a id="f-ip"></a>**`ip`** - Source IP.
 - <a id="f-realm"></a>**`realm`** - Realm id.

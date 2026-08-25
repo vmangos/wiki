@@ -35,7 +35,7 @@ Registered realms served by this auth server (name, address, type, security leve
 - <a id="f-localSubnetMask"></a>**`localSubnetMask`** - Subnet mask deciding which clients count as local (dotted format).
 - <a id="f-port"></a>**`port`** - World server port (default 8085).
 - <a id="f-icon"></a>**`icon`** - Realm type: 0 normal, 1 PvP, 4 normal variant (`REALM_TYPE_NORMAL2`), 6 RP, 8 RPPvP. The custom FFA-PvP mode (16) is stored as 1 in this column.
-- <a id="f-realmflags"></a>**`realmflags`** - Bitmask: 1 invalid (realm hidden from clients), 2 offline, 4 specify build (show version next to name), 32 new players, 64 recommended, 128 full (defined but not set by this core). Only 2, 4, 32 and 64 may be set in DB; realmd shows realms as offline dynamically when the client build is unsupported or the realm is locked.
+- <a id="f-realmflags"></a>**`realmflags`** - Bitmask: 1 invalid (realm hidden from clients), 2 offline, 4 specify build (show version next to name), 8 unknown (REALM_FLAG_UNK1), 16 unknown (REALM_FLAG_UNK2), 32 new players, 64 recommended, 128 full (defined but not set by this core). Only 2, 4, 32 and 64 may be set in DB; realmd shows realms as offline dynamically when the client build is unsupported or the realm is locked.
 - <a id="f-timezone"></a>**`timezone`** - Realm timezone grouping for the realm list sort.
 - <a id="f-allowedSecurityLevel"></a>**`allowedSecurityLevel`** - Minimum account security required to enter this realm (realms above the account level show as locked).
 - <a id="f-population"></a>**`population`** - Population level float shown as low/medium/high. Updated by mangosd.

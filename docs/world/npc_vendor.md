@@ -25,5 +25,5 @@ Defines items sold by specific NPC vendors (per-spawn or per-entry).
 - <a id="f-item"></a>**`item`** - Primary Key. Item ID ([`item_template`](item_template.md).entry).
 - <a id="f-maxcount"></a>**`maxcount`** - Maximum stock count (0 = unlimited).
 - <a id="f-incrtime"></a>**`incrtime`** - Restock interval (seconds).
-- <a id="f-itemflags"></a>**`itemflags`** - Flags (e.g., `0x01` = extended cost, `0x02` = non-sellable).
+- <a id="f-itemflags"></a>**`itemflags`** - Flags: `0x01` random restock (item restocked at random intervals), `0x02` dynamic restock (restock rate scales with the online player population).
 - <a id="f-condition_id"></a>**`condition_id`** - Condition required to see/buy the item. (see [`conditions`](conditions.md).condition_entry)
