@@ -164,7 +164,9 @@ Defines all quest data: objectives, rewards, requirements, text, and emote seque
 - <a id="f-SpecialFlags"></a>**`SpecialFlags`** - Special flags (e.g., `1` repeatable, `2` exploration/event).
 - <a id="f-NextQuestId"></a><a id="f-PrevQuestId"></a>**`PrevQuestId` / `NextQuestId`** - Quest chain links.
 - <a id="f-ExclusiveGroup"></a>**`ExclusiveGroup`** - Shared group (only one quest in group can be active).
-- <a id="f-BreadcrumbForQuestId"></a>**`BreadcrumbForQuestId`** - Quest this one leads to (unlocks once completed).
+- <a id="f-BreadcrumbForQuestId"></a>**`BreadcrumbForQuestId`** - Lead-in quest pointing at the target quest X given here.
+  This quest is acceptable only while X itself is takeable (it hides behind X's own prerequisites);
+  while this breadcrumb is active/incomplete, X cannot be accepted.
 - <a id="f-NextQuestInChain"></a>**`NextQuestInChain`** - Next quest in chain.
 - <a id="f-SrcItemCount"></a><a id="f-SrcItemId"></a>**`SrcItemId` / `SrcItemCount`** - Source item required.
 - <a id="f-SrcSpell"></a>**`SrcSpell`** - Spell cast to start quest.
@@ -180,7 +182,8 @@ Defines all quest data: objectives, rewards, requirements, text, and emote seque
 - <a id="f-RewChoiceItemCount1"></a><a id="f-RewChoiceItemCount2"></a><a id="f-RewChoiceItemCount3"></a><a id="f-RewChoiceItemCount4"></a><a id="f-RewChoiceItemCount5"></a><a id="f-RewChoiceItemCount6"></a><a id="f-RewChoiceItemId1"></a><a id="f-RewChoiceItemId2"></a><a id="f-RewChoiceItemId3"></a><a id="f-RewChoiceItemId4"></a><a id="f-RewChoiceItemId5"></a><a id="f-RewChoiceItemId6"></a>**`RewChoiceItemId1-6` / `RewChoiceItemCount1-6`** - Choice rewards.
 - <a id="f-RewItemCount1"></a><a id="f-RewItemCount2"></a><a id="f-RewItemCount3"></a><a id="f-RewItemCount4"></a><a id="f-RewItemId1"></a><a id="f-RewItemId2"></a><a id="f-RewItemId3"></a><a id="f-RewItemId4"></a>**`RewItemId1-4` / `RewItemCount1-4`** - Fixed item rewards.
 - <a id="f-RewRepFaction1"></a><a id="f-RewRepFaction2"></a><a id="f-RewRepFaction3"></a><a id="f-RewRepFaction4"></a><a id="f-RewRepFaction5"></a><a id="f-RewRepValue1"></a><a id="f-RewRepValue2"></a><a id="f-RewRepValue3"></a><a id="f-RewRepValue4"></a><a id="f-RewRepValue5"></a>**`RewRepFaction1-5` / `RewRepValue1-5`** - Reputation rewards.
-- <a id="f-RewRepSpilloverMask"></a>**`RewRepSpilloverMask`** - Spillover faction mask.
+- <a id="f-RewRepSpilloverMask"></a>**`RewRepSpilloverMask`** - Bitmask over `RewRepFaction1..5` indexes
+  (bit 0 = faction 1 ... bit 4 = faction 5). A set bit **disables** reputation spillover from that reward faction.
 - <a id="f-RewXP"></a>**`RewXP`** - Experience reward.
 - <a id="f-RewOrReqMoney"></a>**`RewOrReqMoney`** - Money reward (or cost).
 - <a id="f-RewMoneyMaxLevel"></a>**`RewMoneyMaxLevel`** - Max-level money reward.

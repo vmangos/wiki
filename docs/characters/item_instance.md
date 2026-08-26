@@ -35,9 +35,10 @@ One row per physical item in the world: owner, enchantments, charges, durability
 - <a id="f-count"></a>**`count`** - Stack size.
 - <a id="f-duration"></a>**`duration`** - Remaining duration seconds for temp items.
 - <a id="f-charges"></a>**`charges`** - Space-separated remaining charges per charged spell.
-- <a id="f-flags"></a>**`flags`** - Internal state flags (soulbound, wrapped, playable...).
+- <a id="f-flags"></a>**`flags`** - Item state flags (`ItemDynFlags`, `ItemDefines.h`): soulbound, wrapped/gift-wrapped, unlocked, readable…
 - <a id="f-enchantments"></a>**`enchantments`** - Enchantment triplets `(id, duration, charges)` concatenated for each slot.
-- <a id="f-random_property_id"></a>**`random_property_id`** - Random enchant suffix id (from [`item_enchantment_template`](../world/item_enchantment_template.md).entry) chosen at creation.
+- <a id="f-random_property_id"></a>**`random_property_id`** - Random enchant suffix id (rolled from
+  [`item_enchantment_template`](../world/item_enchantment_template.md).ench where `entry` = the item's `random_property`) chosen at creation.
 - <a id="f-durability"></a>**`durability`** - Current durability points.
 - <a id="f-text"></a>**`text`** - Readable-book text id (from [`item_text`](item_text.md).id).
-- <a id="f-generated_loot"></a>**`generated_loot`** - Loot already rolled and stored in [`item_loot`](item_loot.md).entry.
+- <a id="f-generated_loot"></a>**`generated_loot`** - Loot already rolled and stored in [`item_loot`](item_loot.md) (rows keyed by the item's guid).

@@ -1,6 +1,8 @@
 # game_event_status Table
 
-Manual override of [`game_event`](../world/game_event.md) state set by admins (start/stop events independent of their schedule).
+Restart persistence for active [`game_event`](../world/game_event.md) entries: rows track **every** currently
+active event (scheduled or admin-started). Written on activation, deleted on stop; at startup the list is
+read to resume events and then truncated.
 
 ---
 
@@ -14,4 +16,4 @@ Manual override of [`game_event`](../world/game_event.md) state set by admins (s
 
 ## Field Breakdown
 
-- <a id="f-event"></a>**`event`** - Primary Key. [`game_event`](../world/game_event.md).entry forced started/stopped by an admin; overrides scheduling until removed.
+- <a id="f-event"></a>**`event`** - Primary Key. [`game_event`](../world/game_event.md).entry of an event that was active when the server last stopped.

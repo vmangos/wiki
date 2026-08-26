@@ -1,6 +1,6 @@
 # saved_variables Table
 
-Miscellaneous global flags saved between restarts (e.g. next honour calculation date, arena season state).
+Single-row table of global flags saved between restarts (honour maintenance bookkeeping, character-cleaner phase markers).
 
 ---
 
@@ -18,7 +18,7 @@ Miscellaneous global flags saved between restarts (e.g. next honour calculation 
 
 ## Field Breakdown
 
-- <a id="f-key"></a>**`key`** - Primary Key. Variable name (e.g. next honour maintenance day).
+- <a id="f-key"></a>**`key`** - Primary Key (always `0`); each variable is its own column of this one-row table.
 - <a id="f-cleaning_flags"></a>**`cleaning_flags`** - Cleanup-phase markers used during maintenance.
 - <a id="f-honor_last_maintenance_day"></a>**`honor_last_maintenance_day`** - Honour day tick bookkeeping.
 - <a id="f-honor_next_maintenance_day"></a>**`honor_next_maintenance_day`** - Honour day tick bookkeeping.

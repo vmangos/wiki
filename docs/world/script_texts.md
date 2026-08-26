@@ -1,6 +1,6 @@
 # script_texts Table
 
-Generic script texts - similar to [`custom_texts`](custom_texts.md) but used by core scripts.
+Generic script texts. This table is deprecated and will be deleted in the future.
 
 ---
 
@@ -28,7 +28,8 @@ Generic script texts - similar to [`custom_texts`](custom_texts.md) but used by 
 
 ## Field Breakdown
 
-- <a id="f-entry"></a>**`entry`** - Primary Key. Script text ID.
+- <a id="f-entry"></a>**`entry`** - Primary Key. Script text ID. Must be a negative id in the range −1999999…−1000000;
+  positive ids are rejected by the core.
 - <a id="f-content_default"></a>**`content_default`** - Default text.
 - <a id="f-content_loc1"></a>**`content_loc1`** - Localized variant of `content_default` (locale 1).
 - <a id="f-content_loc2"></a>**`content_loc2`** - Localized variant of `content_default` (locale 2).

@@ -8,7 +8,7 @@ How honour, dishonour and PvP flags work in VMaNGOS (`src/game/HonorMgr.cpp`).
 
 Honour is calculated once per week per realm (on the configured maintenance day):
 
-1. The server stores accumulated honour contribution points (CP) per character in
+1. The core stores accumulated honour contribution points (CP) per character in
    [`character_honor_cp`](characters/character_honor_cp.md) during the day.
 2. At the weekly maintenance tick the standing calculation runs over all characters, awards ranks/titles
    and writes history.

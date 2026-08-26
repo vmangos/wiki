@@ -1,6 +1,6 @@
 # instance_wipes Table
 
-Logged wipes on boss encounters (duration, attempts).
+Logged wipes on boss encounters (per encounter counter; currently incremented only by the Naxxramas script).
 
 ---
 

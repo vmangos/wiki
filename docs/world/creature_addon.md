@@ -37,6 +37,7 @@ Provides per-spawn overrides for creature visual state, equipment, mount, emotes
   - `6` - Sit high chair
   - `7` - Dead
   - `8` - Kneel
+  - `9` - Custom state (used by scripts)
 - <a id="f-sheath_state"></a>**`sheath_state`** - Weapon sheath:
   - `0` - Unarmed
   - `1` - Melee (default)

@@ -1,6 +1,7 @@
 # character_aura Table
 
-Auras persisting on a character across logout (passives, shapeshifts, DoTs with long duration).
+Non-passive auras persisting on a character across logout, including self-cast stances/shapeshift forms.
+Passive spells are skipped by the save and re-applied from learned spells instead.
 
 ---
 
@@ -29,7 +30,8 @@ Auras persisting on a character across logout (passives, shapeshifts, DoTs with 
 ## Field Breakdown
 
 - <a id="f-guid"></a>**`guid`** - Primary Key. Character guid carrying the aura ([`characters`](characters.md).guid).
-- <a id="f-caster_guid"></a>**`caster_guid`** - Primary Key. Unit guid of the aura caster (0 = self/environment).
+- <a id="f-caster_guid"></a>**`caster_guid`** - Primary Key. Unit guid of the aura caster (the player's own guid for
+  self-cast auras; `0` only if applied without a caster object).
 - <a id="f-item_guid"></a>**`item_guid`** - Primary Key. Item that granted the aura (proc/enchant), else 0.
 - <a id="f-spell"></a>**`spell`** - Primary Key. Spell id producing this aura.
 - <a id="f-stacks"></a>**`stacks`** - Current stack count (refreshable auras).

@@ -17,7 +17,8 @@ Defines transport vehicles (e.g., ships, zeppelins) with their path period and n
 
 ## Field Breakdown
 
-- <a id="f-entry"></a>**`entry`** - Primary Key. Transport entry ID.
+- <a id="f-entry"></a>**`entry`** - Primary Key. Transport entry ID — references [`gameobject_template`](gameobject_template.md).entry
+  of type `MO_TRANSPORT`; other entries are rejected at load.
 - <a id="f-build"></a>**`build`** - Primary Key. Client build.
 - <a id="f-name"></a>**`name`** - Transport name.
 - <a id="f-period"></a>**`period`** - Round-trip duration override (milliseconds). The core computes a period from the

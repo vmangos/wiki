@@ -1,6 +1,7 @@
 # character_stats Table
 
-Cached lifetime statistics shown in the character sheet (kills, honor, quest count, etc.).
+Snapshot of cached combat stats (max health/powers, attributes, resists, crit %, attack power, spell damage/healing)
+written on save for external tools (armory/web sites); recalculated fresh at each login and never read back by the core.
 
 ---
 

@@ -22,7 +22,7 @@ Links creature spawns to spawn pools (group of spawns that share a spawn limit).
 
 - <a id="f-guid"></a>**`guid`** - Primary Key. Creature GUID ([`creature`](creature.md).guid).
 - <a id="f-pool_entry"></a>**`pool_entry`** - Pool ID ([`pool_template`](pool_template.md).entry).
-- <a id="f-chance"></a>**`chance`** - Probability of spawning (0-100).
+- <a id="f-chance"></a>**`chance`** - Spawn chance (0-100): `0` = equal share among all zero-chance members; explicit percentages must sum to 100 and apply only when the pool's `max_limit` is 1.
 - <a id="f-description"></a>**`description`** - Comment.
-- <a id="f-flags"></a>**`flags`** - Pool flags.
+- <a id="f-flags"></a>**`flags`** - Pool flags: `0x1` = spawn even when world population exceeds the Blizzlike threshold (`FLAG_SPAWN_ENABLE_IF_WORLD_POP_OVER_BLIZZLIKE`).
 - <a id="f-patch_max"></a><a id="f-patch_min"></a>**`patch_min` / `patch_max`** - Client patch range.

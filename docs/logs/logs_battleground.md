@@ -1,6 +1,6 @@
 # logs_battleground Table
 
-Battleground lifecycle log entries (creation, finish).
+Per-participant battleground log rows written once, when a battleground finishes.
 
 ---
 

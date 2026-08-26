@@ -1,6 +1,6 @@
 # npc_trainer Table
 
-Defines spells taught by specific NPC trainers (per-spawn or per-entry).
+Defines spells taught by specific NPC trainers (per creature entry, or shared via [`npc_trainer_template`](npc_trainer_template.md)).
 
 ---
 

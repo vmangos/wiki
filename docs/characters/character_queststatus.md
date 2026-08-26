@@ -32,7 +32,7 @@ Quest progress: accepted quests, kill/credit counters, rewarded status and timer
 - <a id="f-quest"></a>**`quest`** - Primary Key. [`quest_template`](../world/quest_template.md).entry.
 - <a id="f-status"></a>**`status`** - Quest state - see the [Status Values table](#status-values) below.
 - <a id="f-rewarded"></a>**`rewarded`** - 1 once turned in (drives repeatable re-offers).
-- <a id="f-explored"></a>**`explored`** - Exploration bitmask for quest areas (explore objectives).
+- <a id="f-explored"></a>**`explored`** - Boolean flag (0/1), set when the exploration/event objective fires.
 - <a id="f-timer"></a>**`timer`** - Expiry timestamp for timed quests.
 - <a id="f-mob_count1"></a>**`mob_count1`** - Kill/credit counters for objectives 1-4.
 - <a id="f-mob_count2"></a>**`mob_count2`** - Kill/credit counters for objectives 1-4.
@@ -42,7 +42,8 @@ Quest progress: accepted quests, kill/credit counters, rewarded status and timer
 - <a id="f-item_count2"></a>**`item_count2`** - Collected item counters for objectives 1-4.
 - <a id="f-item_count3"></a>**`item_count3`** - Collected item counters for objectives 1-4.
 - <a id="f-item_count4"></a>**`item_count4`** - Collected item counters for objectives 1-4.
-- <a id="f-reward_choice"></a>**`reward_choice`** - Chosen reward option while pending turn-in.
+- <a id="f-reward_choice"></a>**`reward_choice`** - Item entry of the optional reward chosen at turn-in
+  (stored once the quest is rewarded).
 
 ---
 

@@ -22,7 +22,7 @@ Localized point-of-interest names.
 
 ## Field Breakdown
 
-- <a id="f-entry"></a>**`entry`** - Primary Key. [`points_of_interest`](points_of_interest.md).id.
+- <a id="f-entry"></a>**`entry`** - Primary Key. [`points_of_interest`](points_of_interest.md).entry.
 - <a id="f-icon_name_loc1"></a>**`icon_name_loc1`** - Locale 1 text (koKR/frFR/deDE/zhCN/zhTW/esES/esMX/ruRU); empty falls back to the base table.
 - <a id="f-icon_name_loc2"></a>**`icon_name_loc2`** - Locale 2 text (koKR/frFR/deDE/zhCN/zhTW/esES/esMX/ruRU); empty falls back to the base table.
 - <a id="f-icon_name_loc3"></a>**`icon_name_loc3`** - Locale 3 text (koKR/frFR/deDE/zhCN/zhTW/esES/esMX/ruRU); empty falls back to the base table.

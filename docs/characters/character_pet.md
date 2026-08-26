@@ -1,6 +1,6 @@
 # character_pet Table
 
-Persistent pet data (hunter pets): stats, spells, talents-ish state, rename state.
+Persistent pet data (hunter pets and permanent warlock minions): stats, spells, loyalty, rename state.
 
 ---
 
@@ -39,14 +39,15 @@ Persistent pet data (hunter pets): stats, spells, talents-ish state, rename stat
 - <a id="f-id"></a>**`id`** - Primary Key. Persistent pet id (referenced by [`pet_aura`](pet_aura.md), [`pet_spell`](pet_spell.md), and [`pet_spell_cooldown`](pet_spell_cooldown.md) tables).
 - <a id="f-entry"></a>**`entry`** - Creature template entry ([`creature_template`](../world/creature_template.md).entry).
 - <a id="f-owner_guid"></a>**`owner_guid`** - Owner character guid ([`characters`](characters.md).guid).
-- <a id="f-display_id"></a>**`display_id`** - Current display model.
+- <a id="f-display_id"></a>**`display_id`** - Native (base) display model.
 - <a id="f-created_by_spell"></a>**`created_by_spell`** - Spell that created/tamed the pet.
-- <a id="f-pet_type"></a>**`pet_type`** - Pet class: hunter pet, warlock minion, guardian…
+- <a id="f-pet_type"></a>**`pet_type`** - Pet type: `0` = summoned pet (warlock minion etc.), `1` = hunter pet;
+  only these two values are ever persisted.
 - <a id="f-level"></a>**`level`** - Pet level.
 - <a id="f-xp"></a>**`xp`** - Experience towards next level.
 - <a id="f-react_state"></a>**`react_state`** - Reaction: 0 passive, 1 defensive, 2 aggressive.
-- <a id="f-loyalty_points"></a>**`loyalty_points`** - Loyalty progression (pre-TBC feeding system).
-- <a id="f-loyalty"></a>**`loyalty`** - Loyalty progression (pre-TBC feeding system).
+- <a id="f-loyalty_points"></a>**`loyalty_points`** - Accumulated loyalty experience points.
+- <a id="f-loyalty"></a>**`loyalty`** - Loyalty rank level (1-6).
 - <a id="f-training_points"></a>**`training_points`** - Points available for teaching abilities.
 - <a id="f-name"></a>**`name`** - Current pet name.
 - <a id="f-renamed"></a>**`renamed`** - Whether the owner already renamed the pet.
@@ -55,7 +56,7 @@ Persistent pet data (hunter pets): stats, spells, talents-ish state, rename stat
 - <a id="f-current_mana"></a>**`current_mana`** - Saved vitals.
 - <a id="f-current_happiness"></a>**`current_happiness`** - Happiness level (affects damage).
 - <a id="f-save_time"></a>**`save_time`** - Unix timestamp of last save.
-- <a id="f-reset_talents_cost"></a>**`reset_talents_cost`** - Talent reset price scaling data.
-- <a id="f-reset_talents_time"></a>**`reset_talents_time`** - Talent reset price scaling data.
+- <a id="f-reset_talents_cost"></a>**`reset_talents_cost`** - Cost paid at the last talent reset; scales the next price (10s → 50s → 1g → +1g per attempt, cap 10g).
+- <a id="f-reset_talents_time"></a>**`reset_talents_time`** - Game time of the last talent reset (drives day-based price decay).
 - <a id="f-action_bar_data"></a>**`action_bar_data`** - Serialized action bar assignment blob.
 - <a id="f-teach_spell_data"></a>**`teach_spell_data`** - Serialized spell-teaching queue/state.

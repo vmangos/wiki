@@ -18,6 +18,6 @@ Signatures collected on a petition.
 ## Field Breakdown
 
 - <a id="f-owner_guid"></a>**`owner_guid`** - Charter holder.
-- <a id="f-petition_guid"></a>**`petition_guid`** - Primary Key. Charter item guid being signed.
+- <a id="f-petition_guid"></a>**`petition_guid`** - Primary Key. Petition id ([`petition`](petition.md).petition_guid).
 - <a id="f-player_guid"></a>**`player_guid`** - Primary Key. Signer.
 - <a id="f-player_account"></a>**`player_account`** - Signer's account (one signature per account rule).

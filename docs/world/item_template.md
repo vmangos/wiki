@@ -197,7 +197,7 @@ Defines base properties for all items - stats, spells, quality, and behavior.
 | 0x00000002 | CONJURED | conjured item (vanishes on logout unless stored) |
 | 0x00000004 | LOOTABLE | right-click to open for loot (non-container) |
 | 0x00000008 | EXOTIC | not used in pre-3.x content |
-| 0x00000010 | DEPRECATED | renders with a red icon when durability is 0 |
+| 0x00000010 | DEPRECATED | renders with a red icon (like a zero-durability item) |
 | 0x00000020 | INDESTRUCTIBLE | cannot be destroyed except as a spell reagent (totems) |
 | 0x00000040 | PLAYERCAST | usable by players ("usable" old note) |
 | 0x00000080 | NO_EQUIP_COOLDOWN | no cooldown when equipping |
@@ -337,13 +337,15 @@ Ten paired slots. `stat_type` uses `ItemModType`: `0` Mana · `1` Health · `3` 
 ### Bindings to World & Food
 
 - <a id="f-area_bound"></a><a id="f-map_bound"></a>**`area_bound` / `map_bound`** - Restricts where the item functions.
-- <a id="f-food_type"></a>**`food_type`** - Food category used by "well fed"-style spells.
-- <a id="f-wrapped_gift"></a>**`wrapped_gift`** - Set on gift-wrapped packages.
+- <a id="f-food_type"></a>**`food_type`** - Pet-diet food category (1-based bit into the pet family's food mask);
+  determines which foods a hunter pet accepts via `Pet::HaveInDiet`.
+- <a id="f-wrapped_gift"></a>**`wrapped_gift`** - On wrapping-paper items: the item entry the package becomes once wrapped.
 
 ### Loot Money & Cross-Faction
 
 - <a id="f-max_money_loot"></a><a id="f-min_money_loot"></a>**`min_money_loot` / `max_money_loot`** - Coin range rolled into
   [`item_loot_template`](item_loot_template.md)-style openable items.
-- <a id="f-extra_flags"></a>**`extra_flags`** - Server-side behaviour flags (e.g. drop-rate category overrides).
-- <a id="f-other_team_entry"></a>**`other_team_entry`** - Counterpart entry id on the opposing faction
-  (faction-specific quest items pair up through this column).
+- <a id="f-extra_flags"></a>**`extra_flags`** - Server-side flags (`ItemExtraFlags`, `src/game/Objects/ItemPrototype.h`):
+  `0x01` mail stationery icon/background, `0x02` ignore quest-status check when this item drops, `0x04` never obtainable by players in vanilla.
+- <a id="f-other_team_entry"></a>**`other_team_entry`** - Counterpart entry id on the opposing faction;
+  informational only - not read by core logic (faction pairing happens through tables like [`player_factionchange_items`](player_factionchange_items.md)).

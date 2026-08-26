@@ -29,7 +29,8 @@ Auras persisting on pets across logout.
 ## Field Breakdown
 
 - <a id="f-guid"></a>**`guid`** - Primary Key. Global Unique Identifier
-- <a id="f-caster_guid"></a>**`caster_guid`** - Primary Key. Unit guid of the aura caster (0 = self/environment).
+- <a id="f-caster_guid"></a>**`caster_guid`** - Primary Key. Unit guid of the aura caster (the pet's own guid for
+  self-cast auras; `0` only for system/null casters).
 - <a id="f-item_guid"></a>**`item_guid`** - Primary Key. Item that granted the aura (proc/enchant), else 0.
 - <a id="f-spell"></a>**`spell`** - Primary Key. Spell id producing this aura.
 - <a id="f-stacks"></a>**`stacks`** - Current stack count (refreshable auras).

@@ -38,11 +38,14 @@ Defines options within a gossip menu - buttons, actions, and conditions.
   8 innkeeper, 9 banker, 10 petitioner, 11 tabard designer, 12 battleground, 13 auctioneer,
   14 stable pet, 15 armorer, 16 unlearn talents, 17 unlearn pet skills.
 - <a id="f-npc_option_npcflag"></a>**`npc_option_npcflag`** - NPC flag required to display.
-- <a id="f-action_menu_id"></a>**`action_menu_id`** - Menu to open when selected.
+- <a id="f-action_menu_id"></a>**`action_menu_id`** - Menu to open when selected: `>0` opens that gossip menu,
+  `<0` closes the gossip window. For vendor options it doubles as the vendor-menu filter
+  (`1` normal / `2` template / `3` both).
 - <a id="f-action_poi_id"></a>**`action_poi_id`** - Point of interest to display.
 - <a id="f-action_script_id"></a>**`action_script_id`** - Script to execute.
 - <a id="f-box_coded"></a>**`box_coded`** - `1` if requires a key/coded box.
-- <a id="f-box_money"></a>**`box_money`** - Money required to choose this option.
+- <a id="f-box_money"></a>**`box_money`** - Money required to choose this option (currently ignored by core -
+  the core reads but never applies it).
 - <a id="f-box_text"></a>**`box_text`** - Text shown in the confirmation box.
 - <a id="f-box_broadcast_text"></a>**`box_broadcast_text`** - Broadcast text ID for box text.; references [`broadcast_text`](broadcast_text.md).entry
 - <a id="f-condition_id"></a>**`condition_id`** - Condition required. (see [`conditions`](conditions.md).condition_entry)

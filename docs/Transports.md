@@ -16,8 +16,7 @@ timing.
 3. **Timing** - stop frames, acceleration and cruise segments are computed automatically from
    path geometry.
 4. **Override** - [`transports`](world/transports.md) may correct the result: a non-zero
-   `period` replaces the computed round-trip duration (the core comment says it plainly:
-   *"load period override from db since our algorithm is not perfect"*). Rows are selected per
+   `period` replaces the computed round-trip duration. Rows are selected per
    client build.
 
 ---

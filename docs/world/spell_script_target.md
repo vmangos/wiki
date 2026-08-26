@@ -31,5 +31,6 @@ Defines script targets for spells - restricts spell to specific creatures or gam
   | 3 | PLAYER | - (`targetEntry` unused) |
 - <a id="f-targetEntry"></a>**`targetEntry`** - Template entry of the required target (see table). (see [`creature_template`](creature_template.md).entry or [`gameobject_template`](gameobject_template.md).entry)
 - <a id="f-conditionId"></a>**`conditionId`** - Condition. (see [`conditions`](conditions.md).condition_entry)
-- <a id="f-inverseEffectMask"></a>**`inverseEffectMask`** - Mask to invert effect.
+- <a id="f-inverseEffectMask"></a>**`inverseEffectMask`** - Bitmask over effect indexes (`1` = effect 1, `2` = effect 2,
+  `4` = effect 3): effects with their bit set do **not** hit the scripted target defined here.
 - <a id="f-build_max"></a><a id="f-build_min"></a>**`build_min` / `build_max`** - Client build range.

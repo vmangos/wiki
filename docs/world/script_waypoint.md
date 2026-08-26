@@ -27,4 +27,6 @@ Defines waypoint paths for scripted creatures (escorts, etc.).
 - <a id="f-location_z"></a>**`location_z`** - Waypoint Z coordinate.
 - <a id="f-waittime"></a>**`waittime`** - Delay at the waypoint (ms).
 - <a id="f-point_comment"></a>**`point_comment`** - Description.
-- Creature must have `script_name` set for the path to load
+- Waypoint rows load unless the referenced creature entry does not exist in [`creature_template`](creature_template.md)
+  (those are skipped with a DB error); if the creature has no matching `script_name`, the core only logs
+  that the waypoints are useless.

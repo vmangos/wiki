@@ -1,6 +1,6 @@
 # character_gifts Table
 
-Items wrapped as gifts waiting to be opened (gift target stored until unwrapped).
+Items wrapped as gifts waiting to be opened (original item entry and flags stored until unwrapped).
 
 ---
 
@@ -17,7 +17,7 @@ Items wrapped as gifts waiting to be opened (gift target stored until unwrapped)
 
 ## Field Breakdown
 
-- <a id="f-guid"></a>**`guid`** - Character who received the wrapped gift ([`characters`](characters.md).guid).
+- <a id="f-guid"></a>**`guid`** - Current owner of the wrapped gift item ([`characters`](characters.md).guid).
 - <a id="f-item_guid"></a>**`item_guid`** - Primary Key. [`item_instance`](item_instance.md).guid of the gift package.
-- <a id="f-item_id"></a>**`item_id`** - Template entry of the package item.
-- <a id="f-flags"></a>**`flags`** - Internal gift state flags.
+- <a id="f-item_id"></a>**`item_id`** - Template entry of the original wrapped contents; restored when the gift is unwrapped.
+- <a id="f-flags"></a>**`flags`** - Original `ITEM_FIELD_FLAGS` value taken at wrap time, restored when the gift is opened.

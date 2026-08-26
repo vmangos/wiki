@@ -219,7 +219,8 @@ Duel arbiter flag object; single spawn in game data.
 
 #### 17 - FISHINGNODE
 
-Fishing bobber; no data payload.
+Fishing bobber. data0 unused · data1 lootId (defined in the union but not read by the core;
+bobber loot comes from [`fishing_loot_template`](fishing_loot_template.md) keyed by zone/area id).
 
 #### 18 - SUMMONING_RITUAL
 
@@ -237,7 +238,7 @@ data0 auctionHouseID (Alliance / Horde / neutral house id)
 
 #### 21 - GUARDPOST
 
-data0 creatureId of the guard summoned · data1 charges (max 10)
+data0 creatureId of the guard summoned · data1 charges
 
 #### 22 - SPELLCASTER
 

@@ -1,6 +1,6 @@
 # geoip Table
 
-IP range to country mapping cache used by the login server.
+IP range to country mapping cache used by the login server. Only used when geolocking is enabled.
 
 ---
 
@@ -26,7 +26,7 @@ IP range to country mapping cache used by the login server.
 
 - <a id="f-network_start_integer"></a>**`network_start_integer`** - Numeric IP range boundaries for the network block.
 - <a id="f-network_last_integer"></a>**`network_last_integer`** - Numeric IP range boundaries for the network block.
-- <a id="f-geoname_id"></a>**`geoname_id`** - Country GeoName resolved for this range.
+- <a id="f-geoname_id"></a>**`geoname_id`** - Most specific (city-level) GeoName id; compared when `GEO_CITY` locking is used.
 - <a id="f-registered_country_geoname_id"></a>**`registered_country_geoname_id`** - Registered (as opposed to routed) country.
 - <a id="f-represented_country_geoname_id"></a>**`represented_country_geoname_id`** - Military/embassy representative country if any.
 - <a id="f-is_anonymous_proxy"></a>**`is_anonymous_proxy`** - Classification flags from the GeoIP dataset.

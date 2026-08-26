@@ -30,4 +30,5 @@ Account ban records with reason and expiration.
 - <a id="f-banreason"></a>**`banreason`** - Reason text shown to staff.
 - <a id="f-active"></a>**`active`** - 1 while ban is in effect; expired bans are deactivated at startup.
 - <a id="f-realm"></a>**`realm`** - Id of the realm that issued the ban.
-- <a id="f-gmlevel"></a>**`gmlevel`** - Minimum GM level required to view the ban reason via `.baninfo`.
+- <a id="f-gmlevel"></a>**`gmlevel`** - Minimum GM level required to view the ban reason via `.baninfo`
+  (note: the core currently misreads the joined realm-name column for this check, so the value has no effect).

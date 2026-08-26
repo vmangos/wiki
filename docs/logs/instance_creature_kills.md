@@ -1,6 +1,6 @@
 # instance_creature_kills Table
 
-Statistics log of creature kills inside instanced encounters.
+Statistics log of **player deaths caused by creatures** inside instanced maps (not creature kills by players).
 
 ---
 
@@ -17,7 +17,7 @@ Statistics log of creature kills inside instanced encounters.
 
 ## Field Breakdown
 
-- <a id="f-mapId"></a>**`mapId`** - Primary Key. Map where the kill happened.
-- <a id="f-creatureEntry"></a>**`creatureEntry`** - Primary Key. Creature killed.
-- <a id="f-spellEntry"></a>**`spellEntry`** - Primary Key. Finishing spell (0 = melee/direct).
-- <a id="f-count"></a>**`count`** - Aggregated kill count.
+- <a id="f-mapId"></a>**`mapId`** - Primary Key. Map where the deaths happened.
+- <a id="f-creatureEntry"></a>**`creatureEntry`** - Primary Key. Killing creature.
+- <a id="f-spellEntry"></a>**`spellEntry`** - Primary Key. Killing-blow spell (0 = melee/direct).
+- <a id="f-count"></a>**`count`** - Aggregated player death count for this creature+spell combination.

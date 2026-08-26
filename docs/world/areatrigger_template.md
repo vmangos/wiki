@@ -30,7 +30,7 @@ Defines the location, size, and shape of all area triggers. These are invisible 
 ## Field Breakdown
 
 - <a id="f-id"></a>**`id`** - Primary Key. Unique area trigger ID.
-- <a id="f-build"></a>**`build`** - Primary Key. Client build version. The core loads the version with the highest build not exceeding the current client build.
+- <a id="f-build"></a>**`build`** - Primary Key. Client build version. The core loads the row with the highest build not exceeding `SUPPORTED_CLIENT_BUILD`.
 - <a id="f-name"></a>**`name`** - Descriptive name (not used by core).
 - <a id="f-map_id"></a>**`map_id`** - Map ID where the trigger is located. (see [`map_template`](map_template.md).entry)
 - <a id="f-x"></a><a id="f-y"></a><a id="f-z"></a>**`x`, `y`, `z`** - Center point of the trigger volume.

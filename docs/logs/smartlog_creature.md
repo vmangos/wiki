@@ -1,6 +1,6 @@
 # smartlog_creature Table
 
-'Smart log' of notable creature AI events (e.g. boss deaths with combat time and party composition).
+'Smart log' of notable creature events: boss deaths and long-running creature combat.
 
 ---
 
@@ -21,9 +21,10 @@
 ## Field Breakdown
 
 - <a id="f-time"></a>**`time`** - Event timestamp.
-- <a id="f-type"></a>**`type`** - Smart-log category (e.g. Death).
+- <a id="f-type"></a>**`type`** - Smart-log category; only `Death` and `LongCombat` are ever written (`ScriptInfo` is dead in the enum).
 - <a id="f-entry"></a>**`entry`** - Creature template entry.
 - <a id="f-guid"></a>**`guid`** - Spawn guid involved.
 - <a id="f-specifier"></a>**`specifier`** - "MapName.CreatureName" context string.
 - <a id="f-combatTime"></a>**`combatTime`** - Combat duration in seconds before the event.
-- <a id="f-content"></a>**`content`** - Serialized context blob (party composition etc.).
+- <a id="f-content"></a>**`content`** - Short kill-context text for Death rows (e.g. "Last hit by player: <name> with
+  instanceId <n>"); empty for LongCombat rows.

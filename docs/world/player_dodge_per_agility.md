@@ -17,6 +17,6 @@ Defines how much dodge chance (in percent) each class gains per point of agility
 ## Field Breakdown
 
 - <a id="f-class"></a>**`class`** - Part of the composite primary key. Class ID (`1`=Warrior, `2`=Paladin, `3`=Hunter, `4`=Rogue, `5`=Priest, `6`=Death Knight (unused), `7`=Shaman, `8`=Mage, `9`=Warlock, `11`=Druid). (see class IDs (see `ChrClasses.dbc`))
-- <a id="f-level"></a>**`level`** - Part of the composite primary key. Player level this rate applies to. Rows with `level` = 0 or above the maximum level are skipped with a DB error.
+- <a id="f-level"></a>**`level`** - Part of the composite primary key. Player level this rate applies to. Rows with `level` = 0 are rejected with a DB error; levels beyond the standard maximum are still loaded.
 - <a id="f-rate"></a>**`rate`** - Dodge chance gained per agility point at this level (percent). Must be positive; invalid values are reported as DB errors.
 *Related table: [`player_crit_per_agility`](player_crit_per_agility.md)

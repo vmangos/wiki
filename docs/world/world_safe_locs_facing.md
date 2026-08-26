@@ -15,6 +15,5 @@ Defines orientation for world safe locations (graveyards, respawn points).
 
 ## Field Breakdown
 
-- <a id="f-id"></a>**`id`** - Primary Key. Safe location ID. (see safe-location id from `WorldSafeLocs.dbc` (same id space as the graveyard ids in)
+- <a id="f-id"></a>**`id`** - Primary Key. Safe-location id from `WorldSafeLocs.dbc` (same id space as the graveyard ids in [`game_graveyard_zone`](game_graveyard_zone.md)).
 - <a id="f-orientation"></a>**`orientation`** - Facing direction (radians).
-- `id` - Safe-location id from `WorldSafeLocs.dbc` (same id space as the graveyard ids in [`game_graveyard_zone`](game_graveyard_zone.md)).

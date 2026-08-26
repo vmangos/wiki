@@ -1,6 +1,6 @@
 # pet_name_generation Table
 
-Generates random names for hunter pets.
+Generates random names for summoned pets (e.g. warlock minions). Hunter pets instead get their creature-family name and can be renamed by the player.
 
 ---
 

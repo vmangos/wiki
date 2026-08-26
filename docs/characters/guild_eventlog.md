@@ -22,7 +22,8 @@ Recent guild events (member join/leave, leadership changes) shown in-game.
 
 - <a id="f-guild_id"></a>**`guild_id`** - Primary Key. Guild the event belongs to.
 - <a id="f-log_guid"></a>**`log_guid`** - Primary Key. Log entry counter.
-- <a id="f-event_type"></a>**`event_type`** - Join/leave/promotion/demotion event code.
+- <a id="f-event_type"></a>**`event_type`** - Event code (`GuildEventLogEntryTypes`): 1 invite, 2 join, 3 promotion,
+  4 demotion, 5 uninvite, 6 leave.
 - <a id="f-player_guid1"></a>**`player_guid1`** - Actors involved (e.g. leaver + issuer).
 - <a id="f-player_guid2"></a>**`player_guid2`** - Actors involved (e.g. leaver + issuer).
 - <a id="f-new_rank"></a>**`new_rank`** - Rank after promotion events.

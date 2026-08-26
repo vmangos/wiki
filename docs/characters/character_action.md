@@ -21,4 +21,4 @@ Player action bar button assignments (spells/items placed on slots).
 - <a id="f-button"></a>**`button`** - Primary Key. Action bar button index (0-119 across bars/pages).
 - <a id="f-action"></a>**`action`** - Content id placed on the button: spell id or item id depending on `type`.
 - <a id="f-type"></a>**`type`** - Button content type (`ActionButtonType`, `Player.h`): `0x00` spell,
-  `0x40` macro, `0x80` item. Defines how the client interprets `action`.
+  `0x01` click, `0x40` macro, `0x41` clicked-macro, `0x80` item. Defines how the client interprets `action`.

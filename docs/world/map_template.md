@@ -31,7 +31,7 @@ Defines map properties - parent map, type, player limit, reset delay, and script
 - <a id="f-map_type"></a>**`map_type`** - `0` normal, `1` instance, `2` raid, `3` battleground.
 - <a id="f-linked_zone"></a>**`linked_zone`** - Zone ID associated with this map.
 - <a id="f-player_limit"></a>**`player_limit`** - Max players.
-- <a id="f-reset_delay"></a>**`reset_delay`** - Instance reset delay (hours).
+- <a id="f-reset_delay"></a>**`reset_delay`** - Instance reset delay in **days** (multiplied by the `Rate.InstanceResetTime` config; minimum forced to 1).
 - <a id="f-ghost_entrance_map"></a>**`ghost_entrance_map`** - Map where ghost appears.
 - <a id="f-ghost_entrance_x"></a><a id="f-ghost_entrance_y"></a>**`ghost_entrance_x/y`** - Ghost entrance coords.
 - <a id="f-map_name"></a>**`map_name`** - Map name.

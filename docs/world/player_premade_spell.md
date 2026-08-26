@@ -15,5 +15,5 @@ Defines spells granted to premade characters.
 
 ## Field Breakdown
 
-- <a id="f-entry"></a>**`entry`** - Primary Key. Premade template ID. (see [`player_premade_item_template`](player_premade_item_template.md).entry)
+- <a id="f-entry"></a>**`entry`** - Primary Key. Premade spec template ID. (see [`player_premade_spell_template`](player_premade_spell_template.md).entry)
 - <a id="f-spell"></a>**`spell`** - Primary Key. Spell ID. (see [`spell_template`](spell_template.md).entry)

@@ -39,6 +39,8 @@ Static world spawns of game objects (chests, doors, quest objects, etc.).
 - <a id="f-orientation"></a>**`orientation`** - Facing direction.
 - <a id="f-rotation0"></a><a id="f-rotation1"></a><a id="f-rotation2"></a><a id="f-rotation3"></a>**`rotation0-3`** - Quaternion rotation.
 - <a id="f-spawntimesecsmin"></a><a id="f-spawntimesecsmax"></a>**`spawntimesecsmin/max`** - Respawn time range (seconds).
+  A negative `spawntimesecsmin` means the object does not spawn by default (event/pool controlled only);
+  the magnitude is its respawn delay (`spawntimesecsmax` is clamped to be at least the min at load).
 - <a id="f-animprogress"></a>**`animprogress`** - Animation progress (0-255).
 - <a id="f-state"></a>**`state`** - Initial state (e.g., open/closed).
 - <a id="f-spawn_flags"></a>**`spawn_flags`** - Spawn behavior flags.

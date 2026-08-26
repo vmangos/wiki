@@ -169,13 +169,13 @@ Defines spell data - the primary table for all spells in the world database.
 - <a id="f-entry"></a>**`entry`** - Spell ID (`Spell.dbc` id).
 - <a id="f-build"></a>**`build`** - Client build this row applies to.
 - <a id="f-auraDescription"></a><a id="f-description"></a><a id="f-name"></a><a id="f-nameSubtext"></a>**`name`**, **`nameSubtext`**, **`description`**, **`auraDescription`** - Display text
-  (name, subtext/rank line, tooltip body, aura tooltip).
+  (name, subtext/rank line, tooltip body, aura tooltip). Only `name` and `nameSubtext` are read by the core; `description` / `auraDescription` are client-DBC/informational columns.
 - <a id="f-auraDescriptionFlags"></a><a id="f-descriptionFlags"></a><a id="f-nameFlags"></a><a id="f-nameSubtextFlags"></a>**`nameFlags`**, **`nameSubtextFlags`**, **`descriptionFlags`**, **`auraDescriptionFlags`** -
-  Broadcast-text-style flag companions for each text column (locale handling).
+  Locale mask for the Aura Description (tooltip) text; not read by core.
 
 ### Identity Extras
 
-- <a id="f-castUI"></a>**`castUI`** - DBC passthrough column; not used by the current core loader.
+- <a id="f-castUI"></a>**`castUI`** - DBC passthrough column; not read by core.
 
 ### Classification
 
@@ -451,7 +451,7 @@ Bitmask columns; every bit is defined as `SPELL_ATTR_*` in
 - <a id="f-rangeIndex"></a>**`rangeIndex`** - Row in `SpellRange.dbc` (max/min range).
 - <a id="f-speed"></a>**`speed`** - Projectile travel speed (yards/sec); 0 = instant.
 - <a id="f-stackAmount"></a>**`stackAmount`** - Max stacks of the produced aura.
-- <a id="f-modelNextSpell"></a>**`modelNextSpell`** - DBC passthrough field; not used by the current core loader.
+- <a id="f-modelNextSpell"></a>**`modelNextSpell`** - DBC passthrough field; not used by the core.
 
 ### Reagents, Totems & Equipment Requirements
 
@@ -627,7 +627,8 @@ All `SPELL_EFFECT_*` values from `src/game/Spells/SpellDefines.h`:
 
 ### Visuals, Icons & Family
 
-- <a id="f-spellVisual1"></a><a id="f-spellVisual2"></a>**`spellVisual1` / `spellVisual2`** - Cast visual ids (`SpellVisual.dbc`).
+- <a id="f-spellVisual1"></a><a id="f-spellVisual2"></a>**`spellVisual1` / `spellVisual2`** - Cast visual ids (`SpellVisual.dbc`);
+  `spellVisual2` is skipped by the core (not used).
 - <a id="f-activeIconId"></a><a id="f-spellIconId"></a>**`spellIconId`** / **`activeIconId`** - Tooltip/action icons.
 - <a id="f-spellPriority"></a>**`spellPriority`** - Aura display priority.
 - <a id="f-spellFamilyFlags"></a><a id="f-spellFamilyName"></a>**`spellFamilyName`** / **`spellFamilyFlags`** - Class/family identification used by procs
@@ -636,15 +637,15 @@ All `SPELL_EFFECT_*` values from `src/game/Spells/SpellDefines.h`:
 - <a id="f-dmgClass"></a>**`dmgClass`** - Damage class: `0` none, `1` magic, `2` melee, `3` ranged.
 - <a id="f-preventionType"></a>**`preventionType`** - What blocks casting: `0` none, `1` Silence, `2` Pacify
   (`SPELL_PREVENTION_TYPE_*`).
-- <a id="f-stanceBarOrder"></a>**`stanceBarOrder`** - Position in the shapeshift bar (DBC passthrough; not read by the current core loader).
+- <a id="f-stanceBarOrder"></a>**`stanceBarOrder`** - Position in the shapeshift bar (DBC passthrough; not read by the core).
 
 ### Misc & Server Fields
 
 - <a id="f-dmgMultiplier1"></a><a id="f-dmgMultiplier2"></a><a id="f-dmgMultiplier3"></a>**`dmgMultiplier1`**, **`dmgMultiplier2`**, **`dmgMultiplier3`** - Per-effect damage
   multiplier (e.g. AoE falloff).
-- <a id="f-minFactionId"></a><a id="f-minReputation"></a>**`minFactionId`** / **`minReputation`** - Reputation requirement for the spell to work (DBC passthrough; not read by the current core loader).
+- <a id="f-minFactionId"></a><a id="f-minReputation"></a>**`minFactionId`** / **`minReputation`** - Reputation requirement for the spell to work (DBC passthrough; not read by the core).
 - <a id="f-requiredAuraVision"></a>**`requiredAuraVision`** - Caster needs an aura allowing them to see stealth/invisible
-  targets of this kind (DBC passthrough; not read by the current core loader).
+  targets of this kind (DBC passthrough; not read by the core).
 - <a id="f-customFlags"></a>**`customFlags`** - Server-side flags loaded into `SpellEntry::Custom` (`SPELL_CUSTOM_*`,
   `SpellDefines.h`: allow stacking between casters, fixed damage, ignore armor, separate aura per caster...).
 - <a id="f-script_name"></a>**`script_name`** - C++ spell script binding ([Scripts Library](../Scripts-Library.md));

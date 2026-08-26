@@ -16,7 +16,7 @@ Grants or revokes RBAC permissions per account (`granted = 0` revokes an inherit
 
 ## Field Breakdown
 
-- <a id="f-account_id"></a>**`account_id`** - Primary Key. Account id (from [`account`](../realmd/account.md).id).
+- <a id="f-account_id"></a>**`account_id`** - Primary Key. Account id (from [`account`](account.md).id).
 - <a id="f-permission_id"></a>**`permission_id`** - Primary Key. [`rbac_permissions`](rbac_permissions.md).id.
 - <a id="f-granted"></a>**`granted`** - 1 grants, 0 explicitly revokes an inherited permission.
 

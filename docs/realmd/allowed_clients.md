@@ -1,6 +1,8 @@
 # allowed_clients Table
 
-Whitelist of exact client builds/platforms permitted to log on through realmd. An empty table permits all clients supported by the core build.
+Whitelist of client builds/platforms permitted to log on through realmd. The table must contain at least one row;
+realmd exits at startup with "No valid client builds specified." otherwise. Builds greater than or equal to the
+first (lowest) listed build number are accepted.
 
 ---
 
@@ -26,6 +28,6 @@ Whitelist of exact client builds/platforms permitted to log on through realmd. A
 - <a id="f-bugfix_version"></a>**`bugfix_version`** - Exact client version components accepted.
 - <a id="f-hotfix_version"></a>**`hotfix_version`** - Exact client version components accepted.
 - <a id="f-build"></a>**`build`** - Client build number (e.g. 5875 for 1.12.1).
-- <a id="f-os"></a>**`os`** - Operating platform filter (Windows/Mac), or wildcard.
-- <a id="f-platform"></a>**`platform`** - Architecture/platform string filter.
+- <a id="f-os"></a>**`os`** - Operating platform filter, exact string match against the client-reported value (`Win`/`OSX`).
+- <a id="f-platform"></a>**`platform`** - Architecture/platform string filter, exact match against the client-reported value (`x86`/`PPC`).
 - <a id="f-integrity_hash"></a>**`integrity_hash`** - Optional client integrity hash requirement.

@@ -1,6 +1,6 @@
 # characters_guid_delete Table
 
-Queue of character GUIDs scheduled for deletion by the cleanup system.
+List of character GUIDs purged by the `.character clean todelete` admin command.
 
 ---
 
@@ -14,4 +14,4 @@ Queue of character GUIDs scheduled for deletion by the cleanup system.
 
 ## Field Breakdown
 
-- <a id="f-guid"></a>**`guid`** - Unique.
+- <a id="f-guid"></a>**`guid`** - Unique. Character guid queued for final deletion via `.character clean todelete`.

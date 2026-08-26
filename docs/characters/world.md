@@ -1,6 +1,7 @@
 # world Table
 
-World-wide persistent variables (e.g. next tick dates for weather/game events).
+Persistent per-map script state (the `data` blob holds map-script instance data, e.g. boss/encounter variables
+written by `InstanceData`).
 
 ---
 
@@ -16,4 +17,4 @@ World-wide persistent variables (e.g. next tick dates for weather/game events).
 ## Field Breakdown
 
 - <a id="f-map"></a>**`map`** - Primary Key. Map id.
-- <a id="f-data"></a>**`data`** - Serialized map-wide persistent state (weather timers etc.).
+- <a id="f-data"></a>**`data`** - Serialized map-wide persistent state (map-script `InstanceData` save blob).

@@ -17,5 +17,7 @@ Skills explicitly unlearned from a character (weapon skill resets); remembered s
 ## Field Breakdown
 
 - <a id="f-guid"></a>**`guid`** - Primary Key. Character guid (from [`characters`](characters.md).guid).
-- <a id="f-skill"></a>**`skill`** - Primary Key. Skill line id that was unlearned (e.g. via GM reset).
+- <a id="f-skill"></a>**`skill`** - Primary Key. Skill line id recorded whenever its granting spell/talent is unlearned
+  (`RemoveSpell` → `UpdateSpellTrainedSkills`; normally the talent respec, but GM `.unlearn` / `.reset spells`
+  take the same path). Weapon-skill retention behaviour since patch 1.11.
 - <a id="f-value"></a>**`value`** - Former skill value, kept so it can be restored.

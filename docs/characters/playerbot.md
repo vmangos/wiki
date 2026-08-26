@@ -1,6 +1,6 @@
 # playerbot Table
 
-State storage for player bots managed by the built-in bot system.
+Bot configuration read by the built-in bot system at startup (read-only - the core never writes this table).
 
 ---
 
@@ -19,5 +19,5 @@ State storage for player bots managed by the built-in bot system.
 
 - <a id="f-char_guid"></a>**`char_guid`** - Primary Key. Character guid usable as bot ([`characters`](characters.md).guid).
 - <a id="f-chance"></a>**`chance`** - Relative chance the bot system picks this character.
-- <a id="f-comment"></a>**`comment`** - Descriptive label.
-- <a id="f-ai"></a>**`ai`** - Preferred AI module name for the bot.
+- <a id="f-comment"></a>**`comment`** - Descriptive label (not used by core).
+- <a id="f-ai"></a>**`ai`** - Hardcoded AI class name for the bot (e.g. `MageOrgrimmarAttackerAI`, `StormwindPopulationAI`).

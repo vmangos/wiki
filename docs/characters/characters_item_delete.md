@@ -1,6 +1,6 @@
 # characters_item_delete Table
 
-Purge list used by the item reference cleanup ([`item_instance`](item_instance.md) deletion queue).
+Purge list consumed by the `.character clean items` admin command, which destroys matching items on players (destructive pass runs only from the console).
 
 ---
 
@@ -14,4 +14,4 @@ Purge list used by the item reference cleanup ([`item_instance`](item_instance.m
 
 ## Field Breakdown
 
-- <a id="f-entry"></a>**`entry`** - Unique.
+- <a id="f-entry"></a>**`entry`** - Unique. Item **template entry id** (matched against ([`item_instance`](item_instance).id).

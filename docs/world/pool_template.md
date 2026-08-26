@@ -24,5 +24,5 @@ Defines spawn pools - groups of spawns that collectively follow a spawn limit.
 - <a id="f-max_limit"></a>**`max_limit`** - Maximum number of active spawns from this pool at once.
 - <a id="f-description"></a>**`description`** - Comment.
 - <a id="f-flags"></a>**`flags`** - Pool flags.
-- <a id="f-instance"></a>**`instance`** - Instance id (0 = world). See [`instance`](../characters/instance.md).
+- <a id="f-instance"></a>**`instance`** - Continent-instance region id used only with the `ContinentsInstanciate` config enabled (0 = shared/world); ignored for instanced (dungeon) maps.
 - <a id="f-patch_max"></a><a id="f-patch_min"></a>**`patch_min` / `patch_max`** - Client patch range.

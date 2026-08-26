@@ -35,11 +35,12 @@ Registered realms served by this auth server (name, address, type, security leve
 - <a id="f-localSubnetMask"></a>**`localSubnetMask`** - Subnet mask deciding which clients count as local (dotted format).
 - <a id="f-port"></a>**`port`** - World server port (default 8085).
 - <a id="f-icon"></a>**`icon`** - Realm type: 0 normal, 1 PvP, 4 normal variant (`REALM_TYPE_NORMAL2`), 6 RP, 8 RPPvP. The custom FFA-PvP mode (16) is stored as 1 in this column.
-- <a id="f-realmflags"></a>**`realmflags`** - Bitmask: 1 invalid (realm hidden from clients), 2 offline, 4 specify build (show version next to name), 8 unknown (REALM_FLAG_UNK1), 16 unknown (REALM_FLAG_UNK2), 32 new players, 64 recommended, 128 full (defined but not set by this core). Only 2, 4, 32 and 64 may be set in DB; realmd shows realms as offline dynamically when the client build is unsupported or the realm is locked.
+- <a id="f-realmflags"></a>**`realmflags`** - Bitmask: 1 invalid (realm hidden from clients), 2 offline, 4 specify build (show version next to name), 8 unknown (REALM_FLAG_UNK1), 16 unknown (REALM_FLAG_UNK2), 32 new players, 64 recommended, 128 full (defined but not set by core). Only 2, 4, 32 and 64 may be set in DB; realmd shows realms as offline dynamically when the client build is unsupported or the realm is locked.
 - <a id="f-timezone"></a>**`timezone`** - Realm timezone grouping for the realm list sort.
 - <a id="f-allowedSecurityLevel"></a>**`allowedSecurityLevel`** - Minimum account security required to enter this realm (realms above the account level show as locked).
 - <a id="f-population"></a>**`population`** - Population level float shown as low/medium/high. Updated by mangosd.
-- <a id="f-gamebuild_min"></a>**`gamebuild_min`** - Accepted client build range. Not read by this core; kept for compatibility.
-- <a id="f-gamebuild_max"></a>**`gamebuild_max`** - Accepted client build range. Not read by this core; kept for compatibility.
-- <a id="f-flag"></a>**`flag`** - Additional display flag byte. Not read by this core; kept for compatibility.
-- <a id="f-realmbuilds"></a>**`realmbuilds`** - Explicit comma-separated accepted build list overriding min/max. Written by mangosd at startup.
+- <a id="f-gamebuild_min"></a>**`gamebuild_min`** - Accepted client build range. Not read by core.
+- <a id="f-gamebuild_max"></a>**`gamebuild_max`** - Accepted client build range. Not read by core.
+- <a id="f-flag"></a>**`flag`** - Additional display flag byte. Not read by core.
+- <a id="f-realmbuilds"></a>**`realmbuilds`** - Space-separated list of accepted build numbers, rewritten by mangosd at startup
+  (e.g. `5875 6005`).

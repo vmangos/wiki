@@ -1,6 +1,6 @@
 # instance_reset Table
 
-Global reset schedule per map/difficulty.
+Global reset schedule per map (one row per resettable map).
 
 ---
 

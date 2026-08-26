@@ -23,9 +23,10 @@ Money flow log entries above the configured threshold (loot, quest rewards, trad
 
 - <a id="f-time"></a>**`time`** - Trade timestamp.
 - <a id="f-type"></a>**`type`** - Trade event kind (item/money flow direction codes).
-- <a id="f-sender"></a>**`sender`** - Sending object identity (player guid or creature/item entry depending on type).
-- <a id="f-senderType"></a>**`senderType`** - Sending object identity (player guid or creature/item entry depending on type).
-- <a id="f-senderEntry"></a>**`senderEntry`** - Sending object identity (player guid or creature/item entry depending on type).
+- <a id="f-sender"></a>**`sender`** - Sender GUID low counter (player guid low, or vendor/auction owner guid).
+- <a id="f-senderType"></a>**`senderType`** - Sender GUID high part: the object type (player, creature, item…).
+- <a id="f-senderEntry"></a>**`senderEntry`** - Sender template entry (creature/vendor/item); `0` for players.
 - <a id="f-receiver"></a>**`receiver`** - Receiving player/object.
 - <a id="f-amount"></a>**`amount`** - Money amount traded.
-- <a id="f-data"></a>**`data`** - Item id/count payload blob for item lines.
+- <a id="f-data"></a>**`data`** - Single related id depending on `type`: item template id for auction/vendor lines,
+  quest id for quest rewards; otherwise `0`.

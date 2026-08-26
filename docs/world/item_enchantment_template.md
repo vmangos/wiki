@@ -19,10 +19,9 @@ Defines random enchantments for items (e.g., from `random_property` fields).
 ## Field Breakdown
 
 - <a id="f-entry"></a>**`entry`** - Primary Key. Random-property group id referenced from
-  [`item_template`](item_template.md) `RandomProperty` (also used for suffix groups via
-  `RandomSuffix`). All rows sharing an entry form one weighted pool.
-- <a id="f-ench"></a>**`ench`** - Primary Key. Enchantment/property id resolved through (see `ItemRandomProperties.dbc` / `SpellItemEnchantment.dbc`)
-  `ItemRandomProperties.dbc` or `SpellItemEnchantment.dbc`.
+  [`item_template`](item_template.md) `RandomProperty`. All rows sharing an entry form one weighted pool.
+- <a id="f-ench"></a>**`ench`** - Primary Key. Enchantment/property id; rolled ids must exist in
+  `ItemRandomProperties.dbc`.
 - <a id="f-chance"></a>**`chance`** - Relative weight (0-100). The roller normalises by the pool total:
   `roll = rand(0..total)`, then walks rows cumulatively, so weights need not sum to 100.
 - <a id="f-patch_max"></a><a id="f-patch_min"></a>**`patch_min` / `patch_max`** - Client patch range.

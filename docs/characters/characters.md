@@ -114,7 +114,8 @@ The central table: one row per player character with race/class/level, position,
 - <a id="f-rest_bonus"></a>**`rest_bonus`** - Accumulated rest bonus (XP %) for the resting system.
 - <a id="f-reset_talents_multiplier"></a>**`reset_talents_multiplier`** - Talent reset cost escalation multiplier.
 - <a id="f-reset_talents_time"></a>**`reset_talents_time`** - Last talent reset timestamp.
-- <a id="f-death_expire_time"></a>**`death_expire_time`** - When the corpse expires / ghost release timing.
+- <a id="f-death_expire_time"></a>**`death_expire_time`** - Expiry timestamp of the repeated-death cooldown used to
+  escalate the corpse reclaim delay (5-minute steps per recent death).
 - <a id="f-stable_slots"></a>**`stable_slots`** - Hunter pet stable slots purchased.
 - <a id="f-bank_bag_slots"></a>**`bank_bag_slots`** - Bank bag slots purchased.
 - <a id="f-extra_flags"></a>**`extra_flags`** - Persistent per-character toggles from `PlayerExtraFlags`: GM mode, ticket/whisper acceptance, taxi cheat, GM invisibility/chat badge, auction-house faction preference, pending PvP death, city protector (full table in [Data Lifecycle](../Data-Lifecycle.md)).
@@ -123,8 +124,8 @@ The central table: one row per player character with race/class/level, position,
 - <a id="f-honor_standing"></a>**`honor_standing`** - Position within the rank for this honour week.
 - <a id="f-honor_last_week_hk"></a>**`honor_last_week_hk`** - Yesterday/last-week HK & CP bookkeeping for the honour day tick.
 - <a id="f-honor_last_week_cp"></a>**`honor_last_week_cp`** - Yesterday/last-week HK & CP bookkeeping for the honour day tick.
-- <a id="f-honor_stored_hk"></a>**`honor_stored_hk`** - Yesterday/last-week HK & CP bookkeeping for the honour day tick.
-- <a id="f-honor_stored_dk"></a>**`honor_stored_dk`** - Yesterday/last-week HK & CP bookkeeping for the honour day tick.
+- <a id="f-honor_stored_hk"></a>**`honor_stored_hk`** - Lifetime total honorable kills accumulated across honour-week ticks.
+- <a id="f-honor_stored_dk"></a>**`honor_stored_dk`** - Lifetime total dishonorable kills accumulated across honour-week ticks.
 - <a id="f-watched_faction"></a>**`watched_faction`** - Faction id currently watched in the rep panel.
 - <a id="f-drunk"></a>**`drunk`** - Soberness level 0-255 (Drunk status tiers).
 - <a id="f-health"></a>**`health`** - Saved vitals: health + mana/rage/focus/energy/happiness.
@@ -137,7 +138,9 @@ The central table: one row per player character with race/class/level, position,
 - <a id="f-equipment_cache"></a>**`equipment_cache`** - Cached appearance blob for other-player equipment display.
 - <a id="f-ammo_id"></a>**`ammo_id`** - Currently equipped ranged ammo.
 - <a id="f-action_bars"></a>**`action_bars`** - Action bar configuration mode bits.
-- <a id="f-deleted_account"></a>**`deleted_account`** - Set while the character sits in the deletion grace window.
-- <a id="f-deleted_name"></a>**`deleted_name`** - Set while the character sits in the deletion grace window.
-- <a id="f-deleted_time"></a>**`deleted_time`** - Set while the character sits in the deletion grace window.
+- <a id="f-deleted_account"></a>**`deleted_account`** - Set while the character sits in the deletion grace window
+  (`CharDelete.Method=1`); `name` is blanked and `account` zeroed, with originals kept in `deleted_name`/`deleted_account`.
+  With method 0 the row is wiped immediately instead.
+- <a id="f-deleted_name"></a>**`deleted_name`** - Original name preserved during the deletion grace window.
+- <a id="f-deleted_time"></a>**`deleted_time`** - When the character entered the deletion grace window.
 - <a id="f-world_phase_mask"></a>**`world_phase_mask`** - Phase mask for phased content visibility.

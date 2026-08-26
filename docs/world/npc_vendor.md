@@ -1,6 +1,6 @@
 # npc_vendor Table
 
-Defines items sold by specific NPC vendors (per-spawn or per-entry).
+Defines items sold by specific NPC vendors (per creature entry, or shared via [`npc_vendor_template`](npc_vendor_template.md)).
 
 ---
 

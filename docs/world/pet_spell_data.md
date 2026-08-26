@@ -19,7 +19,7 @@ Spell data for pets - up to 4 spells per pet entry.
 
 ## Field Breakdown
 
-- <a id="f-entry"></a>**`entry`** - Primary Key. Pet creature entry the set applies to. (see [`creature_template`](creature_template.md).entry)
+- <a id="f-entry"></a>**`entry`** - Primary Key. Pet spell-list ID, referenced from [`creature_template`](creature_template.md).pet_spell_list_id
 - <a id="f-build"></a>**`build`** - Primary Key. Client build version.
 - <a id="f-spell_id1"></a>**`spell_id1`** - Spells in this pet spell slot set. (see [`spell_template`](spell_template.md).entry)
 - <a id="f-spell_id2"></a>**`spell_id2`** - Spells in this pet spell slot set.

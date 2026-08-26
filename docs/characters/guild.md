@@ -1,6 +1,6 @@
 # guild Table
 
-Guild headers: name, leader, creation date, bank money etc.
+Guild headers: name, leader, creation date, tabard emblem, public info and MOTD.
 
 ---
 

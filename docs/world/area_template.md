@@ -47,4 +47,4 @@ Contains information about all areas and zones of the world, including flags, re
   - `2` - Ocean
   - `3` - Magma
   - `4` - Slime
-  - `5` - Naxxramas slime
+  - `21` - Naxxramas slime

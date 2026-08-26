@@ -1,6 +1,7 @@
 # rbac_permissions Table
 
-Definitions of RBAC permissions referenced by account grants and command bindings. Ids match `SEC_*` levels and extra fine-grained permissions used by the core.
+Definitions of RBAC permissions referenced by account grants and command bindings. Ids are independent bit
+identifiers (must stay below 32) layered on top of the `SEC_*` levels from [`account_access`](account_access.md).
 
 ---
 

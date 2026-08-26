@@ -40,24 +40,26 @@ Account credentials and per-account settings (username, password hash/verifier, 
 - <a id="f-id"></a>**`id`** - Primary Key. Account id (referenced as [`account`](account.md) in characters DB).
 - <a id="f-username"></a>**`username`** - Unique. Login name (uppercase-normalized for lookups).
 - <a id="f-gmlevel"></a>**`gmlevel`** - Legacy per-account GM level snapshot; live level comes from [`account_access`](account_access.md).gmlevel.
-- <a id="f-sessionkey"></a>**`sessionkey`** - Active session key while logged in (invalidated at logout).
+- <a id="f-sessionkey"></a>**`sessionkey`** - SRP6 session key written by realmd at each successful login; reused for
+  reconnect and world-server authentication until replaced by the next login.
 - <a id="f-v"></a>**`v`** - SRP6 verifier, never a plain password.
 - <a id="f-s"></a>**`s`** - SRP6 salt used with `v` for the secure login handshake.
-- <a id="f-token_key"></a>**`token_key`** - Authenticator token key when 2FA is enabled.
+- <a id="f-token_key"></a>**`token_key`** - Authenticator token key when 2FA is enabled. (2FA secrets are stored in `security`).
 - <a id="f-email"></a>**`email`** - Account e-mail (password recovery / identification).
 - <a id="f-joindate"></a>**`joindate`** - Registration date.
 - <a id="f-last_ip"></a>**`last_ip`** - IP of the most recent login.
 - <a id="f-locked"></a>**`locked`** - Lock/authenticator bitmask (`LockFlag`): 1 = IP lock to `last_ip`, 2 = fixed PIN required, 4 = TOTP authenticator, 8 = always enforce authenticator, 16 = GeoIP country lock, 32 = GeoIP city lock.
-- <a id="f-lock_country"></a>**`lock_country`** - Country code of the client's last-login IP (populated by external tooling); never written or read by this core.
+- <a id="f-lock_country"></a>**`lock_country`** - Country code of the client's last-login IP (populated by external tooling); never written or read by core.
 - <a id="f-last_login"></a>**`last_login`** - Timestamp of previous successful login.
-- <a id="f-online"></a>**`online`** - 1 while logged into any realm served by this auth server.
-- <a id="f-expansion"></a>**`expansion`** - Expansion level (`.account set addon`): 0 classic, 1 TBC, 2 WotLK. Set via command only; not consulted by this classic-only core.
+- <a id="f-online"></a>**`online`** - 1 while logged into any realm served by auth server.
+- <a id="f-expansion"></a>**`expansion`** - Expansion level (`.account set addon`): 0 classic, 1 TBC, 2 WotLK. Set via command only.
 - <a id="f-mutetime"></a>**`mutetime`** - Unix timestamp until chat mutes expire (0 none).
 - <a id="f-locale"></a>**`locale`** - Client locale id selected at login (drives localized DBC data).
 - <a id="f-os"></a>**`os`** - OS identifier reported by client (Win/Mac).
 - <a id="f-platform"></a>**`platform`** - Detailed platform string reported by client.
 - <a id="f-current_realm"></a>**`current_realm`** - Last realm played (id).
-- <a id="f-flags"></a>**`flags`** - Server-side account flag bits: `0x1` = muted from public chat channels (set by the anticheat). Not read back by this core.
+- <a id="f-flags"></a>**`flags`** - Server-side account flag bits: `0x1` = muted from public chat channels
+  (set by the anticheat for `SEC_PLAYER`s; read back at world login and enforced when sending messages to public channels).
 - <a id="f-security"></a>**`security`** - Authenticator secret used to verify the fixed PIN or TOTP code entered at login.
 - <a id="f-email_verif"></a>**`email_verif`** - E-mail verification state; with `ReqEmailVerification` enabled unverified accounts cannot log in.
 - <a id="f-geolock_pin"></a>**`geolock_pin`** - PIN that must be entered at next login (set after suspicious logins); cleared once entered correctly.

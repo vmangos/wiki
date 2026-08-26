@@ -1,6 +1,6 @@
 # guild_rank Table
 
-Rank definitions per guild (rights and money withdraw limits).
+Rank definitions per guild.
 
 ---
 

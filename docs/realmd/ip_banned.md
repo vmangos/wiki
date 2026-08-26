@@ -18,7 +18,7 @@ Banned IP addresses/networks.
 
 ## Field Breakdown
 
-- <a id="f-ip"></a>**`ip`** - Primary Key. Banned IP address or pattern.
+- <a id="f-ip"></a>**`ip`** - Primary Key. Banned IPv4 address (exact string match only; patterns are not supported).
 - <a id="f-bandate"></a>**`bandate`** - Start/end unix timestamps.
 - <a id="f-unbandate"></a>**`unbandate`** - Start/end unix timestamps.
 - <a id="f-bannedby"></a>**`bannedby`** - Staff account or console that issued the ban.

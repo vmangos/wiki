@@ -18,7 +18,8 @@ Per-character client UI data blobs (window layouts, action settings), stored by 
 ## Field Breakdown
 
 - <a id="f-guid"></a>**`guid`** - Primary Key. Character guid these settings belong to ([`characters`](characters.md).guid).
-- <a id="f-type"></a>**`type`** - Primary Key. Data slot 0-7 (same slots as [`account_data`](account_data.md), but per character).
+- <a id="f-type"></a>**`type`** - Primary Key. Per-character data type index (`1` = config, `3` = bindings, `5` = macros,
+  `6` = layout, `7` = chat; `PER_CHARACTER_CACHE_MASK`). Global types 0/2/4 live in [`account_data`](account_data.md).
 - <a id="f-time"></a>**`time`** - Unix timestamp of last modification.
 - <a id="f-data"></a>**`data`** - Client UI configuration blob.
 

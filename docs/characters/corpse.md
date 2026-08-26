@@ -31,7 +31,8 @@ Corpses left in the world after deaths (position, bones/state).
 - <a id="f-orientation"></a>**`orientation`** - Where the corpse lies.
 - <a id="f-map"></a>**`map`** - Where the corpse lies.
 - <a id="f-time"></a>**`time`** - Death time.
-- <a id="f-corpse_type"></a>**`corpse_type`** - 0 = bones (lootable skeleton), 1 = resurrectable PvE corpse, 2 = resurrectable PvP corpse.
+- <a id="f-corpse_type"></a>**`corpse_type`** - 0 = bones, 1 = resurrectable PvE corpse, 2 = resurrectable PvP corpse.
+  Only values 1-2 are ever written; bones exist only as transient world objects (never persisted).
 - <a id="f-instance"></a>**`instance`** - Instance id ([`instance`](instance.md).id) when death happened inside an instance.
 
 ---
@@ -40,6 +41,8 @@ Corpses left in the world after deaths (position, bones/state).
 
 | Value | Meaning |
 | :---: | :--- |
-| 0 | Bones (resurrection finished; lootable skeleton remains) |
+| 0 | Bones - enum value exists but bones are never saved to the DB |
 | 1 | Resurrectable PvE corpse |
 | 2 | Resurrectable PvP corpse |
+
+> Resurrectable corpses expire after 3 days (`time` + 3 days).

@@ -22,7 +22,7 @@ Links game object spawns to spawn pools.
 
 - <a id="f-guid"></a>**`guid`** - Primary Key. Game object GUID ([`gameobject`](gameobject.md).guid).
 - <a id="f-pool_entry"></a>**`pool_entry`** - Pool ID. (see [`pool_template`](pool_template.md).entry)
-- <a id="f-chance"></a>**`chance`** - Spawn probability.
+- <a id="f-chance"></a>**`chance`** - Spawn chance: `0` = equal share among all zero-chance members; explicit percentages must sum to 100 and apply only when the pool's `max_limit` is 1.
 - <a id="f-description"></a>**`description`** - Comment.
 - <a id="f-flags"></a>**`flags`** - Pool flags.
 - <a id="f-patch_max"></a><a id="f-patch_min"></a>**`patch_min` / `patch_max`** - Client patch range.
