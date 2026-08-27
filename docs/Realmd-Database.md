@@ -9,8 +9,6 @@ The **realmd** (login/auth) database stores accounts, bans, GM access levels and
 - [`account_banned`](realmd/account_banned.md) - Account ban records with reason and expiration.
 - [`allowed_clients`](realmd/allowed_clients.md) - Whitelist of exact client builds/platforms permitted to log on through realmd.
 - [`geoip`](realmd/geoip.md) - IP range to country mapping cache used by the login server.
-- [`ip2nation`](realmd/ip2nation.md) - Mapping of IP ranges to country codes for GeoIP lookups.
-- [`ip2nationcountries`](realmd/ip2nationcountries.md) - Country metadata for `ip2nation`.
 - [`ip_banned`](realmd/ip_banned.md) - Banned IP addresses/networks.
 - [`migrations`](realmd/migrations.md) - Applied migration IDs for the realmd database.
 - [`rbac_account_permissions`](realmd/rbac_account_permissions.md) - Grants or revokes RBAC permissions per account.

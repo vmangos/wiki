@@ -11,7 +11,6 @@ The **character** database stores all player-owned state: characters themselves,
 - [`character_aura`](characters/character_aura.md) - Auras persisting on a character across logout (passives, shapeshifts, DoTs with long duration).
 - [`character_battleground_data`](characters/character_battleground_data.md) - Per-character battleground state that must survive a restart (marked for BG, random BG info).
 - [`character_deleted_items`](characters/character_deleted_items.md) - Items deleted from a character, kept for restoration purposes.
-- [`character_duplicate_account`](characters/character_duplicate_account.md) - Detection data for characters suspected of being duplicated between accounts.
 - [`character_forgotten_skills`](characters/character_forgotten_skills.md) - Skills explicitly unlearned from a character (weapon skill resets); remembered so they are not re-granted automatically.
 - [`character_gifts`](characters/character_gifts.md) - Items wrapped as gifts waiting to be opened (gift target stored until unwrapped).
 - [`character_homebind`](characters/character_homebind.md) - Home bind position (hearthstone destination) per character.
@@ -60,4 +59,3 @@ The **character** database stores all player-owned state: characters themselves,
 - [`playerbot`](characters/playerbot.md) - State storage for player bots managed by the built-in bot system.
 - [`saved_variables`](characters/saved_variables.md) - Miscellaneous global flags saved between restarts, such as the next honour-day maintenance date.
 - [`world`](characters/world.md) - World-wide persistent variables, such as per-map weather timers.
-- [`worldstates`](characters/worldstates.md) - World state variables broadcast to clients (BG scores, AQ war effort state…).

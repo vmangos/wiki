@@ -11,7 +11,6 @@ The **logs** database is an optional audit/statistics sink: chat logs, trade rec
 - [`logs_player`](logs/logs_player.md) - Per-player audit log of notable events written when player logging is enabled.
 - [`logs_trade`](logs/logs_trade.md) - Money flow log entries above the configured threshold (loot, quest rewards, trades, mail, GM changes).
 - [`logs_transactions`](logs/logs_transactions.md) - Money/mail transaction audit trail.
-- [`logs_trashcharacters`](logs/logs_trashcharacters.md) - Characters flagged as trash/farm bots by detection systems.
 - [`migrations`](logs/migrations.md) - Applied migration IDs for the logs database.
 - [`smartlog_creature`](logs/smartlog_creature.md) - 'Smart log' rows for notable creature AI events such as boss deaths with combat time.
 - [`system_fingerprint_usage`](logs/system_fingerprint_usage.md) - Records system fingerprint usage during logon for anti-cheat detection.
