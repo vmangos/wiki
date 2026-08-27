@@ -1,0 +1,782 @@
+# GM Commands Reference
+
+Every chat/console command registered by `ChatHandler::getCommandTable()` (`src/game/Chat/Chat.cpp`), with its minimum account security level. Commands are sent in-game with a `.` prefix (e.g. `.tele`); from the server console they are used without it.
+
+**Security levels** (`src/shared/Common.h`):
+
+| Level | Name |
+| :---: | :--- |
+| 0 | Player |
+| 1 | Moderator |
+| 2 | Ticket Master |
+| 3 | Game Master |
+| 4 | Basic Admin |
+| 5 | Developer |
+| 6 | Administrator |
+| 7 | Console |
+
+**761 commands** documented.
+
+## Command List
+
+- **[`account`](realmd/account.md)** · min. level **0** (Player)
+  - **[`account`](realmd/account.md)** · min. level **0** (Player)
+  - **`account characters`** · min. level **3** (Game Master)
+  - **`account cleardata`** · min. level **0** (Player) *(not from console)*
+  - **`account create`** · min. level **7** (Console)
+  - **`account delete`** · min. level **7** (Console)
+  - **`account lock`** · min. level **0** (Player)
+  - **`account onlinelist`** · min. level **7** (Console)
+  - **`account password`** · min. level **0** (Player)
+  - **`account set`** · min. level **6** (Administrator)
+    - **`account set addon`** · min. level **7** (Console)
+    - **`account set gmlevel`** · min. level **7** (Console)
+    - **`account set locked`** · min. level **6** (Administrator)
+    - **`account set password`** · min. level **7** (Console)
+- **`additem`** · min. level **3** (Game Master) *(not from console)*
+- **`additemset`** · min. level **3** (Game Master) *(not from console)*
+- **`ahbot`** · min. level **6** (Administrator)<br>Manage AH bot
+  - **`ahbot reload`** · min. level **6** (Administrator)<br>Reload table and config
+  - **`ahbot update`** · min. level **6** (Administrator)<br>Add items for sale
+- **`angle`** · min. level **1** (Moderator) *(not from console)*
+- **`anticheat`** · min. level **2** (Ticket Master) *(not from console)*
+- **`antispam`** · min. level **2** (Ticket Master)
+  - **`antispam add`** · min. level **2** (Ticket Master)
+  - **`antispam replace`** · min. level **2** (Ticket Master)
+- **`aoedamage`** · min. level **3** (Game Master) *(not from console)*
+- **[`auction`](characters/auction.md)** · min. level **2** (Ticket Master) *(not from console)*
+  - **[`auction`](characters/auction.md)** · min. level **2** (Ticket Master) *(not from console)*
+  - **`auction alliance`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`auction goblin`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`auction horde`** · min. level **2** (Ticket Master) *(not from console)*
+- **`ban`** · min. level **2** (Ticket Master)
+  - **`ban account`** · min. level **3** (Game Master)
+  - **`ban allip`** · min. level **6** (Administrator)
+  - **`ban character`** · min. level **3** (Game Master)
+  - **`ban ip`** · min. level **6** (Administrator)
+  - **`ban note`** · min. level **2** (Ticket Master)
+  - **`ban warn`** · min. level **2** (Ticket Master)
+- **`baninfo`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`baninfo account`** · min. level **2** (Ticket Master)
+  - **`baninfo character`** · min. level **2** (Ticket Master)
+  - **`baninfo ip`** · min. level **3** (Game Master)
+- **`bank`** · min. level **2** (Ticket Master) *(not from console)*
+- **`banlist`** · min. level **2** (Ticket Master)
+  - **`banlist account`** · min. level **2** (Ticket Master)
+  - **`banlist character`** · min. level **2** (Ticket Master)
+  - **`banlist ip`** · min. level **3** (Game Master)
+- **`battlebot`** · min. level **6** (Administrator)<br>Manage battle bots
+  - **`battlebot add`** · min. level **6** (Administrator)<br>Add a new bot
+    - **`battlebot add alterac`** · min. level **6** (Administrator)
+    - **`battlebot add arathi`** · min. level **6** (Administrator)
+    - **`battlebot add warsong`** · min. level **6** (Administrator)
+  - **`battlebot remove`** · min. level **6** (Administrator) *(not from console)*
+  - **`battlebot removeall`** · min. level **6** (Administrator)
+  - **`battlebot showallpaths`** · min. level **6** (Administrator) *(not from console)*
+  - **`battlebot showpath`** · min. level **6** (Administrator) *(not from console)*
+- **`bg`** · min. level **3** (Game Master) *(not from console)*
+  - **`bg`** · min. level **3** (Game Master) *(not from console)*
+  - **`bg start`** · min. level **3** (Game Master) *(not from console)*
+  - **`bg status`** · min. level **3** (Game Master) *(not from console)*
+  - **`bg stop`** · min. level **3** (Game Master) *(not from console)*
+- **`bot`** · min. level **6** (Administrator)<br>Manage bots
+  - **`bot add`** · min. level **6** (Administrator)
+  - **`bot add_all`** · min. level **6** (Administrator)
+  - **`bot delete`** · min. level **6** (Administrator)
+  - **`bot info`** · min. level **6** (Administrator)
+  - **`bot ranadd`** · min. level **6** (Administrator)
+  - **`bot reload`** · min. level **6** (Administrator)
+  - **`bot start`** · min. level **6** (Administrator)
+  - **`bot stop`** · min. level **6** (Administrator)
+- **`cast`** · min. level **5** (Developer) *(not from console)*
+  - **`cast`** · min. level **5** (Developer) *(not from console)*
+  - **`cast back`** · min. level **5** (Developer) *(not from console)*
+  - **`cast dist`** · min. level **5** (Developer) *(not from console)*
+  - **`cast self`** · min. level **5** (Developer) *(not from console)*
+  - **`cast target`** · min. level **5** (Developer) *(not from console)*
+- **`channel`** · min. level **1** (Moderator) *(not from console)*
+  - **`channel join`** · min. level **1** (Moderator) *(not from console)*
+  - **`channel leave`** · min. level **1** (Moderator) *(not from console)*
+- **`character`** · min. level **2** (Ticket Master)
+  - **`character aiinfo`** · min. level **1** (Moderator)
+  - **`character citytitle`** · min. level **6** (Administrator) *(not from console)*
+  - **`character clean`** · min. level **6** (Administrator)
+    - **`character clean items`** · min. level **6** (Administrator)
+    - **`character clean todelete`** · min. level **6** (Administrator)
+  - **`character deleted`** · min. level **3** (Game Master)
+    - **`character deleted delete`** · min. level **7** (Console)
+    - **`character deleted list`** · min. level **3** (Game Master)
+      - **`character deleted list account`** · min. level **3** (Game Master)
+      - **`character deleted list name`** · min. level **3** (Game Master)
+    - **`character deleted old`** · min. level **7** (Console)
+  - **`character erase`** · min. level **7** (Console)
+  - **`character fillflys`** · min. level **3** (Game Master)
+  - **`character hasitem`** · min. level **2** (Ticket Master)
+  - **`character level`** · min. level **5** (Developer)
+  - **`character rename`** · min. level **3** (Game Master)
+  - **`character reputation`** · min. level **2** (Ticket Master)
+- **`charge`** · min. level **3** (Game Master) *(not from console)*
+- **`cheat`** · min. level **3** (Game Master) *(not from console)*
+  - **`cheat beastmaster`** · min. level **3** (Game Master) *(not from console)*
+  - **`cheat castchecks`** · min. level **3** (Game Master) *(not from console)*
+  - **`cheat casttime`** · min. level **3** (Game Master) *(not from console)*
+  - **`cheat cooldown`** · min. level **3** (Game Master) *(not from console)*
+  - **`cheat criticals`** · min. level **3** (Game Master) *(not from console)*
+  - **`cheat debuffs`** · min. level **3** (Game Master) *(not from console)*
+  - **`cheat debugtargetinfo`** · min. level **3** (Game Master) *(not from console)*
+  - **`cheat fixedz`** · min. level **3** (Game Master) *(not from console)*
+  - **`cheat fly`** · min. level **3** (Game Master) *(not from console)*
+  - **`cheat god`** · min. level **3** (Game Master) *(not from console)*
+  - **`cheat ignoretriggers`** · min. level **3** (Game Master) *(not from console)*
+  - **`cheat immunenpc`** · min. level **3** (Game Master) *(not from console)*
+  - **`cheat immunepc`** · min. level **3** (Game Master) *(not from console)*
+  - **`cheat powercost`** · min. level **3** (Game Master) *(not from console)*
+  - **`cheat procs`** · min. level **3** (Game Master) *(not from console)*
+  - **`cheat status`** · min. level **3** (Game Master) *(not from console)*
+  - **`cheat triggerpass`** · min. level **3** (Game Master) *(not from console)*
+  - **`cheat untargetable`** · min. level **3** (Game Master) *(not from console)*
+  - **`cheat wallclimb`** · min. level **3** (Game Master) *(not from console)*
+  - **`cheat waterwalk`** · min. level **3** (Game Master) *(not from console)*
+- **`cinematic`** · min. level **5** (Developer) *(not from console)*
+  - **`cinematic addwp`** · min. level **5** (Developer) *(not from console)*
+  - **`cinematic gotime`** · min. level **5** (Developer) *(not from console)*
+  - **`cinematic listwp`** · min. level **5** (Developer) *(not from console)*
+- **`combatstop`** · min. level **3** (Game Master) *(not from console)*
+- **`cometome`** · min. level **3** (Game Master) *(not from console)*
+- **`commands`** · min. level **0** (Player)
+- **`cooldown`** · min. level **3** (Game Master) *(not from console)*
+  - **`cooldown clear`** · min. level **3** (Game Master) *(not from console)*
+  - **`cooldown clearclientside`** · min. level **3** (Game Master) *(not from console)*
+  - **`cooldown list`** · min. level **3** (Game Master) *(not from console)*
+- **`damage`** · min. level **3** (Game Master) *(not from console)*
+- **`debug`** · min. level **2** (Ticket Master)
+  - **`debug anim`** · min. level **3** (Game Master) *(not from console)*
+  - **`debug assert`** · min. level **6** (Administrator)
+  - **`debug bg`** · min. level **6** (Administrator)
+  - **`debug bytes1`** · min. level **5** (Developer)
+  - **`debug bytes2`** · min. level **5** (Developer)
+  - **`debug chatfreeze`** · min. level **6** (Administrator)
+  - **`debug condition`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`debug control`** · min. level **3** (Game Master) *(not from console)*
+  - **`debug faceme`** · min. level **3** (Game Master) *(not from console)*
+  - **`debug factionchange_items`** · min. level **6** (Administrator)
+  - **`debug forceupdate`** · min. level **5** (Developer) *(not from console)*
+  - **`debug getitemstate`** · min. level **5** (Developer) *(not from console)*
+  - **`debug getitemvalue`** · min. level **5** (Developer) *(not from console)*
+  - **`debug getprevplaytime`** · min. level **5** (Developer) *(not from console)*
+  - **`debug getvaluebyindex`** · min. level **5** (Developer) *(not from console)*
+  - **`debug getvaluebyname`** · min. level **5** (Developer) *(not from console)*
+  - **`debug loottable`** · min. level **5** (Developer)
+  - **`debug los`** · min. level **5** (Developer) *(not from console)*
+    - **`debug los allow`** · min. level **5** (Developer) *(not from console)*
+    - **`debug los check`** · min. level **5** (Developer) *(not from console)*
+  - **`debug lrecipient`** · min. level **3** (Game Master) *(not from console)*
+  - **`debug moditemvalue`** · min. level **5** (Developer) *(not from console)*
+  - **`debug modvalue`** · min. level **5** (Developer) *(not from console)*
+  - **`debug monster`** · min. level **3** (Game Master) *(not from console)*
+  - **`debug movedistance`** · min. level **5** (Developer) *(not from console)*
+  - **`debug moveflags`** · min. level **3** (Game Master) *(not from console)*
+  - **`debug movemotion`** · min. level **5** (Developer) *(not from console)*
+  - **`debug movespline`** · min. level **3** (Game Master) *(not from console)*
+  - **`debug moveto`** · min. level **3** (Game Master) *(not from console)*
+  - **`debug play`** · min. level **2** (Ticket Master) *(not from console)*
+    - **`debug play cinematic`** · min. level **2** (Ticket Master) *(not from console)*
+    - **`debug play music`** · min. level **2** (Ticket Master) *(not from console)*
+    - **`debug play sound`** · min. level **2** (Ticket Master) *(not from console)*
+    - **`debug play text`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`debug pvpcredit`** · min. level **5** (Developer) *(not from console)*
+  - **`debug send`** · min. level **3** (Game Master) *(not from console)*
+    - **`debug send buyerror`** · min. level **5** (Developer) *(not from console)*
+    - **`debug send channelnotify`** · min. level **5** (Developer) *(not from console)*
+    - **`debug send chanvisual`** · min. level **5** (Developer)
+    - **`debug send chanvisualnext`** · min. level **5** (Developer)
+    - **`debug send chatmmessage`** · min. level **5** (Developer) *(not from console)*
+    - **`debug send equiperror`** · min. level **5** (Developer) *(not from console)*
+    - **`debug send impact`** · min. level **5** (Developer)
+    - **`debug send mailerror`** · min. level **5** (Developer) *(not from console)*
+    - **`debug send opcode`** · min. level **5** (Developer) *(not from console)*
+    - **`debug send openbag`** · min. level **3** (Game Master) *(not from console)*
+    - **`debug send poi`** · min. level **5** (Developer) *(not from console)*
+    - **`debug send qinvalidmsg`** · min. level **5** (Developer) *(not from console)*
+    - **`debug send qpartymsg`** · min. level **5** (Developer) *(not from console)*
+    - **`debug send sellerror`** · min. level **5** (Developer) *(not from console)*
+    - **`debug send spellfail`** · min. level **5** (Developer) *(not from console)*
+    - **`debug send visual`** · min. level **5** (Developer)
+    - **`debug send worldstate`** · min. level **5** (Developer) *(not from console)*
+  - **`debug setaurastate`** · min. level **5** (Developer) *(not from console)*
+  - **`debug setitemvalue`** · min. level **5** (Developer) *(not from console)*
+  - **`debug setprevplaytime`** · min. level **5** (Developer) *(not from console)*
+  - **`debug setvaluebyindex`** · min. level **5** (Developer) *(not from console)*
+  - **`debug setvaluebyname`** · min. level **5** (Developer) *(not from console)*
+  - **`debug spellcheck`** · min. level **7** (Console)
+  - **`debug spellcoefs`** · min. level **5** (Developer)
+  - **`debug spellmods`** · min. level **5** (Developer) *(not from console)*
+  - **`debug time`** · min. level **6** (Administrator)
+  - **`debug unitstate`** · min. level **3** (Game Master) *(not from console)*
+  - **`debug utf8overflow`** · min. level **6** (Administrator)
+- **`deleteitem`** · min. level **3** (Game Master) *(not from console)*
+- **`demorph`** · min. level **3** (Game Master) *(not from console)*
+- **`deplenish`** · min. level **3** (Game Master) *(not from console)*
+- **`die`** · min. level **3** (Game Master) *(not from console)*
+- **`dismount`** · min. level **0** (Player) *(not from console)*
+- **`distance`** · min. level **1** (Moderator) *(not from console)*
+- **`escort`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`escort addwp`** · min. level **5** (Developer) *(not from console)*
+  - **`escort clearwp`** · min. level **5** (Developer) *(not from console)*
+  - **`escort create`** · min. level **5** (Developer) *(not from console)*
+  - **`escort hidewp`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`escort modwp`** · min. level **5** (Developer) *(not from console)*
+  - **`escort showwp`** · min. level **2** (Ticket Master) *(not from console)*
+- **`event`** · min. level **3** (Game Master) *(not from console)*
+  - **`event`** · min. level **3** (Game Master)
+  - **`event disable`** · min. level **5** (Developer)
+  - **`event enable`** · min. level **5** (Developer)
+  - **`event list`** · min. level **3** (Game Master)
+- **`explorecheat`** · min. level **2** (Ticket Master) *(not from console)*
+- **`fear`** · min. level **3** (Game Master) *(not from console)*
+- **`freeze`** · min. level **2** (Ticket Master) *(not from console)*
+- **`gm`** · min. level **0** (Player)
+  - **`gm`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`gm chat`** · min. level **1** (Moderator) *(not from console)*
+  - **`gm fly`** · min. level **3** (Game Master) *(not from console)*
+  - **`gm ingame`** · min. level **0** (Player)
+  - **`gm list`** · min. level **6** (Administrator)
+  - **`gm setview`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`gm visible`** · min. level **2** (Ticket Master) *(not from console)*
+- **`go`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`go`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`go alterac`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`go arathi`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`go creature`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`go forward`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`go graveyard`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`go grid`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`go object`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`go relative`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`go target`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`go taxinode`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`go trigger`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`go up`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`go warsong`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`go xy`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`go xyz`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`go xyzo`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`go zonexy`** · min. level **2** (Ticket Master) *(not from console)*
+- **`gobject`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`gobject add`** · min. level **5** (Developer) *(not from console)*
+  - **`gobject customanim`** · min. level **3** (Game Master) *(not from console)*
+  - **`gobject delete`** · min. level **5** (Developer) *(not from console)*
+  - **`gobject despawn`** · min. level **3** (Game Master) *(not from console)*
+  - **`gobject despawnanim`** · min. level **3** (Game Master) *(not from console)*
+  - **`gobject info`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`gobject move`** · min. level **3** (Game Master) *(not from console)*
+  - **`gobject near`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`gobject reset`** · min. level **3** (Game Master) *(not from console)*
+  - **`gobject respawn`** · min. level **3** (Game Master) *(not from console)*
+  - **`gobject select`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`gobject setgostate`** · min. level **3** (Game Master) *(not from console)*
+  - **`gobject setlootstate`** · min. level **3** (Game Master) *(not from console)*
+  - **`gobject spawnanim`** · min. level **3** (Game Master) *(not from console)*
+  - **`gobject target`** · min. level **3** (Game Master) *(not from console)*
+  - **`gobject tmpadd`** · min. level **3** (Game Master) *(not from console)*
+  - **`gobject toggle`** · min. level **3** (Game Master) *(not from console)*
+  - **`gobject turn`** · min. level **3** (Game Master) *(not from console)*
+  - **`gobject ufinfo`** · min. level **5** (Developer) *(not from console)*
+  - **`gobject use`** · min. level **3** (Game Master) *(not from console)*
+- **`gocorpse`** · min. level **2** (Ticket Master) *(not from console)*
+- **`goname`** · min. level **2** (Ticket Master) *(not from console)*
+- **`gps`** · min. level **1** (Moderator) *(not from console)*
+- **`group`** · min. level **3** (Game Master)
+  - **`group additem`** · min. level **3** (Game Master) *(not from console)*
+  - **`group replenish`** · min. level **3** (Game Master) *(not from console)*
+  - **`group revive`** · min. level **3** (Game Master) *(not from console)*
+  - **`group summon`** · min. level **3** (Game Master) *(not from console)*
+- **`groupgo`** · min. level **2** (Ticket Master) *(not from console)*
+- **`groupinfo`** · min. level **2** (Ticket Master)
+- **`groupspell`** · min. level **6** (Administrator)
+  - **`groupspell add`** · min. level **6** (Administrator)
+  - **`groupspell rule`** · min. level **6** (Administrator)
+- **`guid`** · min. level **1** (Moderator) *(not from console)*
+- **[`guild`](characters/guild.md)** · min. level **3** (Game Master)
+  - **`guild create`** · min. level **3** (Game Master)
+  - **`guild invite`** · min. level **3** (Game Master)
+  - **`guild rank`** · min. level **3** (Game Master)
+  - **`guild showlog`** · min. level **3** (Game Master)
+  - **`guild uninvite`** · min. level **3** (Game Master)
+- **`help`** · min. level **0** (Player)
+- **`hidearea`** · min. level **2** (Ticket Master) *(not from console)*
+- **`honor`** · min. level **3** (Game Master) *(not from console)*
+  - **`honor show`** · min. level **2** (Ticket Master) *(not from console)*
+- **`hover`** · min. level **2** (Ticket Master) *(not from console)*
+- **[`instance`](characters/instance.md)** · min. level **2** (Ticket Master)
+  - **`instance getdata`** · min. level **3** (Game Master) *(not from console)*
+  - **`instance listbinds`** · min. level **3** (Game Master) *(not from console)*
+  - **`instance setdata`** · min. level **3** (Game Master) *(not from console)*
+  - **`instance smartrebind`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`instance unbind`** · min. level **3** (Game Master) *(not from console)*
+- **`itemmove`** · min. level **3** (Game Master) *(not from console)*
+- **`kick`** · min. level **2** (Ticket Master)
+- **`knockback`** · min. level **3** (Game Master) *(not from console)*
+- **`learn`** · min. level **1** (Moderator) *(not from console)*
+  - **`learn`** · min. level **5** (Developer) *(not from console)*
+  - **`learn all`** · min. level **6** (Administrator) *(not from console)*
+  - **`learn all_crafts`** · min. level **3** (Game Master) *(not from console)*
+  - **`learn all_default`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`learn all_gm`** · min. level **3** (Game Master) *(not from console)*
+  - **`learn all_items`** · min. level **3** (Game Master) *(not from console)*
+  - **`learn all_lang`** · min. level **1** (Moderator) *(not from console)*
+  - **`learn all_myclass`** · min. level **5** (Developer) *(not from console)*
+  - **`learn all_myspells`** · min. level **5** (Developer) *(not from console)*
+  - **`learn all_mytalents`** · min. level **5** (Developer) *(not from console)*
+  - **`learn all_mytaxis`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`learn all_recipes`** · min. level **3** (Game Master) *(not from console)*
+  - **`learn all_trainer`** · min. level **3** (Game Master) *(not from console)*
+- **`levelup`** · min. level **3** (Game Master) *(not from console)*
+- **`linkgrave`** · min. level **5** (Developer) *(not from console)*
+- **`list`** · min. level **2** (Ticket Master)
+  - **`list auras`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`list clicktomove`** · min. level **2** (Ticket Master)
+  - **`list creature`** · min. level **2** (Ticket Master)
+  - **`list exploredareas`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`list hostilerefs`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`list item`** · min. level **2** (Ticket Master)
+  - **`list maps`** · min. level **2** (Ticket Master)
+  - **`list movegens`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`list object`** · min. level **2** (Ticket Master)
+  - **`list talents`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`list threat`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`list visibleguids`** · min. level **2** (Ticket Master) *(not from console)*
+- **`log`** · min. level **3** (Game Master)
+- **`lookup`** · min. level **1** (Moderator)
+  - **`lookup account`** · min. level **3** (Game Master)
+    - **`lookup account name`** · min. level **3** (Game Master) *(not from console)*
+  - **`lookup area`** · min. level **2** (Ticket Master)
+  - **`lookup creature`** · min. level **2** (Ticket Master)
+  - **`lookup creaturemodel`** · min. level **2** (Ticket Master)
+  - **`lookup event`** · min. level **2** (Ticket Master)
+  - **`lookup faction`** · min. level **2** (Ticket Master)
+  - **`lookup guild`** · min. level **1** (Moderator)
+  - **`lookup item`** · min. level **2** (Ticket Master)
+  - **`lookup itemset`** · min. level **2** (Ticket Master)
+  - **`lookup object`** · min. level **2** (Ticket Master)
+  - **`lookup player`** · min. level **1** (Moderator)
+    - **`lookup player account`** · min. level **3** (Game Master) *(not from console)*
+    - **`lookup player character`** · min. level **2** (Ticket Master) *(not from console)*
+    - **`lookup player name`** · min. level **1** (Moderator) *(not from console)*
+  - **`lookup pool`** · min. level **2** (Ticket Master)
+  - **`lookup quest`** · min. level **2** (Ticket Master)
+  - **`lookup skill`** · min. level **2** (Ticket Master)
+  - **`lookup sound`** · min. level **2** (Ticket Master)
+  - **`lookup spell`** · min. level **2** (Ticket Master)
+  - **`lookup taxinode`** · min. level **2** (Ticket Master)
+  - **`lookup tele`** · min. level **2** (Ticket Master)
+- **`maxskill`** · min. level **3** (Game Master) *(not from console)*
+- **`mmap`** · min. level **3** (Game Master) *(not from console)*
+  - **`mmap`** · min. level **6** (Administrator) *(not from console)*
+  - **`mmap connect`** · min. level **6** (Administrator) *(not from console)*
+  - **`mmap loadedtiles`** · min. level **3** (Game Master) *(not from console)*
+  - **`mmap loc`** · min. level **3** (Game Master) *(not from console)*
+  - **`mmap path`** · min. level **3** (Game Master) *(not from console)*
+  - **`mmap reload`** · min. level **6** (Administrator) *(not from console)*
+  - **`mmap stats`** · min. level **3** (Game Master) *(not from console)*
+  - **`mmap testarea`** · min. level **3** (Game Master) *(not from console)*
+  - **`mmap unload`** · min. level **6** (Administrator) *(not from console)*
+- **`modify`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`modify aspeed`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`modify bwalk`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`modify drunk`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`modify emotestate`** · min. level **3** (Game Master) *(not from console)*
+  - **`modify energy`** · min. level **3** (Game Master) *(not from console)*
+  - **`modify exhaustion`** · min. level **3** (Game Master) *(not from console)*
+  - **`modify faction`** · min. level **3** (Game Master) *(not from console)*
+  - **`modify fly`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`modify gender`** · min. level **3** (Game Master) *(not from console)*
+  - **`modify hp`** · min. level **3** (Game Master) *(not from console)*
+  - **`modify mana`** · min. level **3** (Game Master) *(not from console)*
+  - **`modify morph`** · min. level **3** (Game Master) *(not from console)*
+  - **`modify mount`** · min. level **3** (Game Master) *(not from console)*
+  - **`modify rage`** · min. level **3** (Game Master) *(not from console)*
+  - **`modify scale`** · min. level **3** (Game Master) *(not from console)*
+  - **`modify speed`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`modify swim`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`modify xprate`** · min. level **0** (Player) *(not from console)*
+- **`mount`** · min. level **3** (Game Master) *(not from console)*
+- **`movegens`** · min. level **2** (Ticket Master) *(not from console)*
+- **`mute`** · min. level **1** (Moderator)
+- **`namedie`** · min. level **3** (Game Master) *(not from console)*
+- **`namego`** · min. level **2** (Ticket Master) *(not from console)*
+- **`neargrave`** · min. level **2** (Ticket Master) *(not from console)*
+- **`npc`** · min. level **1** (Moderator) *(not from console)*
+  - **`npc additem`** · min. level **5** (Developer) *(not from console)*
+  - **`npc addweapon`** · min. level **3** (Game Master) *(not from console)*
+  - **`npc aiinfo`** · min. level **1** (Moderator) *(not from console)*
+  - **`npc allowattack`** · min. level **3** (Game Master) *(not from console)*
+  - **`npc allowmove`** · min. level **3** (Game Master) *(not from console)*
+  - **`npc delitem`** · min. level **5** (Developer) *(not from console)*
+  - **`npc despawn`** · min. level **3** (Game Master) *(not from console)*
+  - **`npc evade`** · min. level **3** (Game Master) *(not from console)*
+  - **`npc follow`** · min. level **3** (Game Master) *(not from console)*
+  - **`npc group`** · min. level **5** (Developer) *(not from console)*
+    - **`npc group add`** · min. level **5** (Developer) *(not from console)*
+    - **`npc group addrel`** · min. level **5** (Developer) *(not from console)*
+    - **`npc group del`** · min. level **5** (Developer) *(not from console)*
+    - **`npc group link`** · min. level **5** (Developer) *(not from console)*
+  - **`npc info`** · min. level **1** (Moderator) *(not from console)*
+  - **`npc move`** · min. level **3** (Game Master) *(not from console)*
+  - **`npc playemote`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`npc say`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`npc set`** · min. level **3** (Game Master) *(not from console)*
+    - **`npc set displayid`** · min. level **3** (Game Master) *(not from console)*
+    - **`npc set entry`** · min. level **3** (Game Master) *(not from console)*
+    - **`npc set faction`** · min. level **3** (Game Master) *(not from console)*
+    - **`npc set flag`** · min. level **3** (Game Master) *(not from console)*
+    - **`npc set level`** · min. level **3** (Game Master) *(not from console)*
+    - **`npc set movetype`** · min. level **3** (Game Master) *(not from console)*
+    - **`npc set reactstate`** · min. level **3** (Game Master) *(not from console)*
+    - **`npc set respawntime`** · min. level **3** (Game Master) *(not from console)*
+    - **`npc set wanderdistance`** · min. level **3** (Game Master) *(not from console)*
+  - **`npc spawn`** · min. level **1** (Moderator) *(not from console)*
+    - **`npc spawn add`** · min. level **5** (Developer) *(not from console)*
+    - **`npc spawn addentry`** · min. level **5** (Developer) *(not from console)*
+    - **`npc spawn delete`** · min. level **5** (Developer) *(not from console)*
+    - **`npc spawn info`** · min. level **1** (Moderator) *(not from console)*
+    - **`npc spawn load`** · min. level **3** (Game Master) *(not from console)*
+    - **`npc spawn move`** · min. level **5** (Developer) *(not from console)*
+    - **`npc spawn set`** · min. level **5** (Developer) *(not from console)*
+      - **`npc spawn set auras`** · min. level **5** (Developer) *(not from console)*
+      - **`npc spawn set deathstate`** · min. level **5** (Developer) *(not from console)*
+      - **`npc spawn set displayid`** · min. level **5** (Developer) *(not from console)*
+      - **`npc spawn set emotestate`** · min. level **5** (Developer) *(not from console)*
+      - **`npc spawn set entry`** · min. level **5** (Developer) *(not from console)*
+      - **`npc spawn set movetype`** · min. level **5** (Developer) *(not from console)*
+      - **`npc spawn set respawntime`** · min. level **5** (Developer) *(not from console)*
+      - **`npc spawn set sheathstate`** · min. level **5** (Developer) *(not from console)*
+      - **`npc spawn set standstate`** · min. level **5** (Developer) *(not from console)*
+      - **`npc spawn set wanderdistance`** · min. level **5** (Developer) *(not from console)*
+    - **`npc spawn unload`** · min. level **3** (Game Master) *(not from console)*
+  - **`npc summon`** · min. level **3** (Game Master) *(not from console)*
+  - **`npc tame`** · min. level **3** (Game Master) *(not from console)*
+  - **`npc textemote`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`npc unfollow`** · min. level **3** (Game Master) *(not from console)*
+  - **`npc whisper`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`npc yell`** · min. level **2** (Ticket Master) *(not from console)*
+- **`partybot`** · min. level **6** (Administrator) *(not from console)*<br>Manage party bots
+  - **`partybot add`** · min. level **6** (Administrator) *(not from console)*
+  - **`partybot aoe`** · min. level **6** (Administrator) *(not from console)*
+  - **`partybot attackstart`** · min. level **6** (Administrator) *(not from console)*
+  - **`partybot attackstop`** · min. level **6** (Administrator) *(not from console)*
+  - **`partybot caststart`** · min. level **6** (Administrator) *(not from console)*
+  - **`partybot caststop`** · min. level **6** (Administrator) *(not from console)*
+  - **`partybot ccmark`** · min. level **6** (Administrator) *(not from console)*
+  - **`partybot clearmarks`** · min. level **6** (Administrator) *(not from console)*
+  - **`partybot clone`** · min. level **6** (Administrator) *(not from console)*
+  - **`partybot cometome`** · min. level **6** (Administrator) *(not from console)*
+  - **`partybot focusmark`** · min. level **6** (Administrator) *(not from console)*
+  - **`partybot load`** · min. level **6** (Administrator) *(not from console)*
+  - **`partybot pause`** · min. level **6** (Administrator) *(not from console)*
+  - **`partybot pull`** · min. level **6** (Administrator) *(not from console)*
+  - **`partybot remove`** · min. level **6** (Administrator) *(not from console)*
+  - **`partybot setrole`** · min. level **6** (Administrator) *(not from console)*
+  - **`partybot unequip`** · min. level **6** (Administrator) *(not from console)*
+  - **`partybot unpause`** · min. level **6** (Administrator) *(not from console)*
+  - **`partybot usegobject`** · min. level **6** (Administrator) *(not from console)*
+- **`pbcast`** · min. level **6** (Administrator)
+  - **`pbcast setthreads`** · min. level **6** (Administrator)
+  - **`pbcast stats`** · min. level **6** (Administrator)
+- **`pdump`** · min. level **6** (Administrator)
+  - **`pdump load`** · min. level **6** (Administrator)
+  - **`pdump write`** · min. level **6** (Administrator)
+- **`pet`** · min. level **3** (Game Master)
+  - **`pet delete`** · min. level **3** (Game Master)
+  - **`pet info`** · min. level **1** (Moderator) *(not from console)*
+  - **`pet learnspell`** · min. level **5** (Developer) *(not from console)*
+  - **`pet list`** · min. level **3** (Game Master)
+  - **`pet loyalty`** · min. level **3** (Game Master) *(not from console)*
+  - **`pet rename`** · min. level **3** (Game Master)
+  - **`pet unlearnspell`** · min. level **5** (Developer) *(not from console)*
+- **`pinfo`** · min. level **2** (Ticket Master) *(not from console)*
+- **`pool`** · min. level **3** (Game Master)
+  - **`pool`** · min. level **3** (Game Master)
+  - **`pool list`** · min. level **3** (Game Master) *(not from console)*
+  - **`pool spawns`** · min. level **3** (Game Master) *(not from console)*
+  - **`pool update`** · min. level **6** (Administrator) *(not from console)*
+- **`possess`** · min. level **3** (Game Master) *(not from console)*
+- **`pvp`** · min. level **3** (Game Master) *(not from console)*
+- **`quest`** · min. level **3** (Game Master) *(not from console)*
+  - **`quest remove`** · min. level **3** (Game Master) *(not from console)*
+  - **`quest status`** · min. level **3** (Game Master) *(not from console)*
+- **`quit`** · min. level **7** (Console)
+- **`recall`** · min. level **1** (Moderator) *(not from console)*
+- **`reload`** · min. level **5** (Developer)
+  - **`reload account_banned`** · min. level **6** (Administrator)
+  - **`reload all`** · min. level **6** (Administrator)
+  - **`reload all_area`** · min. level **6** (Administrator)
+  - **`reload all_gossips`** · min. level **6** (Administrator)
+  - **`reload all_item`** · min. level **6** (Administrator)
+  - **`reload all_locales`** · min. level **6** (Administrator)
+  - **`reload all_loot`** · min. level **6** (Administrator)
+  - **`reload all_npc`** · min. level **6** (Administrator)
+  - **`reload all_quest`** · min. level **6** (Administrator)
+  - **`reload all_scripts`** · min. level **6** (Administrator)
+  - **`reload all_spell`** · min. level **6** (Administrator)
+  - **`reload anticheat`** · min. level **6** (Administrator)
+  - **`reload areatrigger_involvedrelation`** · min. level **5** (Developer)
+  - **`reload areatrigger_tavern`** · min. level **5** (Developer)
+  - **`reload areatrigger_teleport`** · min. level **5** (Developer)
+  - **`reload autobroadcast`** · min. level **6** (Administrator)
+  - **`reload character_pet`** · min. level **6** (Administrator)
+  - **`reload cinematic_waypoints`** · min. level **5** (Developer)
+  - **`reload command`** · min. level **6** (Administrator)
+  - **`reload conditions`** · min. level **5** (Developer)
+  - **`reload config`** · min. level **6** (Administrator)
+  - **`reload creature`** · min. level **5** (Developer)
+  - **`reload creature_ai_events`** · min. level **5** (Developer)
+  - **`reload creature_battleground`** · min. level **5** (Developer)
+  - **`reload creature_display_info_addon`** · min. level **5** (Developer)
+  - **`reload creature_groups`** · min. level **5** (Developer)
+  - **`reload creature_involvedrelation`** · min. level **5** (Developer)
+  - **`reload creature_loot_template`** · min. level **5** (Developer)
+  - **`reload creature_onkill_reputation`** · min. level **5** (Developer)
+  - **`reload creature_questrelation`** · min. level **5** (Developer)
+  - **`reload creature_spells`** · min. level **5** (Developer)
+  - **`reload creature_spells_scripts`** · min. level **5** (Developer)
+  - **`reload creature_template`** · min. level **5** (Developer)
+  - **`reload disenchant_loot_template`** · min. level **5** (Developer)
+  - **`reload event_scripts`** · min. level **5** (Developer)
+  - **`reload exploration_basexp`** · min. level **5** (Developer)
+  - **`reload fishing_loot_template`** · min. level **5** (Developer)
+  - **`reload game_graveyard_zone`** · min. level **5** (Developer)
+  - **`reload game_tele`** · min. level **5** (Developer)
+  - **`reload game_weather`** · min. level **5** (Developer)
+  - **`reload gameobject`** · min. level **5** (Developer)
+  - **`reload gameobject_battleground`** · min. level **5** (Developer)
+  - **`reload gameobject_involvedrelation`** · min. level **5** (Developer)
+  - **`reload gameobject_loot_template`** · min. level **5** (Developer)
+  - **`reload gameobject_questrelation`** · min. level **5** (Developer)
+  - **`reload gameobject_requirement`** · min. level **5** (Developer)
+  - **`reload gameobject_scripts`** · min. level **5** (Developer)
+  - **`reload gameobject_template`** · min. level **5** (Developer)
+  - **`reload generic_scripts`** · min. level **5** (Developer)
+  - **`reload gossip_menu`** · min. level **5** (Developer)
+  - **`reload gossip_menu_option`** · min. level **5** (Developer)
+  - **`reload gossip_scripts`** · min. level **5** (Developer)
+  - **`reload instance_buff_removal`** · min. level **5** (Developer)
+  - **`reload ip_banned`** · min. level **6** (Administrator)
+  - **`reload item_enchantment_template`** · min. level **5** (Developer)
+  - **`reload item_loot_template`** · min. level **5** (Developer)
+  - **`reload item_required_target`** · min. level **5** (Developer)
+  - **`reload item_template`** · min. level **5** (Developer)
+  - **`reload locales_creature`** · min. level **5** (Developer)
+  - **`reload locales_gameobject`** · min. level **5** (Developer)
+  - **`reload locales_gossip_menu_option`** · min. level **5** (Developer)
+  - **`reload locales_item`** · min. level **5** (Developer)
+  - **`reload locales_page_text`** · min. level **5** (Developer)
+  - **`reload locales_points_of_interest`** · min. level **5** (Developer)
+  - **`reload locales_quest`** · min. level **5** (Developer)
+  - **`reload mail_loot_template`** · min. level **5** (Developer)
+  - **`reload mangos_string`** · min. level **5** (Developer)
+  - **`reload map_loot_disabled`** · min. level **5** (Developer)
+  - **`reload map_template`** · min. level **5** (Developer)
+  - **`reload npc_gossip`** · min. level **5** (Developer)
+  - **`reload npc_text`** · min. level **5** (Developer)
+  - **`reload npc_trainer`** · min. level **5** (Developer)
+  - **`reload npc_vendor`** · min. level **5** (Developer)
+  - **`reload page_text`** · min. level **5** (Developer)
+  - **`reload pet_name_generation`** · min. level **5** (Developer)
+  - **`reload petitions`** · min. level **6** (Administrator)
+  - **`reload pickpocketing_loot_template`** · min. level **5** (Developer)
+  - **`reload player_factionchange_items`** · min. level **5** (Developer)
+  - **`reload player_factionchange_mounts`** · min. level **5** (Developer)
+  - **`reload player_factionchange_quests`** · min. level **5** (Developer)
+  - **`reload player_factionchange_reputations`** · min. level **5** (Developer)
+  - **`reload player_factionchange_spells`** · min. level **5** (Developer)
+  - **`reload points_of_interest`** · min. level **5** (Developer)
+  - **`reload quest_end_scripts`** · min. level **5** (Developer)
+  - **`reload quest_greeting`** · min. level **5** (Developer)
+  - **`reload quest_start_scripts`** · min. level **5** (Developer)
+  - **`reload quest_template`** · min. level **5** (Developer)
+  - **`reload reference_loot_template`** · min. level **5** (Developer)
+  - **`reload reputation_reward_rate`** · min. level **5** (Developer)
+  - **`reload reputation_spillover_template`** · min. level **5** (Developer)
+  - **`reload reserved_name`** · min. level **6** (Administrator)
+  - **`reload skill_fishing_base_level`** · min. level **5** (Developer)
+  - **`reload skinning_loot_template`** · min. level **5** (Developer)
+  - **`reload spell_area`** · min. level **5** (Developer)
+  - **`reload spell_chain`** · min. level **5** (Developer)
+  - **`reload spell_disabled`** · min. level **5** (Developer)
+  - **`reload spell_elixir`** · min. level **5** (Developer)
+  - **`reload spell_group`** · min. level **5** (Developer)
+  - **`reload spell_group_stack_rules`** · min. level **5** (Developer)
+  - **`reload spell_learn_spell`** · min. level **5** (Developer)
+  - **`reload spell_mod`** · min. level **5** (Developer)
+  - **`reload spell_pet_auras`** · min. level **5** (Developer)
+  - **`reload spell_proc_event`** · min. level **5** (Developer)
+  - **`reload spell_proc_item_enchant`** · min. level **5** (Developer)
+  - **`reload spell_script_target`** · min. level **5** (Developer)
+  - **`reload spell_scripts`** · min. level **5** (Developer)
+  - **`reload spell_target_position`** · min. level **5** (Developer)
+  - **`reload spell_template`** · min. level **5** (Developer)
+  - **`reload spell_threats`** · min. level **5** (Developer)
+  - **`reload taxi_path_transitions`** · min. level **5** (Developer)
+  - **`reload trainer_greeting`** · min. level **5** (Developer)
+  - **`reload variables`** · min. level **5** (Developer)
+- **`removeriding`** · min. level **3** (Game Master) *(not from console)*
+- **`repairitems`** · min. level **3** (Game Master)
+- **`replenish`** · min. level **3** (Game Master) *(not from console)*
+- **`reset`** · min. level **3** (Game Master)
+  - **`reset all`** · min. level **6** (Administrator)
+  - **`reset honor`** · min. level **5** (Developer)
+  - **`reset items`** · min. level **6** (Administrator)
+  - **`reset level`** · min. level **5** (Developer)
+  - **`reset spells`** · min. level **5** (Developer)
+  - **`reset stats`** · min. level **5** (Developer)
+  - **`reset talents`** · min. level **3** (Game Master)
+- **`revive`** · min. level **3** (Game Master)
+- **`save`** · min. level **0** (Player) *(not from console)*
+- **`saveall`** · min. level **6** (Administrator)
+- **`send`** · min. level **1** (Moderator)
+  - **`send items`** · min. level **6** (Administrator)
+  - **`send mail`** · min. level **1** (Moderator)
+  - **`send mass`** · min. level **6** (Administrator)
+    - **`send mass items`** · min. level **6** (Administrator)
+    - **`send mass mail`** · min. level **6** (Administrator)
+    - **`send mass money`** · min. level **6** (Administrator)
+  - **`send message`** · min. level **6** (Administrator)
+  - **`send money`** · min. level **6** (Administrator)
+- **`server`** · min. level **0** (Player)
+  - **`server corpses`** · min. level **6** (Administrator)
+  - **`server exit`** · min. level **7** (Console)
+  - **`server idlerestart`** · min. level **6** (Administrator)
+    - **`server idlerestart`** · min. level **6** (Administrator)
+    - **`server idlerestart cancel`** · min. level **6** (Administrator)
+  - **`server idleshutdown`** · min. level **6** (Administrator)
+    - **`server idleshutdown`** · min. level **6** (Administrator)
+    - **`server idleshutdown cancel`** · min. level **6** (Administrator)
+  - **`server info`** · min. level **0** (Player)
+  - **`server log`** · min. level **7** (Console)
+    - **`server log filter`** · min. level **7** (Console)
+    - **`server log level`** · min. level **7** (Console)
+  - **`server motd`** · min. level **0** (Player)
+  - **`server plimit`** · min. level **6** (Administrator)
+  - **`server resetallraids`** · min. level **6** (Administrator)
+  - **`server restart`** · min. level **6** (Administrator)
+    - **`server restart`** · min. level **6** (Administrator)
+    - **`server restart cancel`** · min. level **6** (Administrator)
+  - **`server set`** · min. level **6** (Administrator)
+    - **`server set motd`** · min. level **6** (Administrator)
+  - **`server shutdown`** · min. level **6** (Administrator)
+    - **`server shutdown`** · min. level **6** (Administrator)
+    - **`server shutdown cancel`** · min. level **6** (Administrator)
+- **`service`** · min. level **6** (Administrator)
+  - **`service del_characters`** · min. level **6** (Administrator)
+- **`setskill`** · min. level **3** (Game Master) *(not from console)*
+- **`showarea`** · min. level **2** (Ticket Master) *(not from console)*
+- **`sniff`** · min. level **6** (Administrator) *(not from console)*
+- **`spamer`** · min. level **1** (Moderator)
+  - **`spamer list`** · min. level **2** (Ticket Master)
+  - **`spamer mute`** · min. level **1** (Moderator)
+  - **`spamer unmute`** · min. level **2** (Ticket Master)
+- **`spell`** · min. level **3** (Game Master)
+  - **`spell effects`** · min. level **3** (Game Master)
+  - **`spell iconfix`** · min. level **5** (Developer)
+  - **`spell info`** · min. level **3** (Game Master)
+  - **`spell search`** · min. level **3** (Game Master)
+- **`stable`** · min. level **2** (Ticket Master) *(not from console)*
+- **`start`** · min. level **0** (Player) *(not from console)*
+- **`taxicheat`** · min. level **2** (Ticket Master) *(not from console)*
+- **`tele`** · min. level **2** (Ticket Master)
+  - **`tele`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`tele add`** · min. level **5** (Developer) *(not from console)*
+  - **`tele del`** · min. level **5** (Developer)
+  - **`tele group`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`tele name`** · min. level **2** (Ticket Master)
+- **`ticket`** · min. level **2** (Ticket Master)
+  - **`ticket`** · min. level **2** (Ticket Master)
+  - **`ticket assign`** · min. level **2** (Ticket Master)
+  - **`ticket close`** · min. level **2** (Ticket Master)
+  - **`ticket closedlist`** · min. level **2** (Ticket Master)
+  - **`ticket comment`** · min. level **2** (Ticket Master)
+  - **`ticket complete`** · min. level **2** (Ticket Master)
+  - **`ticket counter`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`ticket delete`** · min. level **3** (Game Master)
+  - **`ticket escalate`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`ticket escalatedlist`** · min. level **3** (Game Master)
+  - **`ticket list`** · min. level **2** (Ticket Master)
+  - **`ticket next`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`ticket notify`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`ticket onlinelist`** · min. level **2** (Ticket Master)
+  - **`ticket previous`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`ticket reload`** · min. level **2** (Ticket Master)
+  - **`ticket reset`** · min. level **6** (Administrator)
+  - **`ticket response`** · min. level **2** (Ticket Master)
+    - **`ticket response append`** · min. level **2** (Ticket Master)
+    - **`ticket response appendln`** · min. level **2** (Ticket Master)
+    - **`ticket response reset`** · min. level **3** (Game Master)
+  - **`ticket togglesystem`** · min. level **6** (Administrator)
+  - **`ticket unassign`** · min. level **2** (Ticket Master)
+  - **`ticket viewid`** · min. level **2** (Ticket Master)
+  - **`ticket viewname`** · min. level **2** (Ticket Master)
+- **`trigger`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`trigger`** · min. level **2** (Ticket Master)
+  - **`trigger active`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`trigger near`** · min. level **2** (Ticket Master) *(not from console)*
+- **`unaura`** · min. level **3** (Game Master) *(not from console)*
+- **`unban`** · min. level **6** (Administrator)
+  - **`unban account`** · min. level **6** (Administrator)
+  - **`unban character`** · min. level **6** (Administrator)
+  - **`unban ip`** · min. level **6** (Administrator)
+- **`unfreeze`** · min. level **2** (Ticket Master) *(not from console)*
+- **`unit`** · min. level **1** (Moderator) *(not from console)*
+  - **`unit aiinfo`** · min. level **1** (Moderator) *(not from console)*
+  - **`unit factioninfo`** · min. level **1** (Moderator) *(not from console)*
+  - **`unit info`** · min. level **1** (Moderator) *(not from console)*
+  - **`unit moveinfo`** · min. level **1** (Moderator) *(not from console)*
+  - **`unit show`** · min. level **1** (Moderator) *(not from console)*
+    - **`unit show class`** · min. level **1** (Moderator) *(not from console)*
+    - **`unit show combattimer`** · min. level **1** (Moderator) *(not from console)*
+    - **`unit show createspell`** · min. level **1** (Moderator) *(not from console)*
+    - **`unit show emotestate`** · min. level **1** (Moderator) *(not from console)*
+    - **`unit show form`** · min. level **1** (Moderator) *(not from console)*
+    - **`unit show gender`** · min. level **1** (Moderator) *(not from console)*
+    - **`unit show miscflags`** · min. level **1** (Moderator) *(not from console)*
+    - **`unit show moveflags`** · min. level **1** (Moderator) *(not from console)*
+    - **`unit show npcflags`** · min. level **1** (Moderator) *(not from console)*
+    - **`unit show powertype`** · min. level **1** (Moderator) *(not from console)*
+    - **`unit show race`** · min. level **1** (Moderator) *(not from console)*
+    - **`unit show sheathstate`** · min. level **1** (Moderator) *(not from console)*
+    - **`unit show standstate`** · min. level **1** (Moderator) *(not from console)*
+    - **`unit show unitflags`** · min. level **1** (Moderator) *(not from console)*
+    - **`unit show unitstate`** · min. level **1** (Moderator) *(not from console)*
+    - **`unit show visflags`** · min. level **1** (Moderator) *(not from console)*
+  - **`unit speedinfo`** · min. level **1** (Moderator) *(not from console)*
+  - **`unit statinfo`** · min. level **1** (Moderator) *(not from console)*
+  - **`unit ufinfo`** · min. level **5** (Developer) *(not from console)*
+- **`unlearn`** · min. level **3** (Game Master) *(not from console)*
+  - **`unlearn`** · min. level **3** (Game Master) *(not from console)*
+  - **`unlearn all_crafts`** · min. level **3** (Game Master) *(not from console)*
+  - **`unlearn all_gm`** · min. level **3** (Game Master) *(not from console)*
+  - **`unlearn all_recipes`** · min. level **3** (Game Master) *(not from console)*
+- **`unmute`** · min. level **2** (Ticket Master)
+- **`unstuck`** · min. level **0** (Player) *(not from console)*
+- **`variable`** · min. level **5** (Developer)
+- **`video`** · min. level **3** (Game Master) *(not from console)*
+  - **`video`** · min. level **3** (Game Master) *(not from console)*
+  - **`video expendables`** · min. level **3** (Game Master) *(not from console)*
+  - **`video turn`** · min. level **3** (Game Master) *(not from console)*
+- **`wareffort`** · min. level **5** (Developer)
+  - **`wareffort getresource`** · min. level **5** (Developer)
+  - **`wareffort info`** · min. level **5** (Developer)
+  - **`wareffort setgongtime`** · min. level **5** (Developer)
+  - **`wareffort setresource`** · min. level **5** (Developer)
+  - **`wareffort setstage`** · min. level **5** (Developer)
+- **`whispers`** · min. level **1** (Moderator) *(not from console)*
+- **[`world`](characters/world.md)** · min. level **6** (Administrator) *(not from console)*
+  - **`world cansee`** · min. level **6** (Administrator) *(not from console)*
+  - **`world detail`** · min. level **6** (Administrator) *(not from console)*
+  - **`world update`** · min. level **6** (Administrator) *(not from console)*
+- **`wp`** · min. level **2** (Ticket Master) *(not from console)*
+  - **`wp add`** · min. level **5** (Developer) *(not from console)*
+  - **`wp export`** · min. level **6** (Administrator) *(not from console)*
+  - **`wp modify`** · min. level **5** (Developer) *(not from console)*
+  - **`wp show`** · min. level **2** (Ticket Master) *(not from console)*
+- **`wr`** · min. level **0** (Player) *(not from console)*

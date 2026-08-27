@@ -1,7 +1,8 @@
-Vanilla-MaNGOS is an open-source Vanilla WoW emulation project. It is a continuation of the Nost family of projects, which branched from MaNGOS-Zero several years ago. It was developed privately by the Nost team until late 2016, when the source code was transferred to the Elysium Project who made it open source. 
+# About the Project
 
-Unlike other emulation projects like cMaNGOS and TrinityCore which only seek to recreate the last patch of each expansion, this project aims to provide full content progression through Vanilla WoW.
+Vanilla-MaNGOS is an open-source Vanilla WoW emulation project. It is a continuation of the Nost family of projects, which branched from MaNGOS-Zero several years ago. It was developed privately by the Nost team until late 2016, when the source code was transferred to the Elysium Project who made it open source.
 
+Unlike other emulation projects like CMaNGOS and TrinityCore which only seek to recreate the last patch of each expansion, this project aims to provide full content progression through Vanilla WoW.
 
 ## Useful Links
 

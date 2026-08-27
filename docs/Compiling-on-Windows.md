@@ -1,6 +1,9 @@
+# Compiling on Windows
+
 This page will guide you through all the required steps to compile the server core on Windows. We also have a [video tutorial](https://www.youtube.com/watch?v=dDQs1t5fZWo) on the subject for people who are not into reading.
 
 ### Required software:
+
 - [Microsoft Visual Studio](https://www.visualstudio.com/vs/visual-studio-express/) ([click here for 2015](https://go.microsoft.com/fwlink/?LinkId=615448&clcid=0x409))
 - [CMake](https://cmake.org/download/)
 - [Git](https://git-scm.com/download/win)

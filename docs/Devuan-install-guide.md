@@ -1,3 +1,5 @@
+# Devuan Install Guide
+
 Here is a list of steps to make VMaNGOS run on Linux. Guide by Florian.
 
 ### Installed Devuan ASCII 2.0
@@ -47,7 +49,7 @@ You have reached private server SERVERNAME.
    unless you have been given permission in
    person by the owner of this system.
    All others must disconnect immediately.
- 
+
    If you have advice to share to improve the
    security or any other aspect of this system
    you can send an email to the following
@@ -67,7 +69,7 @@ SERVERNAME private server
 
 ### INSTALL WEBMIN
 
-I also like to use Webmin, an handy help for server admins. And since I am lazy, I do all as root, so if you are not root, type sudo before each line, as appropriate. 
+I also like to use Webmin, an handy help for server admins. And since I am lazy, I do all as root, so if you are not root, type sudo before each line, as appropriate.
 
 ```
 nano /etc/apt/sources.list.d/Webmin.list
@@ -83,7 +85,7 @@ apt-get install webmin
 
 **install smartmon tools, curl, git**
 
-Webmin will use these: 
+Webmin will use these:
 
 ```
 apt-get install smartmontools curl git
@@ -95,19 +97,19 @@ apt-get install smartmontools curl git
 nano /etc/pam.d/common-session-noninteractive
 ```
 
-Look for the following line: 
+Look for the following line:
 
 ```
 session required        pam_unix.so
 ```
 
-*Above* this line, add the following: 
+*Above* this line, add the following:
 
 ```
 session     [success=1 default=ignore] pam_succeed_if.so service in cron quiet use_uid
 ```
 
-Restart cron: 
+Restart cron:
 
 ```
 service cron restart
@@ -144,7 +146,7 @@ apt-get -qy autoremove
 apt-get install mariadb-server
 ```
 
-To check if it is running: 
+To check if it is running:
 
 ```
 service mysql status
@@ -190,7 +192,7 @@ mysql -u mangos -pmangos --database=logs < vmangos/core/sql/logs.sql
 mysql -u mangos -pmangos --database=realmd < vmangos/core/sql/logon.sql
 ```
 
-In the next (long) line, you can change the 1st 127.0.0.1 to <the IP of your server machine> and the 255.255.255.0 to the netmask, or do it later with HeidiSQL. 
+In the next (long) line, you can change the 1st 127.0.0.1 to <the IP of your server machine> and the 255.255.255.0 to the netmask, or do it later with HeidiSQL.
 
 ```
 echo -e "INSERT INTO \`realmd\`.\`realmlist\` (\`name\`, \`address\`, \`localAddress\`, \`localSubnetMask\`, \`realmbuilds\`) VALUES ('VMaNGOS', '127.0.0.1', '127.0.0.1', '255.255.255.0', '5875 6005 6141');
@@ -263,18 +265,18 @@ This terminal-window will stay open)
 
 **And the World**
 
-Open another terminal window 
+Open another terminal window
 
 ```
 cd /opt/mangos
 ./mangosd
 ```
 
-(This terminal-window will stay open) 
+(This terminal-window will stay open)
 
 **Create a GM account:**
 
-In the mangos console type: 
+In the mangos console type:
 
 ```
 .account create <name> <password>
@@ -288,7 +290,7 @@ apt-get update
 apt-get install screen
 ```
 
-Create screen config file: 
+Create screen config file:
 
 ```
 nano .screenrc
@@ -363,7 +365,7 @@ case "$1" in
     esac
 ```
 
-make it executable: 
+make it executable:
 
 ```
 chmod a+x /opt/mangos/wowserver
@@ -402,7 +404,7 @@ cd $DIR
 ./wowserver
 ```
 
-make it executable: 
+make it executable:
 
 ```
 chmod a+x /etc/init.d/wowserver
@@ -415,7 +417,7 @@ update-rc.d wowserver defaults
 reboot
 ```
 
-To enable|disable autostart: 
+To enable|disable autostart:
 
 ```
 update-rc.d wowserver enable|disable
@@ -425,7 +427,7 @@ This can also be done with webmin, System / Bootup and Shutdown
 
 ### Install apache2
 
-Let Webmin install Apache and not from the command-line!: 
+Let Webmin install Apache and not from the command-line!:
 
 And do Refresh Modules, and now Apache should be availlable under: Servers
 
@@ -435,7 +437,7 @@ And do Refresh Modules, and now Apache should be availlable under: Servers
 apt-get install php php7.0-mysql php7.0-curl
 ```
 
-Verify the PHP version using the following command. 
+Verify the PHP version using the following command.
 ```
 php -v
 nano /var/www/html/info.php
@@ -443,7 +445,7 @@ nano /var/www/html/info.php
 phpinfo();
 ```
 
-and check in browser 
+and check in browser
 
 ```
 php --version
@@ -455,11 +457,11 @@ to check if it has: with Zend OPcache
 service apache2 restart
 ```
 
-(Do it via webmin) 
+(Do it via webmin)
 
 **Uploading website**
 
-Use SFTP-program to upload the website. 
+Use SFTP-program to upload the website.
 
 **HeidiSQL**
 
@@ -480,16 +482,16 @@ and Password to <your password on the server machine>
 
 Click Save and Open.
 
-Go to realmd , realmlist and click on the Data tab.
-Double-click on the ip-address in the address colunm and change it
+Go to realmd, realmlist and click on the Data tab.
+Double-click on the ip-address in the address column and change it
 from 127.0.0.1 to <the IP of your server machine>
-Double-click on the netmask in the netmask colunm and change it
+Double-click on the netmask in the netmask column and change it
 from 255.255.255.0 to <the netmask of your server machine>
-Now restart Apache: 
+Now restart Apache:
 
 **restoring from backup**
 
-Use HeidiSQL to restore the characters and realmd from backup. 
+Use HeidiSQL to restore the characters and realmd from backup.
 
 **Install ufw**
 
@@ -515,16 +517,16 @@ ufw status numbered
 **install SOAP**
 
 ```
-apt-get install php7.0-soap 
+apt-get install php7.0-soap
 
 service apache2 restart
 ```
 
-restart the wowserver 
+restart the wowserver
 
 **save all characters**
 
-Enable SOAP 
+Enable SOAP
 
 ```
 nano /opt/mangos/etc/mangosd.conf
@@ -534,7 +536,7 @@ nano /opt/mangos/etc/mangosd.conf
 SOAP.Enabled = 1
 ```
 
-Restart the server 
+Restart the server
 
 ```
 /opt/mangos/killwowserver
@@ -595,7 +597,7 @@ chmod a+x /opt/mangos/wowbackup
 nano /etc/crontab
 ```
 
-E.g.: Backup runs at: 43 minutes 21 hours : 21h43 on every day of every month. 
+E.g.: Backup runs at: 43 minutes 21 hours : 21h43 on every day of every month.
 
 ```
 43 21 * * *     root    /opt/mangos/wowbackup
