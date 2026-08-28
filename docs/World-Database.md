@@ -4,7 +4,7 @@ The world database is mostly static and contains definitions for all game conten
 
 ## Tables
 
-- [`DB-Script-Tables`](DB-Script-Tables.md) - The generic script command set shared by `event_scripts`, `gossip_scripts``quest_start/end_scripts`, `spell_scripts` and the other script tables.
+- [`DB-Script-Tables`](DB-Script-Tables.md) - The generic script command set shared by all the script tables.
 - [`area_template`](world/area_template.md) - Contains information about all areas and zones of the world, including flags, recommended level, faction ownership, and liquid type.
 - [`areatrigger_bg_entrance`](world/areatrigger_bg_entrance.md) - Defines battleground entrance portals that players can use to join the queue.
 - [`areatrigger_involvedrelation`](world/areatrigger_involvedrelation.md) - Associates area triggers with quest completion.
@@ -20,39 +20,39 @@ The world database is mostly static and contains definitions for all game conten
 - [`broadcast_text`](world/broadcast_text.md) - Central repository for in-game NPC text strings.
 - [`cinematic_waypoints`](world/cinematic_waypoints.md) - Defines camera positions at specific times during intro cinematics.
 - [`command`](world/command.md) - Overrides the default security level and provides help text for in-game chat commands.
-- [`conditions`](world/conditions.md) - Provides a flexible conditional logic system used by scripts, gossip, quests, teleports, etc. This table is heavily referenced.
+- [`conditions`](world/conditions.md) - Provides a flexible conditional logic system used by scripts, gossip, quests, teleports, etc.
 - [`creature`](world/creature.md) - Contains creature spawn data (placement, respawn, movement, and overrides).
 - [`creature_addon`](world/creature_addon.md) - Provides per-spawn overrides for creature visual state, equipment, mount, emotes, and auras.
 - [`creature_ai_events`](world/creature_ai_events.md) - Defines events that trigger scripts for creatures using EventAI.
 - [`creature_ai_scripts`](world/creature_ai_scripts.md) - Actions executed by EventAI events.
 - [`creature_battleground`](world/creature_battleground.md) - Links creature spawns to battleground events, allowing specific NPCs to react to battleground state changes.
-- [`creature_charm_spells`](world/creature_charm_spells.md) - Defines randomized spell pools for the spell slots of charmed creatures (e.g., mind-controlled mobs).
-- [`creature_classlevelstats`](world/creature_classlevelstats.md) - Base statistics for creatures by class and level - health, mana, damage, armor, and primary attributes.
-- [`creature_display_info_addon`](world/creature_display_info_addon.md) - Addon data for creature display info - bounding radius, combat reach, movement speeds, and gender.
-- [`creature_equip_template`](world/creature_equip_template.md) - Defines equipment sets for creatures - up to three items (main hand, off hand, ranged).
+- [`creature_charm_spells`](world/creature_charm_spells.md) - Defines spell available on the pet bar of charmed creatures (e.g., mind-controlled mobs).
+- [`creature_classlevelstats`](world/creature_classlevelstats.md) - Base stats for creatures by class and level - health, mana, damage, armor, and primary attributes.
+- [`creature_display_info_addon`](world/creature_display_info_addon.md) - Additional data for creature display info - bounding radius, combat reach, movement speeds, and gender.
+- [`creature_equip_template`](world/creature_equip_template.md) - Defines held items by creatures (main hand, off hand, ranged).
 - [`creature_groups`](world/creature_groups.md) - Groups creatures into formations, with a leader and relative positions.
-- [`creature_groups_entry_limit`](world/creature_groups_entry_limit.md) - Restricts the number of creatures of a specific template ID that can be part of a group.
-- [`creature_involvedrelation`](world/creature_involvedrelation.md) - Maps creatures (NPCs) to quests that they **end**, the turn-in side of the relation pair (offer side: `creature_questrelation`.
-- [`creature_linking`](world/creature_linking.md) - Links a creature to a master creature.
+- [`creature_groups_entry_limit`](world/creature_groups_entry_limit.md) - Restricts the number of creatures of a specific creature id that can be part of a group.
+- [`creature_involvedrelation`](world/creature_involvedrelation.md) - Maps creatures (NPCs) to quests that they **end**, the turn-in side of the relation pair (offer side: `creature_questrelation`).
+- [`creature_linking`](world/creature_linking.md) - Links creatures so they aggro / evade / respawn together.
 - [`creature_linking_template`](world/creature_linking_template.md) - Template-level creature linking - all spawns of a given entry link to a master entry on a specific map.
 - [`creature_loot_template`](world/creature_loot_template.md) - Loot tables for creatures - defines items, drop chances, groups, and patch ranges.
-- [`creature_movement`](world/creature_movement.md) - Defines waypoint movement paths for specific creature spawns (GUID-based).
+- [`creature_movement`](world/creature_movement.md) - Waypoints assigned by spawn GUID.
 - [`creature_movement_scripts`](world/creature_movement_scripts.md) - Scripts executed when a creature reaches a waypoint.
-- [`creature_movement_special`](world/creature_movement_special.md) - Special movement paths (e.g., scripted escort or event paths) keyed by creature entry or path ID.
-- [`creature_movement_template`](world/creature_movement_template.md) - Template-level waypoint paths that can be reused by any creature spawn (by entry).
+- [`creature_movement_special`](world/creature_movement_special.md) - Waypoints for special purposes (e.g., scripted escort or event paths).
+- [`creature_movement_template`](world/creature_movement_template.md) - Waypoints assigned by creature template id.
 - [`creature_onkill_reputation`](world/creature_onkill_reputation.md) - Reputation rewards granted when a player kills a creature of a specific entry.
 - [`creature_questrelation`](world/creature_questrelation.md) - Maps creatures (NPCs) to quests they offer (quest givers).
-- [`creature_spells`](world/creature_spells.md) - Defines spell lists for creatures - up to 8 spells with probabilities, targets, delays, and repeat intervals.
+- [`creature_spells`](world/creature_spells.md) - Defines spell lists for creatures to use on a timer in combat - up to 8 spells with probabilities, targets, delays, and repeat intervals.
 - [`creature_spells_scripts`](world/creature_spells_scripts.md) - Scripts triggered by creature spell casts.
-- [`creature_template`](world/creature_template.md) - Defines base properties for all creature types - stats, display, faction, AI, loot, and more.
+- [`creature_template`](world/creature_template.md) - Defines base properties for all creature ids - stats, display, faction, AI, loot, and more.
 - [`custom_texts`](world/custom_texts.md) - Holds custom text entries used by scripts, with support for localized versions.
 - [`disenchant_loot_template`](world/disenchant_loot_template.md) - Loot tables for disenchanting items - defines what materials drop when an item is disenchanted.
-- [`event_scripts`](world/event_scripts.md) - Scripts started by in-game events (object use, spell effects, waypoints, ...) via the core's script system.
+- [`event_scripts`](world/event_scripts.md) - Scripts started when using some gameobjects or spells (effect 61). The ids come from official sources.
 - [`exploration_basexp`](world/exploration_basexp.md) - Base experience points awarded for discovering new areas (exploration XP).
 - [`faction`](world/faction.md) - Defines reputation factions, their base standings per race/class, and other properties.
-- [`faction_template`](world/faction_template.md) - Defines faction reactions - which factions are friendly, hostile, or enemy.
+- [`faction_template`](world/faction_template.md) - Defines faction reactions - which factions are friendly, hostile, or enemy. This is the id assigned to units, not the base faction id.
 - [`fishing_loot_template`](world/fishing_loot_template.md) - Loot tables for fishing - defines items catchable in specific zones.
-- [`forbidden_items`](world/forbidden_items.md) - Items that are forbidden from being used or obtained in certain patches.
+- [`forbidden_items`](world/forbidden_items.md) - Items that are forbidden from being used or obtained in certain patches. Part of progression system.
 - [`game_event`](world/game_event.md) - Defines world events - their start/end times, occurrence intervals, and holidays.
 - [`game_event_creature`](world/game_event_creature.md) - Spawns creatures only during specific game events.
 - [`game_event_creature_data`](world/game_event_creature_data.md) - Overrides creature data (display, equipment, spells) during events.
@@ -64,16 +64,16 @@ The world database is mostly static and contains definitions for all game conten
 - [`game_weather`](world/game_weather.md) - Defines weather patterns for zones by season.
 - [`gameobject`](world/gameobject.md) - Static world spawns of game objects (chests, doors, quest objects, etc.).
 - [`gameobject_battleground`](world/gameobject_battleground.md) - Links game objects to battleground events (e.g., flag spawns, towers).
-- [`gameobject_display_info_addon`](world/gameobject_display_info_addon.md) - Addon data for game object display info - bounding box dimensions.
-- [`gameobject_involvedrelation`](world/gameobject_involvedrelation.md) - Maps game objects to quests - used for quest completion (e.g., click object to complete).
-- [`gameobject_loot_template`](world/gameobject_loot_template.md) - Loot tables for game objects (chests, containers, etc.).
+- [`gameobject_display_info_addon`](world/gameobject_display_info_addon.md) - Additional data for game object display info - bounding box dimensions.
+- [`gameobject_involvedrelation`](world/gameobject_involvedrelation.md) - Maps game objects to quest turn in.
+- [`gameobject_loot_template`](world/gameobject_loot_template.md) - Loot tables for game objects (chests).
 - [`gameobject_questrelation`](world/gameobject_questrelation.md) - Maps game objects to quests they offer (quest giver objects).
 - [`gameobject_requirement`](world/gameobject_requirement.md) - Gates *use* of a game object spawn behind world state: the linked creature must be **dead**, or another game object must currently be **active**.
 - [`gameobject_scripts`](world/gameobject_scripts.md) - Scripts executed when a game object is activated.
-- [`gameobject_template`](world/gameobject_template.md) - Defines base properties for game object types - type, display, data fields, and script.
-- [`generic_scripts`](world/generic_scripts.md) - Generic script actions used by various core systems.
+- [`gameobject_template`](world/gameobject_template.md) - Defines base properties for all game object ids - type, display, data fields, and script.
+- [`generic_scripts`](world/generic_scripts.md) - Generic script actions used by various core systems. Can be triggered by many things.
 - [`gossip_menu`](world/gossip_menu.md) - Defines gossip menus - links NPCs to text and script logic.
-- [`gossip_menu_option`](world/gossip_menu_option.md) - Defines options within a gossip menu - buttons, actions, and conditions.
+- [`gossip_menu_option`](world/gossip_menu_option.md) - Defines clickable options within a gossip menu.
 - [`gossip_scripts`](world/gossip_scripts.md) - Scripts executed when a gossip option is selected.
 - [`instance_buff_removal`](world/instance_buff_removal.md) - Defines spells (buffs) that are removed when entering specific instances.
 - [`item_display_info`](world/item_display_info.md) - Maps item display IDs to icon names.
@@ -84,10 +84,10 @@ The world database is mostly static and contains definitions for all game conten
 - [`locales_area`](world/locales_area.md) - Localized names for areas/zones.
 - [`locales_areatrigger`](world/locales_areatrigger.md) - Localized messages for area triggers.
 - [`locales_broadcast_text`](world/locales_broadcast_text.md) - Localized versions of broadcast texts.
-- [`locales_creature`](world/locales_creature.md) - Localized names and subtitles for creatures.
+- [`locales_creature`](world/locales_creature.md) - Localized names and subnames for creatures.
 - [`locales_faction`](world/locales_faction.md) - Localized faction names and descriptions.
 - [`locales_gameobject`](world/locales_gameobject.md) - Localized names for game objects.
-- [`locales_gossip_menu_option`](world/locales_gossip_menu_option.md) - Localized gossip menu option texts.
+- [`locales_gossip_menu_option`](world/locales_gossip_menu_option.md) - Localized gossip menu option texts. Only needed if there is no broadcast text.
 - [`locales_item`](world/locales_item.md) - Localized item names and descriptions.
 - [`locales_page_text`](world/locales_page_text.md) - Localized page/book texts.
 - [`locales_points_of_interest`](world/locales_points_of_interest.md) - Localized point-of-interest names.
@@ -100,19 +100,19 @@ The world database is mostly static and contains definitions for all game conten
 - [`map_loot_disabled`](world/map_loot_disabled.md) - Disables loot from specific maps (e.g., to prevent abuse).
 - [`map_template`](world/map_template.md) - Defines map properties - parent map, type, player limit, reset delay, and script binding.
 - [`migrations`](world/migrations.md) - Tracks applied database migrations (schema updates).
-- [`npc_gossip`](world/npc_gossip.md) - Per-spawn gossip overrides - assigns custom gossip text to specific creature GUIDs.
+- [`npc_gossip`](world/npc_gossip.md) - Per-spawn gossip overrides - assigns custom gossip text to specific creature GUIDs. Only used if we don't know the gossip menu id.
 - [`npc_text`](world/npc_text.md) - Defines NPC gossip text with multiple broadcast text IDs and probabilities.
-- [`npc_trainer`](world/npc_trainer.md) - Defines spells taught by specific NPC trainers (per-spawn or per-entry).
+- [`npc_trainer`](world/npc_trainer.md) - Defines spells taught by specific NPC trainers.
 - [`npc_trainer_greeting`](world/npc_trainer_greeting.md) - Defines custom greeting texts for specific trainer NPCs.
 - [`npc_trainer_template`](world/npc_trainer_template.md) - Defines spells taught by trainer templates (reusable across multiple NPCs via [`creature_template`](world/creature_template.md).trainer_id).
-- [`npc_vendor`](world/npc_vendor.md) - Defines items sold by specific NPC vendors (per-spawn or per-entry).
-- [`npc_vendor_template`](world/npc_vendor_template.md) - Reusable vendor templates
+- [`npc_vendor`](world/npc_vendor.md) - Defines items sold by specific NPC vendors.
+- [`npc_vendor_template`](world/npc_vendor_template.md) - Reusable vendor templates (assigned to NPCs via [`creature_template`](world/creature_template.md).vendor_id)
 - [`page_text`](world/page_text.md) - Defines book/page text content with links to next pages.
 - [`pet_levelstats`](world/pet_levelstats.md) - Base stats for pets by creature entry and level.
 - [`pet_name_generation`](world/pet_name_generation.md) - Generates random names for hunter pets.
 - [`pet_spell_data`](world/pet_spell_data.md) - Spell data for pets - up to 4 spells per pet entry.
 - [`petcreateinfo_spell`](world/petcreateinfo_spell.md) - Defines spells that a pet knows when created (by creature entry).
-- [`pickpocketing_loot_template`](world/pickpocketing_loot_template.md) - Loot tables for pickpocketing - items that can be stolen from creatures.
+- [`pickpocketing_loot_template`](world/pickpocketing_loot_template.md) - Loot tables for pickpocketing - items that can be stolen from creatures by a rogue.
 - [`player_classlevelstats`](world/player_classlevelstats.md) - Base health and mana per class/level.
 - [`player_crit_per_agility`](world/player_crit_per_agility.md) - Defines how much melee/ranged critical strike chance (in percent) each class gains per point of agility, scaled by level.
 - [`player_dodge_per_agility`](world/player_dodge_per_agility.md) - Defines how much dodge chance (in percent) each class gains per point of agility, scaled by level.
@@ -124,18 +124,18 @@ The world database is mostly static and contains definitions for all game conten
 - [`player_levelstats`](world/player_levelstats.md) - Defines base primary attributes (strength, agility, stamina, intellect, spirit) for each race/class/level combination.
 - [`player_premade_item`](world/player_premade_item.md) - Defines items granted to premade characters (used for testing or templates).
 - [`player_premade_item_template`](world/player_premade_item_template.md) - Defines premade character templates (name, class, level, role).
-- [`player_premade_spell`](world/player_premade_spell.md) - Defines spells granted to premade characters.
-- [`player_premade_spell_template`](world/player_premade_spell_template.md) - Additional spell template data for premade characters.
+- [`player_premade_spell`](world/player_premade_spell.md) - Defines individual spells and talents granted by a premade character template.
+- [`player_premade_spell_template`](world/player_premade_spell_template.md) - Specs for premade characters (name, class, level, role).
 - [`player_xp_for_level`](world/player_xp_for_level.md) - Defines experience points required to reach each level.
 - [`playercreateinfo`](world/playercreateinfo.md) - Defines starting location for each race/class combination.
 - [`playercreateinfo_action`](world/playercreateinfo_action.md) - Defines starting action bar layout for each race/class combination.
 - [`playercreateinfo_item`](world/playercreateinfo_item.md) - Defines starting items for each race/class combination.
 - [`playercreateinfo_spell`](world/playercreateinfo_spell.md) - Defines starting spells for each race/class combination.
-- [`points_of_interest`](world/points_of_interest.md) - Defines map points of interest (POI) shown on the world map.
+- [`points_of_interest`](world/points_of_interest.md) - Defines map points of interest (POI) shown on the world map when asking guards for directions. Assigned to [`gossip_menu_option`](world/gossip_menu_option.md) rows.
 - [`pool_creature`](world/pool_creature.md) - Links creature spawns to spawn pools (group of spawns that share a spawn limit).
-- [`pool_creature_template`](world/pool_creature_template.md) - Links creature template IDs to spawn pools (reusable across multiple spawns).
+- [`pool_creature_template`](world/pool_creature_template.md) - Links creature template IDs to spawn pools (for all spawns on map).
 - [`pool_gameobject`](world/pool_gameobject.md) - Links game object spawns to spawn pools.
-- [`pool_gameobject_template`](world/pool_gameobject_template.md) - Links game object template IDs to spawn pools.
+- [`pool_gameobject_template`](world/pool_gameobject_template.md) - Links game object template IDs to spawn pools (for all spawns on map).
 - [`pool_pool`](world/pool_pool.md) - Defines nested pools - a pool within a pool, with shared chance.
 - [`pool_template`](world/pool_template.md) - Defines spawn pools - groups of spawns that collectively follow a spawn limit.
 - [`quest_end_scripts`](world/quest_end_scripts.md) - Scripts executed when a quest is completed (handed in).
@@ -148,13 +148,13 @@ The world database is mostly static and contains definitions for all game conten
 - [`reserved_name`](world/reserved_name.md) - List of reserved character names that cannot be used.
 - [`script_escort_data`](world/script_escort_data.md) - Defines escort quest data - creature, quest, and faction override.
 - [`script_texts`](world/script_texts.md) - Generic script texts - similar to `custom_texts` but used by core scripts.
-- [`script_waypoint`](world/script_waypoint.md) - Defines waypoint paths for scripted creatures (escorts, etc.).
-- [`scripted_event_id`](world/scripted_event_id.md) - Maps scripted event IDs to script names.
+- [`script_waypoint`](world/script_waypoint.md) - Defines waypoint paths for c++ scripted creatures using ScriptedEscortAI.
+- [`scripted_event_id`](world/scripted_event_id.md) - Maps scripted event IDs to script names, same thing as `event_scripts` but for c++ scripts.
 - [`skill_fishing_base_level`](world/skill_fishing_base_level.md) - Defines base fishing skill required per zone/area.
-- [`skill_line_ability`](world/skill_line_ability.md) - Defines abilities learned from skill lines (e.g., from professions).
+- [`skill_line_ability`](world/skill_line_ability.md) - Defines what skill every spell belongs to. Used for professions and class spells.
 - [`skinning_loot_template`](world/skinning_loot_template.md) - Loot tables for skinning creatures.
 - [`sound_entries`](world/sound_entries.md) - Maps sound IDs to sound file names.
-- [`spell_area`](world/spell_area.md) - Defines spells that apply auras when entering a specific area, based on quests, race, gender, etc.
+- [`spell_area`](world/spell_area.md) - Limit spells to a given area, or make them automatically applied in the area.
 - [`spell_chain`](world/spell_chain.md) - Defines spell ranks and their chain relationships (e.g., rank 1, rank 2, etc.).
 - [`spell_check`](world/spell_check.md) - Expected spell properties used by `.debug spellcheck` to validate loaded spells against in-code assumptions.
 - [`spell_cone`](world/spell_cone.md) - Defines cone angles for spells with cone area of effect.
@@ -170,7 +170,7 @@ The world database is mostly static and contains definitions for all game conten
 - [`spell_proc_event`](world/spell_proc_event.md) - Defines proc event conditions for spells (e.g., on hit, on crit, on spellcast).
 - [`spell_proc_item_enchant`](world/spell_proc_item_enchant.md) - Defines proc rates for item enchantments (PPM).
 - [`spell_script_target`](world/spell_script_target.md) - Defines script targets for spells - restricts spell to specific creatures or game objects.
-- [`spell_scripts`](world/spell_scripts.md) - Scripts executed when a spell is cast.
+- [`spell_scripts`](world/spell_scripts.md) - Scripts executed when a spell with effect 77 is cast.
 - [`spell_target_position`](world/spell_target_position.md) - Defines target position for spells that teleport or summon to a fixed location.
 - [`spell_template`](world/spell_template.md) - Defines spell data - the primary table for all spells in the world database.
 - [`spell_threat`](world/spell_threat.md) - Defines threat values for spells - how much threat they generate.
