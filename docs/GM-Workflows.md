@@ -21,11 +21,13 @@ Escalation: `.ban character|account|ip <name> <duration> <reason>`
 ## 2. Spawn & Position Content Live
 
 ```
-.npc add <entry>               ; spawn at your feet
-.gobject add <entry>
-.npc move / .gobject move      ; reposition to current target location
-.npc del / .gobject del        ; remove (DB row stays until cleanup)
-.go xyz x y z [map]            ; travel yourself
+.npc spawn add <entry>           ; spawn NPC at your feet
+.gobject add <entry>             ; spawn object at your feet
+.npc move <target or guid>       ; reposition NPC to your current target location
+.gobject move <guid> <X> <Y> <Z> ; reposition object to set location
+.npc spawn del <target or guid>  ; remove NPC (DB row stays until cleanup)
+.gobject del <guid>              ; remove object (DB row stays until cleanup)
+.go xyz x y z [map]              ; travel yourself
 ```
 
 For permanent spawns still write SQL; live spawns are runtime state.
@@ -48,10 +50,11 @@ Watch the server log while doing it; quest load errors are described in
 ## 4. Control Game Events
 
 ```
-.event list                  ; see events + active state
-.event enable <entry>        ; force start (persists in the game_event_status table)
-.event disable <entry>       ; force stop
-.reload game_event...        ; after table edits
+.event list                 ; see events + active state
+.event start <entry>        ; force-starts an already-enabled event
+.event stop <entry>         ; force-stops an already-enabled event
+.event enable <entry>       ; enables event; starts now if active, else waits for next check  
+.event disable <entry>      ; disables event; stops it now if active, else just marks disabled  
 ```
 
 See [Game Events](Game-Events.md).
@@ -80,8 +83,8 @@ Details: [Security & RBAC](Security-RBAC.md).
 
 ```
 .npc info             ; AI name, faction, flags, loot ids
+.guid                 ; only NPC guid and entry
 .npc aiinfo           ; EventAI event bindings of your target
-.npc move / .npc turn ; reposition or face a direction
 .damage <amount>      ; deal damage to the target
 ```
 
