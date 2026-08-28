@@ -26,7 +26,7 @@ The world database is mostly static and contains definitions for all game conten
 - [`creature_ai_events`](world/creature_ai_events.md) - Defines events that trigger scripts for creatures using EventAI.
 - [`creature_ai_scripts`](world/creature_ai_scripts.md) - Actions executed by EventAI events.
 - [`creature_battleground`](world/creature_battleground.md) - Links creature spawns to battleground events, allowing specific NPCs to react to battleground state changes.
-- [`creature_charm_spells`](world/creature_charm_spells.md) - Defines spell available on the pet bar of charmed creatures (e.g., mind-controlled mobs).
+- [`creature_charm_spells`](world/creature_charm_spells.md) - Defines spells available on the pet bar of charmed creatures (e.g., mind-controlled mobs).
 - [`creature_classlevelstats`](world/creature_classlevelstats.md) - Base stats for creatures by class and level - health, mana, damage, armor, and primary attributes.
 - [`creature_display_info_addon`](world/creature_display_info_addon.md) - Additional data for creature display info - bounding radius, combat reach, movement speeds, and gender.
 - [`creature_equip_template`](world/creature_equip_template.md) - Defines held items by creatures (main hand, off hand, ranged).
