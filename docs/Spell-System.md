@@ -8,10 +8,15 @@ This page maps out which table does what.
 
 ## The Core: [`spell_template`](world/spell_template.md)
 
-The [`spell_template`](world/spell_template.md) table mirrors and extends `Spell.dbc` for every
-spell the server can cast: costs, cast times, cooldowns, effects (1-3), targets, visuals and
-text ids. Most content work only touches DBC data; [`spell_template`](world/spell_template.md) matters when you need to
-change behaviour without touching the client.
+The [`spell_template`](world/spell_template.md) table mirrors and extends `Spell.dbc` for every  
+spell the server can cast: costs, cast times, cooldowns, effects (1-3), targets, visuals and  
+text ids. **This table should never be edited directly**, except to assign `script_name`, its  
+data is considered 100% accurate and directly sourced from the DBC. To change spell behaviour,  
+use [`spell_mod`](world/spell_mod.md) / `spell_effect_mod`, or handle it in the core.  
+
+> **Exception:** the `Custom` (customFlags) field in `spell_template` may be set directly, since  
+> it is a custom, server-only field not sourced from the DBC, modifying it does not discard any  
+> original data.
 
 ---
 
