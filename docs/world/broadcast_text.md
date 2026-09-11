@@ -45,4 +45,3 @@ Central repository for in-game NPC text strings. Supports gender-specific varian
 - <a id="f-emote_delay1"></a>**`emote_delay1`** - Delay (ms) before each corresponding emote fires.
 - <a id="f-emote_delay2"></a>**`emote_delay2`** - Delay (ms) before each corresponding emote fires.
 - <a id="f-emote_delay3"></a>**`emote_delay3`** - Delay (ms) before each corresponding emote fires.
-*Referenced by: [`npc_text`](npc_text.md) and [`gossip_menu_option`](gossip_menu_option.md).*

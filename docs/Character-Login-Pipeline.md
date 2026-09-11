@@ -12,7 +12,7 @@ What the server loads when a player logs in, and which tables feed it. The query
 | 1 | Character row: vitals, position, money, appearance | [`characters`](characters/characters.md) |
 | 2 | Home bind (hearthstone point) | [`character_homebind`](characters/character_homebind.md) |
 | 3 | Group membership | [`groups`](characters/groups.md), [`group_member`](characters/group_member.md) |
-| 4 | Honour CP for today | [`character_honor_cp`](characters/character_honor_cp.md) |
+| 4 | Honor CP for today | [`character_honor_cp`](characters/character_honor_cp.md) |
 | 5 | Instance saves & BG data | [`character_instance`](characters/character_instance.md), [`character_battleground_data`](characters/character_battleground_data.md) |
 | 6 | Guild | [`guild_member`](characters/guild_member.md), [`guild_rank`](characters/guild_rank.md) |
 | 7 | Skills (+ forgotten skills) | [`character_skills`](characters/character_skills.md), [`character_forgotten_skills`](characters/character_forgotten_skills.md) |

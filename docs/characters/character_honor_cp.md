@@ -1,6 +1,6 @@
 # character_honor_cp Table
 
-Honour contribution points accumulated during the current honour day (used by the weekly honour calculation).
+Honor contribution points accumulated during the current honor day (used by the weekly honor calculation).
 
 ---
 
@@ -19,9 +19,9 @@ Honour contribution points accumulated during the current honour day (used by th
 
 ## Field Breakdown
 
-- <a id="f-guid"></a>**`guid`** - Character earning the honour ([`characters`](characters.md).guid); indexed, not unique - one row per honour event.
-- <a id="f-victim_type"></a>**`victim_type`** - Object type id of the honour source unit (0 when the source is the character itself).
+- <a id="f-guid"></a>**`guid`** - Character earning the honor ([`characters`](characters.md).guid); indexed, not unique - one row per honor event.
+- <a id="f-victim_type"></a>**`victim_type`** - Object type id of the honor source unit (0 when the source is the character itself).
 - <a id="f-victim_id"></a>**`victim_id`** - Victim identifier (guid low or creature entry).
 - <a id="f-cp"></a>**`cp`** - Contribution points awarded for this entry.
-- <a id="f-date"></a>**`date`** - Honour day (date key) this row counts towards.
-- <a id="f-type"></a>**`type`** - Honor type (`HonorType`): 1 honourable, 2 dishonourable, 3 bonus, 4 quest, 5 other.
+- <a id="f-date"></a>**`date`** - Honor day (date key) this row counts towards.
+- <a id="f-type"></a>**`type`** - Honor type (`HonorType`): 1 honorable, 2 dishonorable, 3 bonus, 4 quest, 5 other.

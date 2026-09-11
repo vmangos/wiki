@@ -96,5 +96,3 @@ Provides a flexible conditional logic system used by scripts, gossip, quests, te
 | 57 | `CONDITION_CREATURE_GROUP_MEMBER` | Creature is part of a group. | Creature | `value1` = leader_guid (optional) |
 | 58 | `CONDITION_CREATURE_GROUP_DEAD` | Creature's group is dead. | Creature | - |
 | 59 | `CONDITION_AREA_EXPLORED` | Player has explored the area. | Player | `value1` = area_id |
-
-*Referenced by: [`gossip_menu`](gossip_menu.md), [`gossip_menu_option`](gossip_menu_option.md), [`areatrigger_teleport`](areatrigger_teleport.md), [`creature_ai_events`](creature_ai_events.md), [`quest_template`](quest_template.md), [`npc_vendor`](npc_vendor.md), [`spell_area`](spell_area.md), `*_loot_template`, [`script_escort_data`](script_escort_data.md).*

@@ -4,7 +4,7 @@ World PvP objectives implemented as C++ systems in `src/game/OutdoorPvP/`:
 **Silithus (SI)** and **Eastern Plaguelands (EP)**. Both are enabled by default and toggled in
 `mangosd.conf`:
 
-- `OutdoorPvP.SI.Enable` (`World.cpp:806`)
+- `OutdoorPvP.SI.Enable`
 - `OutdoorPvP.EP.Enable`
 
 ---

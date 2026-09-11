@@ -60,7 +60,7 @@ You need to create four databases and a database user that the server will use t
 - Create the following databases:
   - `realmd`
   - `mangos`
-  - [`characters`](characters/characters.md)
+  - `characters`
   - `logs`
 
   (For collation put `utf8_general_ci`.)
@@ -93,7 +93,7 @@ You need four SQL files:
 
 - `logs.sql` - creates the `logs` database tables. *(Located in your core's `sql` folder)*
 - `logon.sql` - creates the `realmd` database tables. *(Located in your core's `sql` folder)*
-- `characters.sql` - creates the [`characters`](characters/characters.md) database tables. *(Located in your core's `sql` folder)*
+- `characters.sql` - creates the `characters` database tables. *(Located in your core's `sql` folder)*
 - The world database - you must obtain the latest world database release from the [database repository](https://github.com/brotalnia/database). Download the most recent `.7z` file (e.g., `world_full_YYYY_MM_DD.7z`) and extract it to get a `.sql` file.
 
 You can find the first three SQL files in the `sql` directory of your source (e.g., `C:\vmangos\core\sql\`).

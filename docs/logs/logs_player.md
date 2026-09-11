@@ -65,7 +65,7 @@ The values actually written are therefore: **Chat, BG, Character, Loot, LevelUp,
 | Chat | chat-related events | Yes |
 | BG | battleground events | Yes |
 | Character | login/logout/create/delete/rename events | Yes |
-| Honor | honour calculation events | No |
+| Honor | honor calculation events | No |
 | RA | remote-access console actions | No |
 | DBError | database error context | No |
 | DBErrorFix | automated DB error repairs | No |

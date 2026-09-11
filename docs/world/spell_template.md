@@ -185,55 +185,56 @@ Defines spell data - the primary table for all spells in the world database.
   (e.g. all Hearthstone-like items).
 - <a id="f-dispel"></a>**`dispel`** - Dispel type (`enum DispelType`, `SpellDefines.h`):
 
-  | Value | Name |
-  | :---: | :--- |
-  | 0 | NONE |
-  | 1 | MAGIC |
-  | 2 | CURSE |
-  | 3 | DISEASE |
-  | 4 | POISON |
-  | 5 | STEALTH |
-  | 6 | INVISIBILITY |
-  | 7 | ALL |
-  | 8 | SPE_NPC_ONLY |
-  | 9 | ENRAGE |
-  | 10 | ZG_TICKET |
+    | Value | Name |
+    | :---: | :--- |
+    | 0 | NONE |
+    | 1 | MAGIC |
+    | 2 | CURSE |
+    | 3 | DISEASE |
+    | 4 | POISON |
+    | 5 | STEALTH |
+    | 6 | INVISIBILITY |
+    | 7 | ALL |
+    | 8 | SPE_NPC_ONLY |
+    | 9 | ENRAGE |
+    | 10 | ZG_TICKET |
+
 - <a id="f-mechanic"></a>**`mechanic`** - Combat mechanic granted/inflicted (`SpellDefines.h`):
 
-  | Value | Name |
-  | :---: | :--- |
-  | 0 | NONE |
-  | 1 | CHARM |
-  | 2 | DISORIENTED |
-  | 3 | DISARM |
-  | 4 | DISTRACT |
-  | 5 | FEAR |
-  | 6 | FUMBLE |
-  | 7 | ROOT |
-  | 8 | PACIFY |
-  | 9 | SILENCE |
-  | 10 | SLEEP |
-  | 11 | SNARE |
-  | 12 | STUN |
-  | 13 | FREEZE |
-  | 14 | KNOCKOUT |
-  | 15 | BLEED |
-  | 16 | BANDAGE |
-  | 17 | POLYMORPH |
-  | 18 | BANISH |
-  | 19 | SHIELD |
-  | 20 | SHACKLE |
-  | 21 | MOUNT |
-  | 22 | PERSUADE |
-  | 23 | TURN |
-  | 24 | HORROR |
-  | 25 | INVULNERABILITY |
-  | 26 | INTERRUPT |
-  | 27 | DAZE |
-  | 28 | DISCOVERY |
-  | 29 | IMMUNE_SHIELD |
-  | 30 | SAPPED |
-  | 31 | SLOW_CAST_SPEED |
+    | Value | Name |
+    | :---: | :--- |
+    | 0 | NONE |
+    | 1 | CHARM |
+    | 2 | DISORIENTED |
+    | 3 | DISARM |
+    | 4 | DISTRACT |
+    | 5 | FEAR |
+    | 6 | FUMBLE |
+    | 7 | ROOT |
+    | 8 | PACIFY |
+    | 9 | SILENCE |
+    | 10 | SLEEP |
+    | 11 | SNARE |
+    | 12 | STUN |
+    | 13 | FREEZE |
+    | 14 | KNOCKOUT |
+    | 15 | BLEED |
+    | 16 | BANDAGE |
+    | 17 | POLYMORPH |
+    | 18 | BANISH |
+    | 19 | SHIELD |
+    | 20 | SHACKLE |
+    | 21 | MOUNT |
+    | 22 | PERSUADE |
+    | 23 | TURN |
+    | 24 | HORROR |
+    | 25 | INVULNERABILITY |
+    | 26 | INTERRUPT |
+    | 27 | DAZE |
+    | 28 | DISCOVERY |
+    | 29 | IMMUNE_SHIELD |
+    | 30 | SAPPED |
+    | 31 | SLOW_CAST_SPEED |
 
 ### Attribute Flags
 

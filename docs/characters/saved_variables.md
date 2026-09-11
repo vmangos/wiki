@@ -1,6 +1,6 @@
 # saved_variables Table
 
-Single-row table of global flags saved between restarts (honour maintenance bookkeeping, character-cleaner phase markers).
+Single-row table of global flags saved between restarts (honor maintenance bookkeeping, character-cleaner phase markers).
 
 ---
 
@@ -20,6 +20,6 @@ Single-row table of global flags saved between restarts (honour maintenance book
 
 - <a id="f-key"></a>**`key`** - Primary Key (always `0`); each variable is its own column of this one-row table.
 - <a id="f-cleaning_flags"></a>**`cleaning_flags`** - Cleanup-phase markers used during maintenance.
-- <a id="f-honor_last_maintenance_day"></a>**`honor_last_maintenance_day`** - Honour day tick bookkeeping.
-- <a id="f-honor_next_maintenance_day"></a>**`honor_next_maintenance_day`** - Honour day tick bookkeeping.
-- <a id="f-honor_maintenance_marker"></a>**`honor_maintenance_marker`** - Honour day tick bookkeeping.
+- <a id="f-honor_last_maintenance_day"></a>**`honor_last_maintenance_day`** - Honor day tick bookkeeping.
+- <a id="f-honor_next_maintenance_day"></a>**`honor_next_maintenance_day`** - Honor day tick bookkeeping.
+- <a id="f-honor_maintenance_marker"></a>**`honor_maintenance_marker`** - Honor day tick bookkeeping.

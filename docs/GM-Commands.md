@@ -15,12 +15,11 @@ Every chat/console command registered by `ChatHandler::getCommandTable()` (`src/
 | 6 | Administrator |
 | 7 | Console |
 
-**761 commands** documented.
+**759 commands** documented.
 
 ## Command List
 
-- **[`account`](realmd/account.md)** · min. level **0** (Player)
-  - **[`account`](realmd/account.md)** · min. level **0** (Player)
+- **`account`** · min. level **0** (Player)
   - **`account characters`** · min. level **3** (Game Master)
   - **`account cleardata`** · min. level **0** (Player) *(not from console)*
   - **`account create`** · min. level **7** (Console)
@@ -44,8 +43,7 @@ Every chat/console command registered by `ChatHandler::getCommandTable()` (`src/
   - **`antispam add`** · min. level **2** (Ticket Master)
   - **`antispam replace`** · min. level **2** (Ticket Master)
 - **`aoedamage`** · min. level **3** (Game Master) *(not from console)*
-- **[`auction`](characters/auction.md)** · min. level **2** (Ticket Master) *(not from console)*
-  - **[`auction`](characters/auction.md)** · min. level **2** (Ticket Master) *(not from console)*
+- **`auction`** · min. level **2** (Ticket Master) *(not from console)*
   - **`auction alliance`** · min. level **2** (Ticket Master) *(not from console)*
   - **`auction goblin`** · min. level **2** (Ticket Master) *(not from console)*
   - **`auction horde`** · min. level **2** (Ticket Master) *(not from console)*
@@ -297,7 +295,7 @@ Every chat/console command registered by `ChatHandler::getCommandTable()` (`src/
   - **`groupspell add`** · min. level **6** (Administrator)
   - **`groupspell rule`** · min. level **6** (Administrator)
 - **`guid`** · min. level **1** (Moderator) *(not from console)*
-- **[`guild`](characters/guild.md)** · min. level **3** (Game Master)
+- **`guild`** · min. level **3** (Game Master)
   - **`guild create`** · min. level **3** (Game Master)
   - **`guild invite`** · min. level **3** (Game Master)
   - **`guild rank`** · min. level **3** (Game Master)
@@ -308,7 +306,7 @@ Every chat/console command registered by `ChatHandler::getCommandTable()` (`src/
 - **`honor`** · min. level **3** (Game Master) *(not from console)*
   - **`honor show`** · min. level **2** (Ticket Master) *(not from console)*
 - **`hover`** · min. level **2** (Ticket Master) *(not from console)*
-- **[`instance`](characters/instance.md)** · min. level **2** (Ticket Master)
+- **`instance`** · min. level **2** (Ticket Master)
   - **`instance getdata`** · min. level **3** (Game Master) *(not from console)*
   - **`instance listbinds`** · min. level **3** (Game Master) *(not from console)*
   - **`instance setdata`** · min. level **3** (Game Master) *(not from console)*
@@ -770,7 +768,7 @@ Every chat/console command registered by `ChatHandler::getCommandTable()` (`src/
   - **`wareffort setresource`** · min. level **5** (Developer)
   - **`wareffort setstage`** · min. level **5** (Developer)
 - **`whispers`** · min. level **1** (Moderator) *(not from console)*
-- **[`world`](characters/world.md)** · min. level **6** (Administrator) *(not from console)*
+- **`world`** · min. level **6** (Administrator) *(not from console)*
   - **`world cansee`** · min. level **6** (Administrator) *(not from console)*
   - **`world detail`** · min. level **6** (Administrator) *(not from console)*
   - **`world update`** · min. level **6** (Administrator) *(not from console)*

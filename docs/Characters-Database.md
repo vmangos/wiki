@@ -14,7 +14,7 @@ The **character** database stores all player-owned state: characters themselves,
 - [`character_forgotten_skills`](characters/character_forgotten_skills.md) - Skills explicitly unlearned from a character (weapon skill resets); remembered so they are not re-granted automatically.
 - [`character_gifts`](characters/character_gifts.md) - Items wrapped as gifts waiting to be opened (gift target stored until unwrapped).
 - [`character_homebind`](characters/character_homebind.md) - Home bind position (hearthstone destination) per character.
-- [`character_honor_cp`](characters/character_honor_cp.md) - Honour contribution points accumulated during the current honour day (used by the weekly honour calculation).
+- [`character_honor_cp`](characters/character_honor_cp.md) - Honor contribution points accumulated during the current honor day (used by the weekly honor calculation).
 - [`character_instance`](characters/character_instance.md) - Instance binds of a character (which dungeon/raid saves they belong to).
 - [`character_inventory`](characters/character_inventory.md) - Every item a character carries: bag/slot mapping from `item_instance`.
 - [`character_pet`](characters/character_pet.md) - Persistent pet data (hunter pets): stats, spells, loyalty, name and stable slot.
@@ -24,7 +24,7 @@ The **character** database stores all player-owned state: characters themselves,
 - [`character_social`](characters/character_social.md) - Friends and ignores of each character.
 - [`character_spell`](characters/character_spell.md) - Spells learned by the character.
 - [`character_spell_cooldown`](characters/character_spell_cooldown.md) - Spell cooldowns persisting across logout.
-- [`character_stats`](characters/character_stats.md) - Cached lifetime statistics for the character sheet: kills, honour, quest counts and combat stats.
+- [`character_stats`](characters/character_stats.md) - Cached lifetime statistics for the character sheet: kills, honor, quest counts and combat stats.
 - [`character_tutorial`](characters/character_tutorial.md) - Tutorial flags shown to newly created accounts/characters.
 - [`characters`](characters/characters.md) - The central table: one row per player character with race/class/level, position, money and appearance.
 - [`characters_guid_delete`](characters/characters_guid_delete.md) - Queue of character GUIDs scheduled for deletion by the cleanup system.
@@ -57,5 +57,5 @@ The **character** database stores all player-owned state: characters themselves,
 - [`petition`](characters/petition.md) - Charter petitions for founding guilds, including the requested guild name and charter item.
 - [`petition_sign`](characters/petition_sign.md) - Signatures collected on a petition.
 - [`playerbot`](characters/playerbot.md) - State storage for player bots managed by the built-in bot system.
-- [`saved_variables`](characters/saved_variables.md) - Miscellaneous global flags saved between restarts, such as the next honour-day maintenance date.
+- [`saved_variables`](characters/saved_variables.md) - Miscellaneous global flags saved between restarts, such as the next honor-day maintenance date.
 - [`world`](characters/world.md) - World-wide persistent variables, such as per-map weather timers.

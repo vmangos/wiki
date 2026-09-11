@@ -16,7 +16,7 @@ field groups:
 | Availability | `MinLevel`, `MaxLevel`, `QuestLevel`, `RequiredClasses`, `RequiredRaces`, `RequiredSkill(Value)`, `RequiredCondition`, reputation min/max pairs |
 | Objectives | `ReqItemId1-4` (+count), `ReqCreatureOrGOId1-4` (+counts), `ReqSpellCast1-4`, kill credit fields |
 | Flow control | `PrevQuestId`, `NextQuestId`, `ExclusiveGroup`, `BreadcrumbForQuestId`, `NextQuestInChain`, `SpecialFlags`, `QuestFlags`, `LimitTime` |
-| Rewards | `RewItemId1-4`, choice items, `RewOrReqMoney`, XP, honour, spell rewards, mail templates |
+| Rewards | `RewItemId1-4`, choice items, `RewOrReqMoney`, XP, honor, spell rewards, mail templates |
 | Starter text/items | `SrcItemId/Count/Spell` - given on accept |
 
 Objectives are validated at load: referenced items/creatures/gameobjects must exist.

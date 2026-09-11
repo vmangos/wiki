@@ -41,4 +41,3 @@ Defines the location, size, and shape of all area triggers. These are invisible 
 - <a id="f-condition_id"></a>**`condition_id`** - Condition that must be met for the trigger to activate. (see [`conditions`](conditions.md).condition_entry)
 - <a id="f-script_id"></a>**`script_id`** - Script event ID.
 - <a id="f-script_name"></a>**`script_name`** - C++ script name for custom logic.
-*Referenced by: the other `areatrigger_*` tables.*

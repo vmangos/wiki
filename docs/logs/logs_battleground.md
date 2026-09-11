@@ -31,5 +31,5 @@ Per-participant battleground log rows written once, when a battleground finishes
 - <a id="f-playerGuid"></a>**`playerGuid`** - Participant character guid (from [`characters`](../characters/characters.md).guid).
 - <a id="f-team"></a>**`team`** - Player's team inside the BG.
 - <a id="f-deaths"></a>**`deaths`** - Deaths by this player in the match.
-- <a id="f-honorBonus"></a>**`honorBonus`** - Bonus honour granted.
-- <a id="f-honorableKills"></a>**`honorableKills`** - Honourable kills credited.
+- <a id="f-honorBonus"></a>**`honorBonus`** - Bonus honor granted.
+- <a id="f-honorableKills"></a>**`honorableKills`** - Honorable kills credited.

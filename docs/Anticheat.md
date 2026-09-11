@@ -28,8 +28,6 @@ Sources: `src/game/Anticheat/`.
   `mangosd.conf`.
 - Detections are written to the unified [`logs_player`](logs/logs_player.md) table
   (`type = 'Anticheat'`).
-- Suspected bot characters can be flagged into
-  [`logs_trashcharacters`](logs/logs_trashcharacters.md).
 
 ---
 

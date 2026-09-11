@@ -33,7 +33,7 @@ Battleground-specific spawns reference these tables instead of the normal
 - **Status flow** - wait → invitation → prestart countdown → running → finished
   (`enum BattleGroundStatus`). Timers such as `BattleGround.PrematureFinishTimer`
   are config options (`mangosd.conf`).
-- **Rewards** - marks of honour and bonus honour are handled by the core;
+- **Rewards** - marks of honor and bonus honor are handled by the core;
   weekend/holiday bonuses come through the [game event](Game-Events.md) system.
 
 ---

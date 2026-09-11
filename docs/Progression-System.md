@@ -79,7 +79,7 @@ Used by (non-exhaustive): [`creature`](world/creature.md), [`gameobject`](world/
 Several `mangosd.conf` settings complement the progression system:
 
 - `WowPatch` - the active content patch (shipped config default `10`; falls back internally to `0`/1.2 if unset).
-- `PvP.AccurateTimeline` and related `PvP.*` toggles - honour/PvP behaviour per timeline.
+- `PvP.AccurateTimeline` and related `PvP.*` toggles - honor/PvP behaviour per timeline.
 - `Progression*` rate toggles that gate content-specific tuning.
 
 ---

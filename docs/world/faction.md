@@ -57,5 +57,3 @@ Defines reputation factions, their base standings per race/class, and other prop
 - <a id="f-team"></a>**`team`** - Parent faction chain link for spillover/aggregation.
 - <a id="f-name"></a>**`name`** - Display strings.
 - <a id="f-description"></a>**`description`** - Display strings.
-
-*Referenced by: [`item_template`](item_template.md).RequiredReputationFaction and other reputation-requiring columns.*

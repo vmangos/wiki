@@ -68,7 +68,7 @@ VALUES (90003, 2589 /*Linen Cloth*/, 0, 0, NULL);
 
 ### Extended Vendor Columns
 
-Extended columns such as `extended_cost` (honour tokens) are TBC-era but tolerated;
+Extended columns such as `extended_cost` (honor tokens) are TBC-era but tolerated;
 in vanilla pricing comes solely from the item's `BuyPrice`.
 
 ### Templates

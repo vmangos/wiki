@@ -16,63 +16,64 @@ The server requires a large amount of data from the client in order to operate. 
 ### Extracting data from client on Linux
 
 1. **Locate your WoW 1.12.1 client folder**
-   Verify it's build **5875** (bottom-left corner of the login screen).
-   Assume your client is installed at `/home/yourname/games/World of Warcraft` - adjust the path accordingly.
+
+    Verify it's build **5875** (bottom-left corner of the login screen).
+    Assume your client is installed at `/home/yourname/games/World of Warcraft` - adjust the path accordingly.
 
 2. **Set your WoW path** (edit once)
 
-   ```bash
-   WOW_PATH='/home/yourname/games/World of Warcraft'
-   ```
-   Change it to your actual path.
+    ```bash
+    WOW_PATH='/home/yourname/games/World of Warcraft'
+    ```
+    Change it to your actual path.
 
 3. **Run extraction (separate commands - run in order)**
 
-   Create the target data directory:
-   ```bash
-   mkdir -p ~/vmangos/data/5875
-   cd ~/vmangos/data
-   ```
+    Create the target data directory:
+    ```bash
+    mkdir -p ~/vmangos/data/5875
+    cd ~/vmangos/data
+    ```
 
-   Extract maps and DBC:
-   ```bash
-   ~/vmangos/bin/Extractors/MapExtractor -i "$WOW_PATH" -o ~/vmangos/data -e 7
-   ```
+    Extract maps and DBC:
+    ```bash
+    ~/vmangos/bin/Extractors/MapExtractor -i "$WOW_PATH" -o ~/vmangos/data -e 7
+    ```
 
-   Move the DBC folder into the version-specific subdirectory:
-   ```bash
-   mv ~/vmangos/data/dbc ~/vmangos/data/5875/dbc
-   ```
+    Move the DBC folder into the version-specific subdirectory:
+    ```bash
+    mv ~/vmangos/data/dbc ~/vmangos/data/5875/dbc
+    ```
 
-   Extract raw vmap data:
-   ```bash
-   ~/vmangos/bin/Extractors/VMapExtractor -d "$WOW_PATH/Data"
-   ```
+    Extract raw vmap data:
+    ```bash
+    ~/vmangos/bin/Extractors/VMapExtractor -d "$WOW_PATH/Data"
+    ```
 
-   Build final vmaps:
-   ```bash
-   ~/vmangos/bin/Extractors/VMapAssembler
-   ```
+    Build final vmaps:
+    ```bash
+    ~/vmangos/bin/Extractors/VMapAssembler
+    ```
 
-   Generate movement maps (adjust thread count automatically):
-   ```bash
-   ~/vmangos/bin/Extractors/MoveMapGenerator --threads "$(nproc)" --silent --configInputPath ~/vmangos/bin/Extractors/config.json --offMeshInput ~/vmangos/bin/Extractors/offmesh.txt
-   ```
+    Generate movement maps (adjust thread count automatically):
+    ```bash
+    ~/vmangos/bin/Extractors/MoveMapGenerator --threads "$(nproc)" --silent --configInputPath ~/vmangos/bin/Extractors/config.json --offMeshInput ~/vmangos/bin/Extractors/offmesh.txt
+    ```
 
-   Clean up unused folders:
-   ```bash
-   rm -rf ~/vmangos/data/{Buildings,Cameras}
-   ```
+    Clean up unused folders:
+    ```bash
+    rm -rf ~/vmangos/data/{Buildings,Cameras}
+    ```
 
 4. **Final structure**
 
-   ```
-   ~/vmangos/data/
-   ├── 5875/dbc/
-   ├── maps/
-   ├── vmaps/
-   └── mmaps/
-   ```
+    ```
+    ~/vmangos/data/
+    ├── 5875/dbc/
+    ├── maps/
+    ├── vmaps/
+    └── mmaps/
+    ```
 
 ---
 
@@ -112,45 +113,45 @@ After this, you can skip to **Step 3**.
 
 1. **Get the latest world database file**
 
-   ```bash
-   LATEST_DB=$(curl -s https://api.github.com/repos/brotalnia/database/contents/ | grep -o '"name": "world_full_[^"]*\.7z"' | sed 's/"name": "\(.*\)"/\1/' | while read f; do date_part=$(echo "$f" | sed 's/world_full_\(.*\)\.7z/\1/'); echo "$(date -d "$(echo "$date_part" | sed 's/_/ /g')" +%s 2>/dev/null) $f"; done | sort -n | tail -n1 | cut -d' ' -f2-) && wget -qO "/tmp/$LATEST_DB" "https://github.com/brotalnia/database/raw/master/$LATEST_DB"
-   ```
+    ```bash
+    LATEST_DB=$(curl -s https://api.github.com/repos/brotalnia/database/contents/ | grep -o '"name": "world_full_[^"]*\.7z"' | sed 's/"name": "\(.*\)"/\1/' | while read f; do date_part=$(echo "$f" | sed 's/world_full_\(.*\)\.7z/\1/'); echo "$(date -d "$(echo "$date_part" | sed 's/_/ /g')" +%s 2>/dev/null) $f"; done | sort -n | tail -n1 | cut -d' ' -f2-) && wget -qO "/tmp/$LATEST_DB" "https://github.com/brotalnia/database/raw/master/$LATEST_DB"
+    ```
 
 2. **Extract the database**
 
-   ```bash
-   7z x "/tmp/$LATEST_DB" -o/tmp/ -y
-   ```
+    ```bash
+    7z x "/tmp/$LATEST_DB" -o/tmp/ -y
+    ```
 
 3. **Import the base world database**
 
-   ```bash
-   mysql -u"${DB_USER}" -p"${DB_PASS}" mangos < "/tmp/$(basename "$LATEST_DB" .7z).sql"
-   ```
+    ```bash
+    mysql -u"${DB_USER}" -p"${DB_PASS}" mangos < "/tmp/$(basename "$LATEST_DB" .7z).sql"
+    ```
 
 4. **Run the VMaNGOS migration merge script**
 
-   ```bash
-   cd ~/vmangos/core/sql/migrations && ./merge.sh
-   ```
-   This generates combined update files like `world_db_updates.sql`, `logs_db_updates.sql`, etc., in the same directory.
+    ```bash
+    cd ~/vmangos/core/sql/migrations && ./merge.sh
+    ```
+    This generates combined update files like `world_db_updates.sql`, `logs_db_updates.sql`, etc., in the same directory.
 
 5. **Import the core SQL files (logs, logon, characters)**
 
-   ```bash
-   mysql -u"${DB_USER}" -p"${DB_PASS}" logs < ~/vmangos/core/sql/logs.sql
-   mysql -u"${DB_USER}" -p"${DB_PASS}" realmd < ~/vmangos/core/sql/logon.sql
-   mysql -u"${DB_USER}" -p"${DB_PASS}" characters < ~/vmangos/core/sql/characters.sql
-   ```
+    ```bash
+    mysql -u"${DB_USER}" -p"${DB_PASS}" logs < ~/vmangos/core/sql/logs.sql
+    mysql -u"${DB_USER}" -p"${DB_PASS}" realmd < ~/vmangos/core/sql/logon.sql
+    mysql -u"${DB_USER}" -p"${DB_PASS}" characters < ~/vmangos/core/sql/characters.sql
+    ```
 
 6. **Import the merged migration files**
 
-   ```bash
-   mysql -u"${DB_USER}" -p"${DB_PASS}" mangos < ~/vmangos/core/sql/migrations/world_db_updates.sql
-   mysql -u"${DB_USER}" -p"${DB_PASS}" logs < ~/vmangos/core/sql/migrations/logs_db_updates.sql
-   mysql -u"${DB_USER}" -p"${DB_PASS}" realmd < ~/vmangos/core/sql/migrations/logon_db_updates.sql
-   mysql -u"${DB_USER}" -p"${DB_PASS}" characters < ~/vmangos/core/sql/migrations/characters_db_updates.sql
-   ```
+    ```bash
+    mysql -u"${DB_USER}" -p"${DB_PASS}" mangos < ~/vmangos/core/sql/migrations/world_db_updates.sql
+    mysql -u"${DB_USER}" -p"${DB_PASS}" logs < ~/vmangos/core/sql/migrations/logs_db_updates.sql
+    mysql -u"${DB_USER}" -p"${DB_PASS}" realmd < ~/vmangos/core/sql/migrations/logon_db_updates.sql
+    mysql -u"${DB_USER}" -p"${DB_PASS}" characters < ~/vmangos/core/sql/migrations/characters_db_updates.sql
+    ```
 
 ---
 
