@@ -4,29 +4,32 @@ Once you've compiled the server core, there are still a number of steps you must
 
 ## 1. Extracting data from the client
 
-The server requires a large amount of data from the client in order to operate. That includes DBC, Map, VMap and MMap files. To extract all that data you need extractors. You can compile them yourself by selecting the `_USE_EXTRACTORS_` option when configuring in CMake. Alternatively you can download all the required files from the internet.
+The server requires a large amount of data from the client in order to operate. That includes DBC, Map, VMap and MMap files. To extract all that data you need extractors. You can compile them yourself by enabling the `BUILD_EXTRACTORS` option when configuring in CMake. Alternatively you can download all the required files from the internet.
 
 ### Extracting data from client on Windows
 
 1. **Locate your WoW 1.12.1 client folder**
    Verify it's build **5875** (bottom-left corner of the login screen).
 
-2. **Copy the extractors and dependencies**
+2. **Copy the extractors and their data files**
    Place these files in your World of Warcraft 1.12.1 game folder:
-   - `mapextractor.exe`
-   - `vmapextractor.exe`
-   - `vmap_assembler.exe`
-   - `MoveMapGen.exe`
-   - Any required DLLs from the build output.
+   - `MapExtractor.exe`
+   - `VMapExtractor.exe`
+   - `VMapAssembler.exe`
+   - `MoveMapGenerator.exe`
+   - `config.json` and `offmesh.txt` - read by `MoveMapGenerator.exe` from the folder it runs in.
+
+   The executables are in your build output (e.g. `core\bin\Release`) and the two data files in `core\contrib\mmap`. After building the `INSTALL` target, all of them are also in the `Extractors` folder of your install directory.
 
 3. **Run the extractors by double-clicking (in order)**
    Open the WoW folder in File Explorer and double-click each one:
 
-   1. **`mapextractor.exe`** - extracts DBC and map files.
-   2. **`vmapextractor.exe`** - extracts raw visual map files.
-   3. **`vmap_assembler.exe`** - converts the vmaps into a usable format.
-   4. **`MoveMapGen.exe`** - generates movement maps (optional, but recommended for proper creature navigation).
+   1. **`MapExtractor.exe`** - extracts DBC and map files.
+   2. **`VMapExtractor.exe`** - extracts raw visual map files.
+   3. **`VMapAssembler.exe`** - converts the vmaps into a usable format.
+   4. **`MoveMapGenerator.exe`** - generates movement maps (optional, but recommended for proper creature navigation).
       *This step takes a long time - from 30 minutes to several hours. If you skip it, mobs will chase targets in a straight line and fear movement will not work. If you get an error about a missing "mmaps" folder, just create it manually.*
+      *Alternatively, copy `mmap_extract.py` from `core\contrib\mmap` as well and run `python mmap_extract.py` in the WoW folder to generate the movement maps for several maps in parallel.*
 
 4. **Move extracted folders to your server**
    Copy the following folders from your WoW folder: `maps`, `vmaps`, `mmaps` (if created), `dbc`
